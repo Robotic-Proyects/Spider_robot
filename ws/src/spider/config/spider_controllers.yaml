@@ -1,0 +1,50 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 20
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+spider_controller:
+  ros__parameters:
+    type: forward_command_controller/ForwardCommandController
+    joints:
+      - base_to_cupula
+      - hip_backright
+      - hip_backleft
+      - hip_frontright
+      - hip_frontleft
+      - leg_backright
+      - leg_backleft
+      - leg_frontright
+      - leg_frontleft
+      - foot_frontleft
+      - foot_frontright
+      - foot_backright
+      - foot_backleft
+    interface_name: position
+
+# spider_controller:
+#   ros__parameters:
+#     update_rate: 20 
+#     type: joint_trajectory_controller/JointTrajectoryController
+#     joints:
+#       - base_to_cupula
+#       - hip_backright
+#       - hip_backleft
+#       - hip_frontright
+#       - hip_frontleft
+#       - leg_backright
+#       - leg_backleft
+#       - leg_frontright
+#       - leg_frontleft
+#       - foot_frontleft
+#       - foot_frontright
+#       - foot_backright
+#       - foot_backleft
+#     command_interfaces:
+#       - position
+#       - effort
+#     state_interfaces:
+#       - position
+#       - velocity
