@@ -81,6 +81,8 @@ def generate_launch_description():
     use_sim_time_launch_arg = DeclareLaunchArgument('use_sim_time', default_value='true')
     use_rviz = LaunchConfiguration('use_rviz')
     use_rviz_arg = DeclareLaunchArgument("use_rviz", default_value='true')
+    use_camera = LaunchConfiguration('use_camera')
+    use_camera_launch_arg = DeclareLaunchArgument('use_camera', default_value='true')
 
     robot_state_publisher = IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
@@ -106,40 +108,60 @@ def generate_launch_description():
         launch_arguments=dict(use_sim_time=use_sim_time).items(),
     )
 
+    pkg_share_folder = get_package_share_directory("spider")
+
     gz_bridge_parameter = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
+        name='bridge_ros_gz',
         output='screen',
-        parameters=[{
-            'use_sim_time': use_sim_time,
-        }],
+        parameters=[
+            {
+                'config_file': join(
+                    pkg_share_folder, 'config', 'sensors_bridge.yaml'
+                ),
+                'use_sim_time': True,
+            }
+        ],
     )
 
     gz_bridge_camera = Node(
         package='ros_gz_image',
         executable='image_bridge',
-        arguments=[],
-        output='screen'
+        arguments=[
+            "/camera_front/image"
+        ],
+        output='screen',
+        parameters=[
+            {'use_sim_time': True,
+             'camera.image.compressed.jpeg_quality': 75},
+        ],
     )
     gz_bridge_camera_dummy = DeclareLaunchArgument('', default_value='') # dummy for LaunchDescription could take empty element
 
-    pkg_share_folder = get_package_share_directory("spider")
-    spider_controller = GroupAction([
-        generate_load_controller_launch_description(
-            controller_name='spider_controller',
-            controller_params_file=join(pkg_share_folder, 'config', 'spider_controllers.yaml')
-        )
-    ])
 
-    joint_state_broadcaster = GroupAction(
-        [
-            generate_load_controller_launch_description(
-                controller_name='joint_state_broadcaster',
-                controller_params_file=join(
-                    pkg_share_folder, 'config', 'spider_controllers.yaml'))
+    joint_state_broadcaster = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'joint_state_broadcaster',
+            '--controller-manager', '/controller_manager',
+            '--switch-timeout', '15',
+            '--controller-manager-timeout', '15',
+            '--service-call-timeout', '15',
+            '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        condition=UnlessCondition(LaunchConfiguration('gui'))
+        output='screen'
+    )
+
+    spider_controller = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'spider_controller',
+            '--controller-manager', '/controller_manager',
+            '--switch-timeout', '15',
+            '--controller-manager-timeout', '15',
+            '--service-call-timeout', '15',
+            '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
+        ],
+        output='screen'
     )
 
     publish_initial_command = TimerAction(
@@ -169,8 +191,8 @@ def generate_launch_description():
         gazebo,
         spawn,
         gz_bridge_parameter,
-        spider_controller,
         joint_state_broadcaster,
-        (gz_bridge_camera if [] else gz_bridge_camera_dummy),
+        spider_controller,
+        (gz_bridge_camera if use_camera else gz_bridge_camera_dummy),
         publish_initial_command
     ])
