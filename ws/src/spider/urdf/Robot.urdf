@@ -37,11 +37,6 @@
         <box size="0.11317322158813477 0.11317322158813477 0.014693019866943359"/>
       </geometry>
     </collision>
-    <inertial>
-      <mass value="0.04"/>
-      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.000083" ixy="0.0" ixz="0.0" iyy="0.000083" iyz="0.0" izz="0.000083"/>
-    </inertial>
   </link>
   <link name="l_SG_base001">
     <visual>

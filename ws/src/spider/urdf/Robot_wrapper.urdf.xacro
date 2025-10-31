@@ -3,4 +3,7 @@
     <xacro:arg name="config_controllers" default="$(find spider)/config/spider_controllers.yaml"/>
     <xacro:include filename="Robot.urdf"/>
     <xacro:include filename="Robot_sensors.urdf.xacro"/>
+
+    <xacro:imu_sensor_structure conex_link="l_SG_base001"/>
+    <xacro:camera_structure conex1_link="l_Spider_camera_module004" h_fov="1.047" v_width="1080" v_height="720"/>
 </robot>
