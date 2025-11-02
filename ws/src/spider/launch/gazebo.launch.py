@@ -152,9 +152,9 @@ def generate_launch_description():
         output='screen'
     )
 
-    spider_controller = ExecuteProcess(
+    spider_leg_back_right_controller = ExecuteProcess(
         cmd=[
-            'ros2', 'run', 'controller_manager', 'spawner', 'spider_controller',
+            'ros2', 'run', 'controller_manager', 'spawner', 'spider_leg_back_right_controller',
             '--controller-manager', '/controller_manager',
             '--switch-timeout', '15',
             '--controller-manager-timeout', '15',
@@ -164,15 +164,113 @@ def generate_launch_description():
         output='screen'
     )
 
-    publish_initial_command = TimerAction(
+    spider_leg_back_left_controller = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'spider_leg_back_left_controller',
+            '--controller-manager', '/controller_manager',
+            '--switch-timeout', '15',
+            '--controller-manager-timeout', '15',
+            '--service-call-timeout', '15',
+            '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
+        ],
+        output='screen'
+    )
+
+    spider_leg_front_right_controller = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'spider_leg_front_right_controller',
+            '--controller-manager', '/controller_manager',
+            '--switch-timeout', '15',
+            '--controller-manager-timeout', '15',
+            '--service-call-timeout', '15',
+            '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
+        ],
+        output='screen'
+    )
+
+
+    spider_leg_front_left_controller = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'spider_leg_front_left_controller',
+            '--controller-manager', '/controller_manager',
+            '--switch-timeout', '15',
+            '--controller-manager-timeout', '15',
+            '--service-call-timeout', '15',
+            '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
+        ],
+        output='screen'
+    )
+
+    spider_dome_controller = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'spider_dome_controller',
+            '--controller-manager', '/controller_manager',
+            '--switch-timeout', '15',
+            '--controller-manager-timeout', '15',
+            '--service-call-timeout', '15',
+            '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
+        ],
+        output='screen'
+    )
+    
+    publish_initial_command_1 = TimerAction(
         period=10.0,
         actions=[
             ExecuteProcess(
                 cmd=[
                     'ros2', 'topic', 'pub',
-                    '/spider_controller/commands',
+                    '/spider_leg_front_left_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, 0.0, 0.0, 0.0, 0.0, -1.57, -1.57, -1.57, -1.57, -1.57, -1.57, -1.57, -1.57]',
+                    'data: [0.0, -0.7, -0.8]',
+                    '--once'
+                ],
+                output='screen'
+            )
+        ],
+        condition=UnlessCondition(LaunchConfiguration('gui'))
+    )
+
+    publish_initial_command_2 = TimerAction(
+        period=10.0,
+        actions=[
+            ExecuteProcess(
+                cmd=[
+                    'ros2', 'topic', 'pub',
+                    '/spider_leg_back_left_controller/commands',
+                    'std_msgs/msg/Float64MultiArray',
+                    'data: [0.0, -0.7, -0.8]',
+                    '--once'
+                ],
+                output='screen'
+            )
+        ],
+        condition=UnlessCondition(LaunchConfiguration('gui'))
+    )
+    publish_initial_command_3 = TimerAction(
+        period=10.0,
+        actions=[
+            ExecuteProcess(
+                cmd=[
+                    'ros2', 'topic', 'pub',
+                    '/spider_leg_back_right_controller/commands',
+                    'std_msgs/msg/Float64MultiArray',
+                    'data: [0.0, -0.7, -0.8]',
+                    '--once'
+                ],
+                output='screen'
+            )
+        ],
+        condition=UnlessCondition(LaunchConfiguration('gui'))
+    )
+    publish_initial_command_4 = TimerAction(
+        period=10.0,
+        actions=[
+            ExecuteProcess(
+                cmd=[
+                    'ros2', 'topic', 'pub',
+                    '/spider_leg_front_right_controller/commands',
+                    'std_msgs/msg/Float64MultiArray',
+                    'data: [0.0, -0.7, -0.8]',
                     '--once'
                 ],
                 output='screen'
@@ -192,7 +290,14 @@ def generate_launch_description():
         spawn,
         gz_bridge_parameter,
         joint_state_broadcaster,
-        spider_controller,
+        spider_dome_controller,
+        spider_leg_front_left_controller,
+        spider_leg_front_right_controller,
+        spider_leg_back_left_controller,
+        spider_leg_back_right_controller,
         (gz_bridge_camera if use_camera else gz_bridge_camera_dummy),
-        publish_initial_command
+        publish_initial_command_1,
+        publish_initial_command_2,
+        publish_initial_command_3,
+        publish_initial_command_4
     ])

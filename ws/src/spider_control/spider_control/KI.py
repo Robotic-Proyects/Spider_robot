@@ -27,11 +27,12 @@ def Beta(l_A, tibia, femur):
     beta = math.acos(  (pow(l_A,2)-pow(tibia,2)-pow(femur,2)) / (-2*tibia*femur)) * RAD_TO_DEG
     return beta
 
-def main():
-    #Point
-    ejeX = -39.18
-    ejeY = -39.22
-    ejeZ = 0
+def get_initial_pose(pose_interface):
+    initial_pose = [0, 93.05, 99.7]
+    initial_pose = [0, initial_pose[1] + math.degrees(-0.7), initial_pose[2] + math.degrees(-0.8)]
+    return initial_pose
+
+def get_configurations(pose_interface, ejeX, ejeY, ejeZ):
     
     #Size
     HIP_LEG = 37.75
@@ -39,8 +40,15 @@ def main():
     FOOT_ENDEFFECTOR = 90.96
     
     desfaceZ = 86
-    
-    initial_pose = [0,93.05,99.7]
+    initial_pose = [0, 93.05, 99.7]
+
+    if pose_interface == 0:
+        initial_pose = [0, 93.05, 99.7]
+    elif pose_interface == 1: # Initial pose for walking
+        initial_pose = [0, initial_pose[1] + math.degrees(-0.7), initial_pose[2] + math.degrees(-0.8)]
+    else:
+        print("Introduce 0 or 1")
+        return(-1)
     
     hipoXY = HipoXY(ejeX,ejeY)
     lineaAlfa = LineaA(desfaceZ, hipoXY, HIP_LEG)
@@ -54,4 +62,5 @@ def main():
     beta_rad = math.radians(beta - initial_pose[2])
 
     print(gamma_rad,alfa_rad,beta_rad)
-main()
+    return(gamma_rad,alfa_rad,beta_rad)
+
