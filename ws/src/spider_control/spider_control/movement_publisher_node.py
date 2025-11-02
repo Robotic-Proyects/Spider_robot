@@ -15,21 +15,22 @@ class MovementPublisher(Node):
 
     def __init__(self):
         super().__init__('movement_publisher')
-        self.publisher_ = self.create_publisher(Float64MultiArray, '/spider_controller/commands', 10)
+        self.publisher_back_left_ = self.create_publisher(Float64MultiArray, '/spider_leg_back_left_controller/commands', 10)
+        self.publisher_back_right_ = self.create_publisher(Float64MultiArray, '/spider_leg_back_right_controller/commands', 10)
+        self.publisher_front_left_ = self.create_publisher(Float64MultiArray, '/spider_leg_front_left_controller/commands', 10)
+        self.publisher_front_right_ = self.create_publisher(Float64MultiArray, '/spider_leg_front_right_controller/commands', 10)
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.state = State.START
-        self.pose = [0.0, 0.0, 0.0, 0.0, 0.0, -0.7, -0.7, -0.7, -0.7, -0.8, -0.8, -0.8, -0.8]
+        self.pose_back_right = [0.0, -0.7, -0.8]
+        self.pose_back_left = [0.0, -0.7, -0.8]
+        self.pose_front_right = [0.0, -0.7, -0.8]
+        self.pose_front_left = [0.0, -0.7, -0.8]
 
-    def publish(self, pose):
+    def publish(self, pose, publisher):
         msg = Float64MultiArray()
-        """
-        msg.data = [rad_dome, rad_hip_br, rad_hip_bl, rad_hip_fr, rad_hip_fl, 
-                    rad_leg_br, rad_leg_bl, rad_leg_fr, rad_leg_fl, rad_foot_fl, 
-                    rad_foot_fr, rad_foot_br, rad_foot_bl]
-        """
         msg.data = pose
-        self.publisher_.publish(msg)
+        publisher.publish(msg)
         self.get_logger().info('Publishing: "%s"' % msg.data)
 
     def timer_callback(self):
@@ -42,13 +43,13 @@ class MovementPublisher(Node):
 
             initial_pose = get_initial_pose(pose_interface=1)
             
-            hip_rad = 2.1187 - initial_pose[1]
+            leg_rad = 2.1187 - initial_pose[1]
             foot_rad = 0.86 - initial_pose[2]
 
-            self.pose[6] = hip_rad
-            self.pose[12] = foot_rad
+            self.pose_front_left[1] = leg_rad
+            self.pose_front_left[2] = foot_rad
             
-            self.publish(self.pose)
+            self.publish(self.pose_front_left, self.publisher_front_left_)
 
         elif self.state == State.MOVE:
 
