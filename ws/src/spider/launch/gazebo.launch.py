@@ -149,7 +149,8 @@ def generate_launch_description():
             '--service-call-timeout', '15',
             '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        output='screen'
+        output='screen',
+        condition=UnlessCondition(LaunchConfiguration('gui'))
     )
 
     spider_leg_back_right_controller = ExecuteProcess(
@@ -161,7 +162,8 @@ def generate_launch_description():
             '--service-call-timeout', '15',
             '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        output='screen'
+        output='screen',
+        condition=UnlessCondition(LaunchConfiguration('gui'))
     )
 
     spider_leg_back_left_controller = ExecuteProcess(
@@ -173,7 +175,8 @@ def generate_launch_description():
             '--service-call-timeout', '15',
             '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        output='screen'
+        output='screen',
+        condition=UnlessCondition(LaunchConfiguration('gui'))
     )
 
     spider_leg_front_right_controller = ExecuteProcess(
@@ -185,7 +188,8 @@ def generate_launch_description():
             '--service-call-timeout', '15',
             '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        output='screen'
+        output='screen',
+        condition=UnlessCondition(LaunchConfiguration('gui'))
     )
 
 
@@ -198,7 +202,8 @@ def generate_launch_description():
             '--service-call-timeout', '15',
             '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        output='screen'
+        output='screen',
+        condition=UnlessCondition(LaunchConfiguration('gui'))
     )
 
     spider_dome_controller = ExecuteProcess(
@@ -210,7 +215,8 @@ def generate_launch_description():
             '--service-call-timeout', '15',
             '--param-file', join(pkg_share_folder, 'config', 'spider_controllers.yaml')
         ],
-        output='screen'
+        output='screen',
+        condition=UnlessCondition(LaunchConfiguration('gui'))
     )
     
     publish_initial_command_1 = TimerAction(
