@@ -227,7 +227,7 @@ def generate_launch_description():
                     'ros2', 'topic', 'pub',
                     '/spider_leg_front_left_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -0.7, -0.8]',
+                    'data: [0.0, -1.57, -1.57]',
                     '--once'
                 ],
                 output='screen'
@@ -244,7 +244,7 @@ def generate_launch_description():
                     'ros2', 'topic', 'pub',
                     '/spider_leg_back_left_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -0.7, -0.8]',
+                    'data: [0.0, -1.57, -1.57]',
                     '--once'
                 ],
                 output='screen'
@@ -260,7 +260,7 @@ def generate_launch_description():
                     'ros2', 'topic', 'pub',
                     '/spider_leg_back_right_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -0.7, -0.8]',
+                    'data: [0.0, -1.57, -1.57]',
                     '--once'
                 ],
                 output='screen'
@@ -276,7 +276,7 @@ def generate_launch_description():
                     'ros2', 'topic', 'pub',
                     '/spider_leg_front_right_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -0.7, -0.8]',
+                    'data: [0.0, -1.57, -1.57]',
                     '--once'
                 ],
                 output='screen'
