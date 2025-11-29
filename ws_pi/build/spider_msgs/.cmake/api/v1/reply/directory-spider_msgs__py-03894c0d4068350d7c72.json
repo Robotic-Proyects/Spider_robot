@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "spider_msgs__py",
+		"source" : "/home/spider/ws/build/spider_msgs/spider_msgs__py"
+	}
+}

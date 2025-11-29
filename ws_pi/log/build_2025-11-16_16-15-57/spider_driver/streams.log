@@ -1,0 +1,37 @@
+[0.201s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[0.857s] [35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[1.094s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[101.208s] [ 50%] [32m[1mLinking CXX shared library libspider_driver.so[0m
+[107.419s] [ 50%] Built target spider_driver
+[107.696s] [35m[1mConsolidate compiler generated dependencies of target control_main[0m
+[108.275s] [ 75%] [32m[1mLinking CXX executable control_main[0m
+[111.115s] [100%] Built target control_main
+[112.087s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[112.846s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/spider/ws/build/spider_driver
+[112.952s] -- Install configuration: ""
+[112.973s] -- Execute custom install script
+[112.979s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/lib/libspider_driver.so
+[112.983s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/lib/spider_driver/control_main
+[112.996s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/include//spider_driver/ControllerNode.hpp
+[112.999s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/include//spider_driver/PCA9685.hpp
+[113.031s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/library_path.sh
+[113.036s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/library_path.dsv
+[113.048s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/package_run_dependencies/spider_driver
+[113.055s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/parent_prefix_path/spider_driver
+[113.066s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/ament_prefix_path.sh
+[113.070s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/ament_prefix_path.dsv
+[113.075s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/path.sh
+[113.078s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/path.dsv
+[113.082s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.bash
+[113.086s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.sh
+[113.089s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.zsh
+[113.092s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.dsv
+[113.094s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/package.dsv
+[113.184s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/packages/spider_driver
+[113.189s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[113.194s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[113.199s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[113.203s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/spider_driverConfig.cmake
+[113.207s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/spider_driverConfig-version.cmake
+[113.217s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/package.xml
+[113.271s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/spider/ws/build/spider_driver

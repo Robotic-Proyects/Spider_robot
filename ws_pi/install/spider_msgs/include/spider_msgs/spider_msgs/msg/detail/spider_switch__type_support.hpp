@@ -1,0 +1,1 @@
+/home/spider/ws/build/spider_msgs/rosidl_generator_cpp/spider_msgs/msg/detail/spider_switch__type_support.hpp

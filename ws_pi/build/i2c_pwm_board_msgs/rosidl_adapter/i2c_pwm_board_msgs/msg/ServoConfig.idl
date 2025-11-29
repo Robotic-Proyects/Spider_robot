@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from i2c_pwm_board_msgs/msg/ServoConfig.msg
+// generated code does not contain a copyright notice
+
+
+module i2c_pwm_board_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "the ServoConfig message is used to assign specific configuration" "\n"
+      "data to a servo. the data is needed to normalize servos to" "\n"
+      "common values to isolate variations from the rest of the user's" "\n"
+      "robot motion code. ")
+    struct ServoConfig {
+      int16 servo;
+
+      int16 center;
+
+      int16 range;
+
+      int16 direction;
+    };
+  };
+};

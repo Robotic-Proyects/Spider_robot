@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from i2c_pwm_board_msgs/srv/ServosConfig.srv
+// generated code does not contain a copyright notice
+
+#include "i2c_pwm_board_msgs/msg/ServoConfig.idl"
+
+module i2c_pwm_board_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "the servos_config service is used to assign useful configuration data to servos" "\n"
+      "the tollerance of electronis varies in RC servos so it is important to calibate" "\n"
+      "each servo, indicating its PWM value for direction of rotation, centering, and" "\n"
+      "range which is used to scale servo motion a standard ±1000 scale")
+    struct ServosConfig_Request {
+      sequence<i2c_pwm_board_msgs::msg::ServoConfig> servos;
+    };
+    struct ServosConfig_Response {
+      int16 error;
+    };
+  };
+};

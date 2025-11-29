@@ -1,0 +1,111 @@
+[0.147s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[0.422s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.788s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.865s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[2.246s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.272s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.332s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.431s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.558s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.892s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.908s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[4.826s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.477s] -- Found spider_msgs: 0.0.0 (/home/spider/ws/install/spider_msgs/share/spider_msgs/cmake)
+[5.647s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[6.406s] -- Found ament_cmake_gtest: 1.3.12 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[6.483s] -- Added test 'copyright' to check source files copyright and LICENSE
+[6.502s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[6.504s] -- Configured cppcheck include dirs: /home/spider/ws/src/spider_driver/include
+[6.505s] -- Configured cppcheck exclude dirs and/or files: 
+[6.522s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[6.523s] -- Configured cpplint exclude dirs and/or files: 
+[6.531s] -- Added test 'lint_cmake' to check CMake code style
+[6.550s] -- Added test 'uncrustify' to check C / C++ code style
+[6.551s] -- Configured uncrustify additional arguments: 
+[6.555s] -- Added test 'xmllint' to check XML markup files
+[6.602s] -- Configuring done
+[6.814s] -- Generating done
+[6.871s] -- Build files have been written to: /home/spider/ws/build/spider_driver
+[7.132s] [35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[7.364s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[32.924s] In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[32.926s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:44:[m[K [01;31m[Kerror: [m[K‘[01m[KSpiderSwitch[m[K’ is not a member of ‘[01m[Kspider_msgs::msg[m[K’
+[32.928s]    53 |     rclcpp::Subscription<spider_msgs::msg::[01;31m[KSpiderSwitch[m[K>::SharedPtr oe_value_;
+[32.929s]       |                                            [01;31m[K^~~~~~~~~~~~[m[K
+[32.931s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:56:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[32.933s]    53 |     rclcpp::Subscription<spider_msgs::msg::SpiderSwitch[01;31m[K>[m[K::SharedPtr oe_value_;
+[32.934s]       |                                                        [01;31m[K^[m[K
+[32.936s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:56:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[32.937s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:56:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[32.939s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:56:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[32.941s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:59:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[32.942s]    53 |     rclcpp::Subscription<spider_msgs::msg::SpiderSwitch>::[01;31m[KSharedPtr[m[K oe_value_;
+[32.946s]       |                                                           [01;31m[K^~~~~~~~~[m[K
+[32.948s]       |                                                                    [32m[K;[m[K
+[32.950s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:53:69:[m[K [01;31m[Kerror: [m[K‘[01m[Koe_value_[m[K’ does not name a type; did you mean ‘[01m[Ksi_value[m[K’?
+[32.952s]    53 |     rclcpp::Subscription<spider_msgs::msg::SpiderSwitch>::SharedPtr [01;31m[Koe_value_[m[K;
+[32.954s]       |                                                                     [01;31m[K^~~~~~~~~[m[K
+[32.955s]       |                                                                     [32m[Ksi_value[m[K
+[32.958s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:54:37:[m[K [01;31m[Kerror: [m[K‘[01m[KSpiderSwitch[m[K’ in namespace ‘[01m[Kspider_msgs::msg[m[K’ does not name a type
+[32.968s]    54 |     void oe(const spider_msgs::msg::[01;31m[KSpiderSwitch[m[K::SharedPtr msg);
+[32.970s]       |                                     [01;31m[K^~~~~~~~~~~~[m[K
+[32.973s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:54:61:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[32.976s]    54 |     void oe(const spider_msgs::msg::SpiderSwitch::SharedPtr [01;31m[Kmsg[m[K);
+[32.978s]       |                                                             [01;31m[K^~~[m[K
+[32.980s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:54:60:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[32.981s]    54 |     void oe[34m[K([m[Kconst spider_msgs::msg::SpiderSwitch::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K);
+[32.985s]       |            [34m[K~[m[K                                               [01;31m[K^[m[K[32m[K~~~[m[K
+[32.987s]       |                                                            [32m[K)[m[K
+[32.989s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:54:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[32.991s]    54 |     void oe(const spider_msgs::msg::SpiderSwitch::[01;31m[KSharedPtr[m[K msg);
+[32.992s]       |                                                   [01;31m[K^~~~~~~~~[m[K
+[32.995s]       |                                                            [32m[K;[m[K
+[32.997s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:54:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ does not name a type
+[32.998s]    54 |     void oe(const spider_msgs::msg::SpiderSwitch::SharedPtr [01;31m[Kmsg[m[K);
+[32.999s]       |                                                             [01;31m[K^~~[m[K
+[33.297s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[33.298s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:79:5:[m[K [01;31m[Kerror: [m[K‘[01m[Koe_value_[m[K’ was not declared in this scope; did you mean ‘[01m[Ksi_value[m[K’?
+[33.300s]    79 |     [01;31m[Koe_value_[m[K = this->create_subscription<spider_msgs::msg::SpiderSwitch>(
+[33.301s]       |     [01;31m[K^~~~~~~~~[m[K
+[33.303s]       |     [32m[Ksi_value[m[K
+[33.304s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:79:61:[m[K [01;31m[Kerror: [m[K‘[01m[KSpiderSwitch[m[K’ is not a member of ‘[01m[Kspider_msgs::msg[m[K’
+[33.305s]    79 |     oe_value_ = this->create_subscription<spider_msgs::msg::[01;31m[KSpiderSwitch[m[K>(
+[33.306s]       |                                                             [01;31m[K^~~~~~~~~~~~[m[K
+[33.319s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:79:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcontroller::ControllerNode::create_subscription<<expression error> >(const char [10], int, std::_Bind_helper<false, void (controller::ControllerNode::*)(...), controller::ControllerNode*, const std::_Placeholder<1>&>::type)[m[K’
+[33.319s]    79 |     oe_value_ = [01;31m[Kthis->create_subscription<spider_msgs::msg::SpiderSwitch>([m[K
+[33.320s]       |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[33.321s]    80 | [01;31m[K        "/oe_value", 10, std::bind(&ControllerNode::oe, this, std::placeholders::_1))[m[K;
+[33.322s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[33.338s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+[33.340s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[33.341s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[33.343s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[33.345s]                  from [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:4[m[K,
+[33.346s]                  from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[33.348s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:92:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[33.350s]    92 | [01;36m[KNode[m[K::create_subscription(
+[33.351s]       | [01;36m[K^~~~[m[K
+[33.352s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:92:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[33.354s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[33.355s]    79 |     oe_value_ = [01;31m[Kthis->create_subscription<spider_msgs::msg::SpiderSwitch>([m[K
+[33.356s]       |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[33.358s]    80 | [01;31m[K        "/oe_value", 10, std::bind(&ControllerNode::oe, this, std::placeholders::_1))[m[K;
+[33.359s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[33.571s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[33.574s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:198:49:[m[K [01;31m[Kerror: [m[K‘[01m[KSpiderSwitch[m[K’ in namespace ‘[01m[Kspider_msgs::msg[m[K’ does not name a type
+[33.576s]   198 | void ControllerNode::oe(const spider_msgs::msg::[01;31m[KSpiderSwitch[m[K::SharedPtr msg)
+[33.578s]       |                                                 [01;31m[K^~~~~~~~~~~~[m[K
+[33.580s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:198:73:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[33.584s]   198 | void ControllerNode::oe(const spider_msgs::msg::SpiderSwitch::SharedPtr [01;31m[Kmsg[m[K)
+[33.587s]       |                                                                         [01;31m[K^~~[m[K
+[33.588s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:198:72:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[33.592s]   198 | void ControllerNode::oe[34m[K([m[Kconst spider_msgs::msg::SpiderSwitch::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)
+[33.595s]       |                        [34m[K~[m[K                                               [01;31m[K^[m[K[32m[K~~~[m[K
+[33.596s]       |                                                                        [32m[K)[m[K
+[33.598s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:198:73:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[Kmsg[m[K’
+[33.600s]   198 | void ControllerNode::oe(const spider_msgs::msg::SpiderSwitch::SharedPtr [01;31m[Kmsg[m[K)
+[33.601s]       |                                                                         [01;31m[K^~~[m[K
+[58.806s] gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+[58.883s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+[58.884s] gmake: *** [Makefile:146: all] Error 2
+[59.995s] Invoked command in '/home/spider/ws/build/spider_driver' returned '2': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4

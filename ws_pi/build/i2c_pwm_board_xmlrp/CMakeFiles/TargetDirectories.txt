@@ -1,0 +1,10 @@
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/uninstall.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/i2c_pwm_board_xmlrp_uninstall.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/i2c_pwm_board_xmlrp_lib.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/test.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/edit_cache.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/rebuild_cache.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/list_install_components.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/install.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/install/local.dir
+/home/spider/ws/build/i2c_pwm_board_xmlrp/CMakeFiles/install/strip.dir

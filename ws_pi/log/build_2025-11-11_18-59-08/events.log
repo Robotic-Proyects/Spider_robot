@@ -1,0 +1,161 @@
+[0.000000] (-) TimerEvent: {}
+[0.003822] (-) JobUnselected: {'identifier': 'i2c_pwm_board'}
+[0.005080] (-) JobUnselected: {'identifier': 'i2c_pwm_board_calibration'}
+[0.005565] (-) JobUnselected: {'identifier': 'i2c_pwm_board_msgs'}
+[0.006371] (-) JobUnselected: {'identifier': 'i2c_pwm_board_xmlrp'}
+[0.006810] (-) JobUnselected: {'identifier': 'spider_driver'}
+[0.007095] (-) JobUnselected: {'identifier': 'spider_msgs'}
+[0.007320] (-) JobUnselected: {'identifier': 'xmlrpcpp'}
+[0.007656] (spider_control) JobQueued: {'identifier': 'spider_control', 'dependencies': OrderedDict()}
+[0.007925] (spider_control) JobStarted: {'identifier': 'spider_control'}
+[0.099352] (-) TimerEvent: {}
+[0.201832] (-) TimerEvent: {}
+[0.303422] (-) TimerEvent: {}
+[0.404595] (-) TimerEvent: {}
+[0.505801] (-) TimerEvent: {}
+[0.607441] (-) TimerEvent: {}
+[0.709112] (-) TimerEvent: {}
+[0.810609] (-) TimerEvent: {}
+[0.911960] (-) TimerEvent: {}
+[1.013184] (-) TimerEvent: {}
+[1.114546] (-) TimerEvent: {}
+[1.215807] (-) TimerEvent: {}
+[1.317220] (-) TimerEvent: {}
+[1.418689] (-) TimerEvent: {}
+[1.520050] (-) TimerEvent: {}
+[1.621475] (-) TimerEvent: {}
+[1.723152] (-) TimerEvent: {}
+[1.824516] (-) TimerEvent: {}
+[1.925788] (-) TimerEvent: {}
+[2.027112] (-) TimerEvent: {}
+[2.128528] (-) TimerEvent: {}
+[2.230166] (-) TimerEvent: {}
+[2.331576] (-) TimerEvent: {}
+[2.432905] (-) TimerEvent: {}
+[2.534370] (-) TimerEvent: {}
+[2.635702] (-) TimerEvent: {}
+[2.737053] (-) TimerEvent: {}
+[2.838572] (-) TimerEvent: {}
+[2.939871] (-) TimerEvent: {}
+[3.041550] (-) TimerEvent: {}
+[3.143159] (-) TimerEvent: {}
+[3.245246] (-) TimerEvent: {}
+[3.347727] (-) TimerEvent: {}
+[3.448959] (-) TimerEvent: {}
+[3.550466] (-) TimerEvent: {}
+[3.651705] (-) TimerEvent: {}
+[3.753112] (-) TimerEvent: {}
+[3.854592] (-) TimerEvent: {}
+[3.956435] (-) TimerEvent: {}
+[4.057744] (-) TimerEvent: {}
+[4.159290] (-) TimerEvent: {}
+[4.260547] (-) TimerEvent: {}
+[4.362046] (-) TimerEvent: {}
+[4.463451] (-) TimerEvent: {}
+[4.564783] (-) TimerEvent: {}
+[4.666100] (-) TimerEvent: {}
+[4.767423] (-) TimerEvent: {}
+[4.868723] (-) TimerEvent: {}
+[4.970190] (-) TimerEvent: {}
+[5.071409] (-) TimerEvent: {}
+[5.172659] (-) TimerEvent: {}
+[5.274041] (-) TimerEvent: {}
+[5.375463] (-) TimerEvent: {}
+[5.476855] (-) TimerEvent: {}
+[5.578535] (-) TimerEvent: {}
+[5.679927] (-) TimerEvent: {}
+[5.781484] (-) TimerEvent: {}
+[5.882860] (-) TimerEvent: {}
+[5.984206] (-) TimerEvent: {}
+[6.085583] (-) TimerEvent: {}
+[6.186927] (-) TimerEvent: {}
+[6.288266] (-) TimerEvent: {}
+[6.389615] (-) TimerEvent: {}
+[6.491358] (-) TimerEvent: {}
+[6.592643] (-) TimerEvent: {}
+[6.694066] (-) TimerEvent: {}
+[6.795390] (-) TimerEvent: {}
+[6.896725] (-) TimerEvent: {}
+[6.998522] (-) TimerEvent: {}
+[7.099768] (-) TimerEvent: {}
+[7.201151] (-) TimerEvent: {}
+[7.302745] (-) TimerEvent: {}
+[7.404233] (-) TimerEvent: {}
+[7.505648] (-) TimerEvent: {}
+[7.511739] (spider_control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/spider/ws/build/spider_control/build', '--no-deps', 'symlink_data'], 'cwd': '/home/spider/ws/build/spider_control', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'spider', 'SSH_CLIENT': '192.168.1.209 41114 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/spider', 'TERM_PROGRAM_VERSION': '1.105.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-8369d2bb-ed19-4358-9538-c1db1ca07289.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/spider/ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'spider', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '62', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-31b5ff44af.sock', 'TERM_PROGRAM': 'vscode', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/spider_control:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/spider/ws/build/spider_control', 'SSH_CONNECTION': '192.168.1.209 41114 192.168.1.111 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/spider/ws/build/spider_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:/home/spider/ws/build/spider_control:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs'}, 'shell': False}
+[7.605981] (-) TimerEvent: {}
+[7.708180] (-) TimerEvent: {}
+[7.809448] (-) TimerEvent: {}
+[7.911050] (-) TimerEvent: {}
+[8.012334] (-) TimerEvent: {}
+[8.113996] (-) TimerEvent: {}
+[8.215858] (-) TimerEvent: {}
+[8.317306] (-) TimerEvent: {}
+[8.418836] (-) TimerEvent: {}
+[8.520186] (-) TimerEvent: {}
+[8.621599] (-) TimerEvent: {}
+[8.723042] (-) TimerEvent: {}
+[8.824366] (-) TimerEvent: {}
+[8.925629] (-) TimerEvent: {}
+[9.026937] (-) TimerEvent: {}
+[9.128247] (-) TimerEvent: {}
+[9.229602] (-) TimerEvent: {}
+[9.331630] (-) TimerEvent: {}
+[9.433099] (-) TimerEvent: {}
+[9.534423] (-) TimerEvent: {}
+[9.635730] (-) TimerEvent: {}
+[9.737076] (-) TimerEvent: {}
+[9.838456] (-) TimerEvent: {}
+[9.939847] (-) TimerEvent: {}
+[10.041241] (-) TimerEvent: {}
+[10.145112] (-) TimerEvent: {}
+[10.247373] (-) TimerEvent: {}
+[10.349653] (-) TimerEvent: {}
+[10.451146] (-) TimerEvent: {}
+[10.552945] (-) TimerEvent: {}
+[10.654599] (-) TimerEvent: {}
+[10.727692] (spider_control) StdoutLine: {'line': b'running develop\n'}
+[10.754850] (-) TimerEvent: {}
+[10.856261] (-) TimerEvent: {}
+[10.957529] (-) TimerEvent: {}
+[11.058839] (-) TimerEvent: {}
+[11.160096] (-) TimerEvent: {}
+[11.261716] (-) TimerEvent: {}
+[11.363269] (-) TimerEvent: {}
+[11.464695] (-) TimerEvent: {}
+[11.566060] (-) TimerEvent: {}
+[11.667843] (-) TimerEvent: {}
+[11.769152] (-) TimerEvent: {}
+[11.870547] (-) TimerEvent: {}
+[11.972015] (-) TimerEvent: {}
+[12.073384] (-) TimerEvent: {}
+[12.174837] (-) TimerEvent: {}
+[12.276144] (-) TimerEvent: {}
+[12.377442] (-) TimerEvent: {}
+[12.478742] (-) TimerEvent: {}
+[12.580064] (-) TimerEvent: {}
+[12.681366] (-) TimerEvent: {}
+[12.782877] (-) TimerEvent: {}
+[12.884484] (-) TimerEvent: {}
+[12.921214] (spider_control) StdoutLine: {'line': b'running egg_info\n'}
+[12.922975] (spider_control) StdoutLine: {'line': b'writing spider_control.egg-info/PKG-INFO\n'}
+[12.925431] (spider_control) StdoutLine: {'line': b'writing dependency_links to spider_control.egg-info/dependency_links.txt\n'}
+[12.927887] (spider_control) StdoutLine: {'line': b'writing entry points to spider_control.egg-info/entry_points.txt\n'}
+[12.930012] (spider_control) StdoutLine: {'line': b'writing requirements to spider_control.egg-info/requires.txt\n'}
+[12.931958] (spider_control) StdoutLine: {'line': b'writing top-level names to spider_control.egg-info/top_level.txt\n'}
+[12.948194] (spider_control) StdoutLine: {'line': b"reading manifest file 'spider_control.egg-info/SOURCES.txt'\n"}
+[12.955631] (spider_control) StdoutLine: {'line': b"writing manifest file 'spider_control.egg-info/SOURCES.txt'\n"}
+[12.968643] (spider_control) StdoutLine: {'line': b'running build_ext\n'}
+[12.971012] (spider_control) StdoutLine: {'line': b'Creating /home/spider/ws/install/spider_control/lib/python3.10/site-packages/spider-control.egg-link (link to .)\n'}
+[12.979751] (spider_control) StdoutLine: {'line': b'Installing movement_publisher script to /home/spider/ws/install/spider_control/lib/spider_control\n'}
+[12.982709] (spider_control) StdoutLine: {'line': b'\n'}
+[12.984289] (spider_control) StdoutLine: {'line': b'Installed /home/spider/ws/build/spider_control\n'}
+[12.985299] (-) TimerEvent: {}
+[12.986529] (spider_control) StdoutLine: {'line': b'running symlink_data\n'}
+[13.085639] (-) TimerEvent: {}
+[13.187357] (-) TimerEvent: {}
+[13.289747] (-) TimerEvent: {}
+[13.321479] (spider_control) CommandEnded: {'returncode': 0}
+[13.390013] (-) TimerEvent: {}
+[13.453668] (spider_control) JobEnded: {'identifier': 'spider_control', 'rc': 0}
+[13.460291] (-) EventReactorShutdown: {}

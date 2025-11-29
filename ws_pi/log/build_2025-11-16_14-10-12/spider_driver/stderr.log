@@ -1,0 +1,264 @@
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::configure_all_servos()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:73:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontleft_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontleft_pose_[m[K’?
+   73 |     set_group(pca_frontleft_,  [01;31m[Kfrontleft_pose[m[K);
+      |                                [01;31m[K^~~~~~~~~~~~~~[m[K
+      |                                [32m[Kfrontleft_pose_[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:74:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontright_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontright_pose_[m[K’?
+   74 |     set_group(pca_frontright_, [01;31m[Kfrontright_pose[m[K);
+      |                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                [32m[Kfrontright_pose_[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:75:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kbackright_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kbackright_pose_[m[K’?
+   75 |     set_group(pca_backright_,  [01;31m[Kbackright_pose[m[K);
+      |                                [01;31m[K^~~~~~~~~~~~~~[m[K
+      |                                [32m[Kbackright_pose_[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:76:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kbackleft_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kbackleft_pose_[m[K’?
+   76 |     set_group(pca_backleft_,   [01;31m[Kbackleft_pose[m[K);
+      |                                [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                [32m[Kbackleft_pose_[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:96:65:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kprint[m[K’
+   96 |         set_pose(frontleft_pose_, msg->hip, msg->leg, msg->foot)
+      |                                                                 [01;31m[K^[m[K
+      |                                                                 [32m[K;[m[K
+   97 |         [32m[Kprint[m[K("SMOOTH MOVEMENT");
+      |         [32m[K~~~~~[m[K                                                    
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:106:66:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kprint[m[K’
+  106 |         set_pose(frontright_pose_, msg->hip, msg->leg, msg->foot)
+      |                                                                  [01;31m[K^[m[K
+      |                                                                  [32m[K;[m[K
+  107 |         [32m[Kprint[m[K("SMOOTH MOVEMENT");
+      |         [32m[K~~~~~[m[K                                                     
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:116:65:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kprint[m[K’
+  116 |         set_pose(backright_pose_, msg->hip, msg->leg, msg->foot)
+      |                                                                 [01;31m[K^[m[K
+      |                                                                 [32m[K;[m[K
+  117 |         [32m[Kprint[m[K("SMOOTH MOVEMENT");
+      |         [32m[K~~~~~[m[K                                                    
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:126:64:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kprint[m[K’
+  126 |         set_pose(backleft_pose_, msg->hip, msg->leg, msg->foot)
+      |                                                                [01;31m[K^[m[K
+      |                                                                [32m[K;[m[K
+  127 |         [32m[Kprint[m[K("SMOOTH MOVEMENT");
+      |         [32m[K~~~~~[m[K                                                   
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:140:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid controller::ControllerNode::move_servo(const int*, int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’
+  140 | void [01;31m[KControllerNode[m[K::move_servo(const int channels[3], int poses[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg)
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:46:10:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid controller::ControllerNode::move_servo(const int*, double*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’
+   46 |     void [01;36m[Kmove_servo[m[K(const int channels[3], double poses[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);
+      |          [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:14:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass controller::ControllerNode[m[K’ defined here
+   14 | class [01;36m[KControllerNode[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:187:14:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K([m[K’ token
+  187 |     set_group[01;31m[K([m[Kpca_frontright_, frontright_pose);
+      |              [01;31m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:188:14:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K([m[K’ token
+  188 |     set_group[01;31m[K([m[Kpca_backright_,  backright_pose);
+      |              [01;31m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:189:14:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K([m[K’ token
+  189 |     set_group[01;31m[K([m[Kpca_backleft_,   backleft_pose);
+      |              [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:4[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:191:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kdo[m[K’
+  191 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Servos rad %.2f → PWM %d", initial_rad_, pwm_init);
+      |     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:191:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kwhile[m[K’
+  191 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Servos rad %.2f → PWM %d", initial_rad_, pwm_init);
+      |     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:192:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+  192 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:197:6:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  197 | void [01;31m[KControllerNode[m[K::frontleft(const spider_msgs::msg::SpiderLeg::SharedPtr msg)
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In function ‘[01m[Kvoid frontleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:200:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kpca_frontleft_[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontleft[m[K’?
+  200 |     move_servo([01;31m[Kpca_frontleft_[m[K, frontleft_pose_, msg);
+      |                [01;31m[K^~~~~~~~~~~~~~[m[K
+      |                [32m[Kfrontleft[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:200:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontleft_pose_[m[K’ was not declared in this scope
+  200 |     move_servo(pca_frontleft_, [01;31m[Kfrontleft_pose_[m[K, msg);
+      |                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:200:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmove_servo[m[K’ was not declared in this scope
+  200 |     [01;31m[Kmove_servo[m[K(pca_frontleft_, frontleft_pose_, msg);
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:202:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+  202 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+      |     [01;31m[K^~~~~[m[K
+      |     [32m[Krint[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:206:6:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  206 | void [01;31m[KControllerNode[m[K::frontright(const spider_msgs::msg::SpiderLeg::SharedPtr msg)
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In function ‘[01m[Kvoid frontright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:209:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kpca_frontright_[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontright[m[K’?
+  209 |     move_servo([01;31m[Kpca_frontright_[m[K, frontright_pose_, msg);
+      |                [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                [32m[Kfrontright[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:209:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontright_pose_[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontright[m[K’?
+  209 |     move_servo(pca_frontright_, [01;31m[Kfrontright_pose_[m[K, msg);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                                 [32m[Kfrontright[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:209:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmove_servo[m[K’ was not declared in this scope
+  209 |     [01;31m[Kmove_servo[m[K(pca_frontright_, frontright_pose_, msg);
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:211:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+  211 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+      |     [01;31m[K^~~~~[m[K
+      |     [32m[Krint[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:215:6:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  215 | void [01;31m[KControllerNode[m[K::backright(const spider_msgs::msg::SpiderLeg::SharedPtr msg)
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In function ‘[01m[Kvoid backright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:218:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kpca_backright_[m[K’ was not declared in this scope; did you mean ‘[01m[Kbackright[m[K’?
+  218 |     move_servo([01;31m[Kpca_backright_[m[K, backright_pose_, msg);
+      |                [01;31m[K^~~~~~~~~~~~~~[m[K
+      |                [32m[Kbackright[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:218:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kbackright_pose_[m[K’ was not declared in this scope
+  218 |     move_servo(pca_backright_, [01;31m[Kbackright_pose_[m[K, msg);
+      |                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:218:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmove_servo[m[K’ was not declared in this scope
+  218 |     [01;31m[Kmove_servo[m[K(pca_backright_, backright_pose_, msg);
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:220:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+  220 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+      |     [01;31m[K^~~~~[m[K
+      |     [32m[Krint[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:224:6:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  224 | void [01;31m[KControllerNode[m[K::backleft(const spider_msgs::msg::SpiderLeg::SharedPtr msg)
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In function ‘[01m[Kvoid backleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:227:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kpca_backleft_[m[K’ was not declared in this scope; did you mean ‘[01m[Kbackleft[m[K’?
+  227 |     move_servo([01;31m[Kpca_backleft_[m[K, backleft_pose_, msg);
+      |                [01;31m[K^~~~~~~~~~~~~[m[K
+      |                [32m[Kbackleft[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:227:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kbackleft_pose_[m[K’ was not declared in this scope
+  227 |     move_servo(pca_backleft_, [01;31m[Kbackleft_pose_[m[K, msg);
+      |                               [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:227:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmove_servo[m[K’ was not declared in this scope
+  227 |     [01;31m[Kmove_servo[m[K(pca_backleft_, backleft_pose_, msg);
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:229:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+  229 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+      |     [01;31m[K^~~~~[m[K
+      |     [32m[Krint[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:233:5:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  233 | int [01;31m[KControllerNode[m[K::rad_to_pwm(double angle_rad, double min_rad, double max_rad, int min_pwm, int max_pwm)
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:242:6:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  242 | void [01;31m[KControllerNode[m[K::move_servo(const int channels[3], int poses[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg)
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In function ‘[01m[Kvoid move_servo(const int*, int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:253:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpca_[m[K’ was not declared in this scope
+  253 |     [01;31m[Kpca_[m[K.setPWM(channels[0], rad_to_pwm(msg->hip,  -1.5, 1.5, 100, 520));
+      |     [01;31m[K^~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:4[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:257:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+  257 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(),
+      |                 [01;31m[K^~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:257:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:257:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  257 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+      |     [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:4[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:257:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+  257 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(),
+      |                 [01;31m[K^~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:257:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+  257 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(),
+      |                 [01;31m[K^~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:263:6:[m[K [01;31m[Kerror: [m[K‘[01m[KControllerNode[m[K’ has not been declared
+  263 | void [01;31m[KControllerNode[m[K::calibrate_callback(
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In function ‘[01m[Kvoid calibrate_callback(std::shared_ptr<spider_msgs::srv::ServoCalibrate_Request_<std::allocator<void> > >, std::shared_ptr<spider_msgs::srv::ServoCalibrate_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:273:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpca_[m[K’ was not declared in this scope
+  273 |     [01;31m[Kpca_[m[K.setPWM(channel, pwm);
+      |     [01;31m[K^~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:4[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:275:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+  275 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(),
+      |                 [01;31m[K^~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:275:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:275:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  275 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+      |     [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:4[m[K,
+                 from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:275:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+  275 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(),
+      |                 [01;31m[K^~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:275:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+  275 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(),
+      |                 [01;31m[K^~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:287:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+  287 | [01;31m[K}[m[K  // namespace controller
+      | [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

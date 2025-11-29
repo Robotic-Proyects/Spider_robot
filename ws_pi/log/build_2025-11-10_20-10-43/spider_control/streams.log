@@ -1,0 +1,24 @@
+[8.548s] Invoking command in '/home/spider/ws/build/spider_control': PYTHONPATH=/home/spider/ws/build/spider_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/spider/ws/build/spider_control/build --no-deps symlink_data
+[11.597s] running develop
+[13.758s] running egg_info
+[13.759s] creating spider_control.egg-info
+[13.760s] writing spider_control.egg-info/PKG-INFO
+[13.763s] writing dependency_links to spider_control.egg-info/dependency_links.txt
+[13.764s] writing entry points to spider_control.egg-info/entry_points.txt
+[13.766s] writing requirements to spider_control.egg-info/requires.txt
+[13.767s] writing top-level names to spider_control.egg-info/top_level.txt
+[13.769s] writing manifest file 'spider_control.egg-info/SOURCES.txt'
+[13.784s] reading manifest file 'spider_control.egg-info/SOURCES.txt'
+[13.790s] writing manifest file 'spider_control.egg-info/SOURCES.txt'
+[13.804s] running build_ext
+[13.806s] Creating /home/spider/ws/install/spider_control/lib/python3.10/site-packages/spider-control.egg-link (link to .)
+[13.814s] Installing movement_publisher script to /home/spider/ws/install/spider_control/lib/spider_control
+[13.818s] 
+[13.819s] Installed /home/spider/ws/build/spider_control
+[13.822s] running symlink_data
+[13.825s] creating /home/spider/ws/install/spider_control/share/ament_index
+[13.828s] creating /home/spider/ws/install/spider_control/share/ament_index/resource_index
+[13.830s] creating /home/spider/ws/install/spider_control/share/ament_index/resource_index/packages
+[13.831s] symbolically linking /home/spider/ws/build/spider_control/resource/spider_control -> /home/spider/ws/install/spider_control/share/ament_index/resource_index/packages
+[13.832s] symbolically linking /home/spider/ws/build/spider_control/package.xml -> /home/spider/ws/install/spider_control/share/spider_control
+[14.122s] Invoked command in '/home/spider/ws/build/spider_control' returned '0': PYTHONPATH=/home/spider/ws/build/spider_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/spider/ws/build/spider_control/build --no-deps symlink_data

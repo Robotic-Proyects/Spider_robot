@@ -1,0 +1,822 @@
+[0.000000] (-) TimerEvent: {}
+[0.003715] (-) JobUnselected: {'identifier': 'i2c_pwm_board'}
+[0.005030] (-) JobUnselected: {'identifier': 'i2c_pwm_board_calibration'}
+[0.005523] (-) JobUnselected: {'identifier': 'i2c_pwm_board_msgs'}
+[0.006244] (-) JobUnselected: {'identifier': 'i2c_pwm_board_xmlrp'}
+[0.006729] (-) JobUnselected: {'identifier': 'spider_control'}
+[0.007091] (-) JobUnselected: {'identifier': 'spider_driver'}
+[0.007385] (-) JobUnselected: {'identifier': 'xmlrpcpp'}
+[0.007640] (spider_msgs) JobQueued: {'identifier': 'spider_msgs', 'dependencies': OrderedDict()}
+[0.007931] (spider_msgs) JobStarted: {'identifier': 'spider_msgs'}
+[0.097169] (-) TimerEvent: {}
+[0.109152] (spider_msgs) JobProgress: {'identifier': 'spider_msgs', 'progress': 'cmake'}
+[0.116271] (spider_msgs) JobProgress: {'identifier': 'spider_msgs', 'progress': 'build'}
+[0.122766] (spider_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/spider/ws/build/spider_msgs', '--', '-j4', '-l4'], 'cwd': '/home/spider/ws/build/spider_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'spider'), ('SSH_CLIENT', '192.168.1.174 58274 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spider'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-d8943ab4-9549-4e8d-a5c3-f60832f39338.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/spider/ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spider'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '35'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31b5ff44af.sock'), ('TERM_PROGRAM', 'vscode'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/spider_control:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/spider/ws/build/spider_msgs'), ('SSH_CONNECTION', '192.168.1.174 58274 192.168.1.111 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:/home/spider/ws/build/spider_control:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble')]), 'shell': False}
+[0.197564] (-) TimerEvent: {}
+[0.299163] (-) TimerEvent: {}
+[0.400828] (-) TimerEvent: {}
+[0.445192] (spider_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.501142] (-) TimerEvent: {}
+[0.602621] (-) TimerEvent: {}
+[0.704134] (-) TimerEvent: {}
+[0.805578] (-) TimerEvent: {}
+[0.907001] (-) TimerEvent: {}
+[1.008260] (-) TimerEvent: {}
+[1.109737] (-) TimerEvent: {}
+[1.211303] (-) TimerEvent: {}
+[1.312890] (-) TimerEvent: {}
+[1.414320] (-) TimerEvent: {}
+[1.515624] (-) TimerEvent: {}
+[1.617173] (-) TimerEvent: {}
+[1.718656] (-) TimerEvent: {}
+[1.820084] (-) TimerEvent: {}
+[1.901458] (spider_msgs) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.920366] (-) TimerEvent: {}
+[2.021841] (-) TimerEvent: {}
+[2.068135] (spider_msgs) StdoutLine: {'line': b'-- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[2.122142] (-) TimerEvent: {}
+[2.223704] (-) TimerEvent: {}
+[2.325326] (-) TimerEvent: {}
+[2.426694] (-) TimerEvent: {}
+[2.528127] (-) TimerEvent: {}
+[2.562444] (spider_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[2.599239] (spider_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[2.628409] (-) TimerEvent: {}
+[2.690758] (spider_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[2.728743] (-) TimerEvent: {}
+[2.826002] (spider_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.829003] (-) TimerEvent: {}
+[2.930353] (-) TimerEvent: {}
+[3.010151] (spider_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.030640] (-) TimerEvent: {}
+[3.132049] (-) TimerEvent: {}
+[3.233706] (-) TimerEvent: {}
+[3.326458] (spider_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[3.334011] (-) TimerEvent: {}
+[3.436217] (-) TimerEvent: {}
+[3.537533] (-) TimerEvent: {}
+[3.638786] (-) TimerEvent: {}
+[3.740234] (-) TimerEvent: {}
+[3.841688] (-) TimerEvent: {}
+[3.942923] (-) TimerEvent: {}
+[4.044256] (-) TimerEvent: {}
+[4.145780] (-) TimerEvent: {}
+[4.247198] (-) TimerEvent: {}
+[4.348678] (-) TimerEvent: {}
+[4.450003] (-) TimerEvent: {}
+[4.551453] (-) TimerEvent: {}
+[4.652920] (-) TimerEvent: {}
+[4.754262] (-) TimerEvent: {}
+[4.855556] (-) TimerEvent: {}
+[4.957024] (-) TimerEvent: {}
+[5.058430] (-) TimerEvent: {}
+[5.160256] (-) TimerEvent: {}
+[5.261712] (-) TimerEvent: {}
+[5.363465] (-) TimerEvent: {}
+[5.465025] (-) TimerEvent: {}
+[5.566582] (-) TimerEvent: {}
+[5.668010] (-) TimerEvent: {}
+[5.769569] (-) TimerEvent: {}
+[5.870923] (-) TimerEvent: {}
+[5.972268] (-) TimerEvent: {}
+[6.074424] (-) TimerEvent: {}
+[6.175917] (-) TimerEvent: {}
+[6.277501] (-) TimerEvent: {}
+[6.379541] (-) TimerEvent: {}
+[6.480851] (-) TimerEvent: {}
+[6.582196] (-) TimerEvent: {}
+[6.591099] (spider_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[6.682474] (-) TimerEvent: {}
+[6.784053] (-) TimerEvent: {}
+[6.885545] (-) TimerEvent: {}
+[6.987479] (-) TimerEvent: {}
+[7.088780] (-) TimerEvent: {}
+[7.190301] (-) TimerEvent: {}
+[7.292039] (-) TimerEvent: {}
+[7.393568] (-) TimerEvent: {}
+[7.494990] (-) TimerEvent: {}
+[7.596336] (-) TimerEvent: {}
+[7.697761] (-) TimerEvent: {}
+[7.799352] (-) TimerEvent: {}
+[7.900811] (-) TimerEvent: {}
+[8.002203] (-) TimerEvent: {}
+[8.103898] (-) TimerEvent: {}
+[8.205460] (-) TimerEvent: {}
+[8.307041] (-) TimerEvent: {}
+[8.408778] (-) TimerEvent: {}
+[8.510245] (-) TimerEvent: {}
+[8.611491] (-) TimerEvent: {}
+[8.713050] (-) TimerEvent: {}
+[8.814532] (-) TimerEvent: {}
+[8.915897] (-) TimerEvent: {}
+[9.017462] (-) TimerEvent: {}
+[9.118814] (-) TimerEvent: {}
+[9.220291] (-) TimerEvent: {}
+[9.321797] (-) TimerEvent: {}
+[9.423206] (-) TimerEvent: {}
+[9.525528] (-) TimerEvent: {}
+[9.626858] (-) TimerEvent: {}
+[9.728289] (-) TimerEvent: {}
+[9.830092] (-) TimerEvent: {}
+[9.931577] (-) TimerEvent: {}
+[10.033289] (-) TimerEvent: {}
+[10.135196] (-) TimerEvent: {}
+[10.236507] (-) TimerEvent: {}
+[10.337981] (-) TimerEvent: {}
+[10.439601] (-) TimerEvent: {}
+[10.541077] (-) TimerEvent: {}
+[10.642535] (-) TimerEvent: {}
+[10.743940] (-) TimerEvent: {}
+[10.764354] (spider_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[10.844213] (-) TimerEvent: {}
+[10.945593] (-) TimerEvent: {}
+[11.046866] (-) TimerEvent: {}
+[11.148286] (-) TimerEvent: {}
+[11.249695] (-) TimerEvent: {}
+[11.351123] (-) TimerEvent: {}
+[11.452708] (-) TimerEvent: {}
+[11.554263] (-) TimerEvent: {}
+[11.655771] (-) TimerEvent: {}
+[11.757275] (-) TimerEvent: {}
+[11.858561] (-) TimerEvent: {}
+[11.960002] (-) TimerEvent: {}
+[12.061497] (-) TimerEvent: {}
+[12.162955] (-) TimerEvent: {}
+[12.264526] (-) TimerEvent: {}
+[12.366084] (-) TimerEvent: {}
+[12.375576] (spider_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[12.466328] (-) TimerEvent: {}
+[12.567704] (-) TimerEvent: {}
+[12.645722] (spider_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[12.667994] (-) TimerEvent: {}
+[12.769351] (-) TimerEvent: {}
+[12.870835] (-) TimerEvent: {}
+[12.926542] (spider_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[12.928234] (spider_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[12.929507] (spider_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[12.971093] (-) TimerEvent: {}
+[13.072492] (-) TimerEvent: {}
+[13.174285] (-) TimerEvent: {}
+[13.274665] (spider_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[13.276770] (-) TimerEvent: {}
+[13.378281] (-) TimerEvent: {}
+[13.482620] (-) TimerEvent: {}
+[13.585927] (-) TimerEvent: {}
+[13.687511] (-) TimerEvent: {}
+[13.737192] (spider_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[13.769385] (spider_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[13.787779] (-) TimerEvent: {}
+[13.874829] (spider_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[13.888110] (-) TimerEvent: {}
+[13.989871] (-) TimerEvent: {}
+[14.091268] (-) TimerEvent: {}
+[14.192818] (-) TimerEvent: {}
+[14.294101] (-) TimerEvent: {}
+[14.395405] (-) TimerEvent: {}
+[14.435537] (spider_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[14.495713] (-) TimerEvent: {}
+[14.581881] (spider_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/spider/ws/build/spider_msgs\n'}
+[14.596035] (-) TimerEvent: {}
+[14.697724] (-) TimerEvent: {}
+[14.799328] (-) TimerEvent: {}
+[14.868509] (spider_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[14.899631] (-) TimerEvent: {}
+[14.979899] (spider_msgs) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[14.999899] (-) TimerEvent: {}
+[15.078483] (spider_msgs) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_symlink_spider_msgs\n'}
+[15.100215] (-) TimerEvent: {}
+[15.204990] (-) TimerEvent: {}
+[15.308897] (-) TimerEvent: {}
+[15.412262] (-) TimerEvent: {}
+[15.516091] (-) TimerEvent: {}
+[15.620729] (-) TimerEvent: {}
+[15.723150] (-) TimerEvent: {}
+[15.824887] (-) TimerEvent: {}
+[15.926392] (-) TimerEvent: {}
+[16.027872] (-) TimerEvent: {}
+[16.131214] (-) TimerEvent: {}
+[16.234477] (-) TimerEvent: {}
+[16.336216] (-) TimerEvent: {}
+[16.437801] (-) TimerEvent: {}
+[16.539389] (-) TimerEvent: {}
+[16.640861] (-) TimerEvent: {}
+[16.742368] (-) TimerEvent: {}
+[16.843848] (-) TimerEvent: {}
+[16.945315] (-) TimerEvent: {}
+[17.047593] (-) TimerEvent: {}
+[17.149396] (-) TimerEvent: {}
+[17.252137] (-) TimerEvent: {}
+[17.355162] (-) TimerEvent: {}
+[17.457953] (-) TimerEvent: {}
+[17.561305] (-) TimerEvent: {}
+[17.663870] (-) TimerEvent: {}
+[17.766600] (-) TimerEvent: {}
+[17.870362] (-) TimerEvent: {}
+[17.973482] (-) TimerEvent: {}
+[18.076173] (-) TimerEvent: {}
+[18.179153] (-) TimerEvent: {}
+[18.280511] (-) TimerEvent: {}
+[18.382026] (-) TimerEvent: {}
+[18.483439] (-) TimerEvent: {}
+[18.585030] (-) TimerEvent: {}
+[18.688324] (-) TimerEvent: {}
+[18.789780] (-) TimerEvent: {}
+[18.891205] (-) TimerEvent: {}
+[18.993745] (-) TimerEvent: {}
+[19.096269] (-) TimerEvent: {}
+[19.162531] (spider_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[19.171469] (spider_msgs) StdoutLine: {'line': b'writing spider_msgs.egg-info/PKG-INFO\n'}
+[19.176721] (spider_msgs) StdoutLine: {'line': b'writing dependency_links to spider_msgs.egg-info/dependency_links.txt\n'}
+[19.181236] (spider_msgs) StdoutLine: {'line': b'writing top-level names to spider_msgs.egg-info/top_level.txt\n'}
+[19.196663] (-) TimerEvent: {}
+[19.213816] (spider_msgs) StdoutLine: {'line': b"reading manifest file 'spider_msgs.egg-info/SOURCES.txt'\n"}
+[19.226528] (spider_msgs) StdoutLine: {'line': b"writing manifest file 'spider_msgs.egg-info/SOURCES.txt'\n"}
+[19.297158] (-) TimerEvent: {}
+[19.399087] (-) TimerEvent: {}
+[19.501898] (-) TimerEvent: {}
+[19.603438] (-) TimerEvent: {}
+[19.705062] (-) TimerEvent: {}
+[19.726364] (spider_msgs) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_build_spider_msgs_egg\n'}
+[19.805516] (-) TimerEvent: {}
+[19.909291] (-) TimerEvent: {}
+[20.012362] (-) TimerEvent: {}
+[20.069624] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_generator_c\x1b[0m\n'}
+[20.112767] (-) TimerEvent: {}
+[20.135745] (spider_msgs) StdoutLine: {'line': b'[  5%] Built target spider_msgs__cpp\n'}
+[20.203074] (spider_msgs) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_c.dir/rosidl_generator_c/spider_msgs/msg/detail/spider_leg__functions.c.o\x1b[0m\n'}
+[20.207923] (spider_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_c.dir/rosidl_generator_c/spider_msgs/srv/detail/servo_calibrate__functions.c.o\x1b[0m\n'}
+[20.213059] (-) TimerEvent: {}
+[20.268964] (spider_msgs) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[20.285011] (spider_msgs) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[20.313351] (-) TimerEvent: {}
+[20.416289] (-) TimerEvent: {}
+[20.517828] (-) TimerEvent: {}
+[20.619837] (-) TimerEvent: {}
+[20.721943] (-) TimerEvent: {}
+[20.825345] (-) TimerEvent: {}
+[20.927154] (-) TimerEvent: {}
+[21.028831] (-) TimerEvent: {}
+[21.130777] (-) TimerEvent: {}
+[21.232463] (-) TimerEvent: {}
+[21.336122] (-) TimerEvent: {}
+[21.438807] (-) TimerEvent: {}
+[21.542349] (-) TimerEvent: {}
+[21.644394] (-) TimerEvent: {}
+[21.746185] (-) TimerEvent: {}
+[21.820780] (spider_msgs) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[21.846483] (-) TimerEvent: {}
+[21.878771] (spider_msgs) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libspider_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[21.946804] (-) TimerEvent: {}
+[22.049733] (-) TimerEvent: {}
+[22.152516] (-) TimerEvent: {}
+[22.256980] (-) TimerEvent: {}
+[22.362085] (-) TimerEvent: {}
+[22.465747] (-) TimerEvent: {}
+[22.485104] (spider_msgs) StdoutLine: {'line': b'[ 20%] Built target spider_msgs__rosidl_generator_c\n'}
+[22.566066] (-) TimerEvent: {}
+[22.620555] (spider_msgs) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[22.666395] (-) TimerEvent: {}
+[22.768070] (-) TimerEvent: {}
+[22.869609] (-) TimerEvent: {}
+[22.972817] (-) TimerEvent: {}
+[23.076180] (-) TimerEvent: {}
+[23.179242] (-) TimerEvent: {}
+[23.284130] (-) TimerEvent: {}
+[23.386909] (-) TimerEvent: {}
+[23.489567] (-) TimerEvent: {}
+[23.592400] (-) TimerEvent: {}
+[23.695392] (-) TimerEvent: {}
+[23.797503] (-) TimerEvent: {}
+[23.898967] (-) TimerEvent: {}
+[24.000341] (-) TimerEvent: {}
+[24.103263] (-) TimerEvent: {}
+[24.205944] (-) TimerEvent: {}
+[24.310464] (-) TimerEvent: {}
+[24.413824] (-) TimerEvent: {}
+[24.516830] (-) TimerEvent: {}
+[24.620094] (-) TimerEvent: {}
+[24.722731] (-) TimerEvent: {}
+[24.777006] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_cpp\x1b[0m\n'}
+[24.823093] (-) TimerEvent: {}
+[24.926965] (-) TimerEvent: {}
+[24.981270] (spider_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/spider_msgs/msg/spider_leg__type_support.cpp.o\x1b[0m\n'}
+[25.027270] (-) TimerEvent: {}
+[25.130303] (-) TimerEvent: {}
+[25.234298] (-) TimerEvent: {}
+[25.337854] (-) TimerEvent: {}
+[25.441558] (-) TimerEvent: {}
+[25.545664] (-) TimerEvent: {}
+[25.649018] (-) TimerEvent: {}
+[25.752474] (-) TimerEvent: {}
+[25.855757] (-) TimerEvent: {}
+[25.956984] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[25.958376] (-) TimerEvent: {}
+[26.059589] (-) TimerEvent: {}
+[26.161078] (-) TimerEvent: {}
+[26.220733] (spider_msgs) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/spider_msgs/msg/detail/dds_fastrtps/spider_leg__type_support.cpp.o\x1b[0m\n'}
+[26.261420] (-) TimerEvent: {}
+[26.366237] (-) TimerEvent: {}
+[26.470478] (-) TimerEvent: {}
+[26.574271] (-) TimerEvent: {}
+[26.677993] (-) TimerEvent: {}
+[26.781728] (-) TimerEvent: {}
+[26.885702] (-) TimerEvent: {}
+[26.986729] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[26.988837] (-) TimerEvent: {}
+[27.097933] (-) TimerEvent: {}
+[27.201743] (-) TimerEvent: {}
+[27.274960] (spider_msgs) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/spider_msgs/msg/detail/spider_leg__type_support.cpp.o\x1b[0m\n'}
+[27.302062] (-) TimerEvent: {}
+[27.404962] (-) TimerEvent: {}
+[27.507813] (-) TimerEvent: {}
+[27.611607] (-) TimerEvent: {}
+[27.631740] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[27.711972] (-) TimerEvent: {}
+[27.813847] (-) TimerEvent: {}
+[27.836787] (spider_msgs) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/spider_msgs/msg/detail/spider_leg__type_support_c.cpp.o\x1b[0m\n'}
+[27.914254] (-) TimerEvent: {}
+[28.016163] (-) TimerEvent: {}
+[28.118283] (-) TimerEvent: {}
+[28.220245] (-) TimerEvent: {}
+[28.322044] (-) TimerEvent: {}
+[28.423710] (-) TimerEvent: {}
+[28.525892] (-) TimerEvent: {}
+[28.627859] (-) TimerEvent: {}
+[28.730000] (-) TimerEvent: {}
+[28.832001] (-) TimerEvent: {}
+[28.934402] (-) TimerEvent: {}
+[29.036619] (-) TimerEvent: {}
+[29.138746] (-) TimerEvent: {}
+[29.240795] (-) TimerEvent: {}
+[29.344848] (-) TimerEvent: {}
+[29.447429] (-) TimerEvent: {}
+[29.532381] (spider_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/spider_msgs/srv/servo_calibrate__type_support.cpp.o\x1b[0m\n'}
+[29.547751] (-) TimerEvent: {}
+[29.649512] (-) TimerEvent: {}
+[29.752381] (-) TimerEvent: {}
+[29.857295] (-) TimerEvent: {}
+[29.959081] (-) TimerEvent: {}
+[30.062073] (-) TimerEvent: {}
+[30.164971] (-) TimerEvent: {}
+[30.267568] (-) TimerEvent: {}
+[30.370427] (-) TimerEvent: {}
+[30.473485] (-) TimerEvent: {}
+[30.576322] (-) TimerEvent: {}
+[30.679359] (-) TimerEvent: {}
+[30.782370] (-) TimerEvent: {}
+[30.886273] (-) TimerEvent: {}
+[30.991108] (-) TimerEvent: {}
+[31.095542] (-) TimerEvent: {}
+[31.199440] (-) TimerEvent: {}
+[31.303067] (-) TimerEvent: {}
+[31.406810] (-) TimerEvent: {}
+[31.510792] (-) TimerEvent: {}
+[31.619822] (-) TimerEvent: {}
+[31.722951] (-) TimerEvent: {}
+[31.827811] (-) TimerEvent: {}
+[31.932925] (-) TimerEvent: {}
+[32.038179] (-) TimerEvent: {}
+[32.144504] (-) TimerEvent: {}
+[32.249891] (-) TimerEvent: {}
+[32.354922] (-) TimerEvent: {}
+[32.459505] (-) TimerEvent: {}
+[32.564232] (-) TimerEvent: {}
+[32.671329] (-) TimerEvent: {}
+[32.775541] (-) TimerEvent: {}
+[32.879970] (-) TimerEvent: {}
+[32.984542] (-) TimerEvent: {}
+[33.089014] (-) TimerEvent: {}
+[33.193867] (-) TimerEvent: {}
+[33.298849] (-) TimerEvent: {}
+[33.402101] (-) TimerEvent: {}
+[33.408073] (spider_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/spider_msgs/srv/detail/dds_fastrtps/servo_calibrate__type_support.cpp.o\x1b[0m\n'}
+[33.417546] (spider_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/spider_msgs/srv/detail/servo_calibrate__type_support.cpp.o\x1b[0m\n'}
+[33.437574] (spider_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/spider_msgs/srv/detail/servo_calibrate__type_support_c.cpp.o\x1b[0m\n'}
+[33.502429] (-) TimerEvent: {}
+[33.606544] (-) TimerEvent: {}
+[33.710265] (-) TimerEvent: {}
+[33.813995] (-) TimerEvent: {}
+[33.917671] (-) TimerEvent: {}
+[34.021520] (-) TimerEvent: {}
+[34.126050] (-) TimerEvent: {}
+[34.234387] (-) TimerEvent: {}
+[34.335757] (-) TimerEvent: {}
+[34.376634] (spider_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32m\x1b[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[34.436098] (-) TimerEvent: {}
+[34.537720] (-) TimerEvent: {}
+[34.640136] (-) TimerEvent: {}
+[34.745418] (-) TimerEvent: {}
+[34.850351] (-) TimerEvent: {}
+[34.954324] (-) TimerEvent: {}
+[35.059050] (-) TimerEvent: {}
+[35.119915] (spider_msgs) StdoutLine: {'line': b'[ 46%] Built target spider_msgs__rosidl_typesupport_cpp\n'}
+[35.160052] (-) TimerEvent: {}
+[35.263010] (-) TimerEvent: {}
+[35.271100] (spider_msgs) StdoutLine: {'line': b'[ 48%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[35.363446] (-) TimerEvent: {}
+[35.467077] (-) TimerEvent: {}
+[35.571550] (-) TimerEvent: {}
+[35.676387] (-) TimerEvent: {}
+[35.780975] (-) TimerEvent: {}
+[35.885424] (-) TimerEvent: {}
+[35.987373] (-) TimerEvent: {}
+[36.089382] (-) TimerEvent: {}
+[36.191250] (-) TimerEvent: {}
+[36.293083] (-) TimerEvent: {}
+[36.394926] (-) TimerEvent: {}
+[36.496708] (-) TimerEvent: {}
+[36.598481] (-) TimerEvent: {}
+[36.700301] (-) TimerEvent: {}
+[36.802288] (-) TimerEvent: {}
+[36.904054] (-) TimerEvent: {}
+[37.007219] (-) TimerEvent: {}
+[37.109237] (-) TimerEvent: {}
+[37.210997] (-) TimerEvent: {}
+[37.312745] (-) TimerEvent: {}
+[37.414471] (-) TimerEvent: {}
+[37.518241] (-) TimerEvent: {}
+[37.620168] (-) TimerEvent: {}
+[37.721933] (-) TimerEvent: {}
+[37.826272] (-) TimerEvent: {}
+[37.931896] (-) TimerEvent: {}
+[38.036372] (-) TimerEvent: {}
+[38.142757] (-) TimerEvent: {}
+[38.244388] (-) TimerEvent: {}
+[38.346355] (-) TimerEvent: {}
+[38.450347] (-) TimerEvent: {}
+[38.553367] (-) TimerEvent: {}
+[38.657696] (-) TimerEvent: {}
+[38.759365] (-) TimerEvent: {}
+[38.862261] (-) TimerEvent: {}
+[38.964006] (-) TimerEvent: {}
+[39.068220] (-) TimerEvent: {}
+[39.170389] (-) TimerEvent: {}
+[39.274799] (-) TimerEvent: {}
+[39.379034] (-) TimerEvent: {}
+[39.483003] (-) TimerEvent: {}
+[39.584754] (-) TimerEvent: {}
+[39.686947] (-) TimerEvent: {}
+[39.793810] (-) TimerEvent: {}
+[39.839193] (spider_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[39.895447] (-) TimerEvent: {}
+[39.999251] (-) TimerEvent: {}
+[40.095883] (spider_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[40.100694] (-) TimerEvent: {}
+[40.204354] (-) TimerEvent: {}
+[40.295336] (spider_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[40.304789] (-) TimerEvent: {}
+[40.409217] (-) TimerEvent: {}
+[40.514628] (-) TimerEvent: {}
+[40.619397] (-) TimerEvent: {}
+[40.722999] (-) TimerEvent: {}
+[40.826242] (-) TimerEvent: {}
+[40.931083] (-) TimerEvent: {}
+[40.941944] (spider_msgs) StdoutLine: {'line': b'[ 56%] Built target spider_msgs__rosidl_typesupport_introspection_cpp\n'}
+[41.031493] (-) TimerEvent: {}
+[41.039589] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[41.108866] (spider_msgs) StdoutLine: {'line': b'[ 58%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[41.131840] (-) TimerEvent: {}
+[41.194244] (spider_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/spider_msgs/msg/detail/spider_leg__type_support.c.o\x1b[0m\n'}
+[41.232144] (-) TimerEvent: {}
+[41.303560] (spider_msgs) StdoutLine: {'line': b'[ 61%] Built target spider_msgs__rosidl_typesupport_fastrtps_c\n'}
+[41.332667] (-) TimerEvent: {}
+[41.417222] (spider_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/spider_msgs/srv/detail/servo_calibrate__type_support.c.o\x1b[0m\n'}
+[41.432925] (-) TimerEvent: {}
+[41.535208] (-) TimerEvent: {}
+[41.638026] (-) TimerEvent: {}
+[41.644237] (spider_msgs) StdoutLine: {'line': b'[ 64%] Built target spider_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[41.738531] (-) TimerEvent: {}
+[41.841703] (-) TimerEvent: {}
+[41.943092] (spider_msgs) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking C shared library libspider_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[41.944814] (-) TimerEvent: {}
+[42.047648] (-) TimerEvent: {}
+[42.149108] (-) TimerEvent: {}
+[42.250524] (-) TimerEvent: {}
+[42.298414] (spider_msgs) StdoutLine: {'line': b'[ 66%] Built target spider_msgs__rosidl_typesupport_introspection_c\n'}
+[42.350765] (-) TimerEvent: {}
+[42.452179] (-) TimerEvent: {}
+[42.554093] (-) TimerEvent: {}
+[42.655405] (-) TimerEvent: {}
+[42.756769] (-) TimerEvent: {}
+[42.858056] (-) TimerEvent: {}
+[42.959311] (-) TimerEvent: {}
+[43.060639] (-) TimerEvent: {}
+[43.161909] (-) TimerEvent: {}
+[43.263683] (-) TimerEvent: {}
+[43.365444] (-) TimerEvent: {}
+[43.466811] (-) TimerEvent: {}
+[43.568553] (-) TimerEvent: {}
+[43.670010] (-) TimerEvent: {}
+[43.771279] (-) TimerEvent: {}
+[43.872645] (-) TimerEvent: {}
+[43.973870] (-) TimerEvent: {}
+[44.075177] (-) TimerEvent: {}
+[44.176756] (-) TimerEvent: {}
+[44.278339] (-) TimerEvent: {}
+[44.380108] (-) TimerEvent: {}
+[44.415652] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_c\x1b[0m\n'}
+[44.480457] (-) TimerEvent: {}
+[44.546424] (spider_msgs) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/spider_msgs/msg/spider_leg__type_support.cpp.o\x1b[0m\n'}
+[44.550811] (spider_msgs) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/spider_msgs/srv/servo_calibrate__type_support.cpp.o\x1b[0m\n'}
+[44.580781] (-) TimerEvent: {}
+[44.682221] (-) TimerEvent: {}
+[44.784101] (-) TimerEvent: {}
+[44.886415] (-) TimerEvent: {}
+[44.943143] (spider_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[44.986712] (-) TimerEvent: {}
+[45.088141] (-) TimerEvent: {}
+[45.189824] (-) TimerEvent: {}
+[45.291374] (-) TimerEvent: {}
+[45.343261] (spider_msgs) StdoutLine: {'line': b'[ 74%] Built target spider_msgs__rosidl_typesupport_c\n'}
+[45.391659] (-) TimerEvent: {}
+[45.493995] (-) TimerEvent: {}
+[45.561433] (spider_msgs) StdoutLine: {'line': b'[ 74%] Built target spider_msgs\n'}
+[45.594306] (-) TimerEvent: {}
+[45.695755] (-) TimerEvent: {}
+[45.781119] (spider_msgs) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[45.796040] (-) TimerEvent: {}
+[45.897452] (-) TimerEvent: {}
+[45.998831] (-) TimerEvent: {}
+[46.100332] (-) TimerEvent: {}
+[46.201890] (-) TimerEvent: {}
+[46.304005] (-) TimerEvent: {}
+[46.405598] (-) TimerEvent: {}
+[46.506917] (-) TimerEvent: {}
+[46.608316] (-) TimerEvent: {}
+[46.709708] (-) TimerEvent: {}
+[46.810976] (-) TimerEvent: {}
+[46.912317] (-) TimerEvent: {}
+[47.013638] (-) TimerEvent: {}
+[47.115013] (-) TimerEvent: {}
+[47.216348] (-) TimerEvent: {}
+[47.317683] (-) TimerEvent: {}
+[47.418974] (-) TimerEvent: {}
+[47.520214] (-) TimerEvent: {}
+[47.621546] (-) TimerEvent: {}
+[47.722860] (-) TimerEvent: {}
+[47.824702] (-) TimerEvent: {}
+[47.925988] (-) TimerEvent: {}
+[48.027264] (-) TimerEvent: {}
+[48.128501] (-) TimerEvent: {}
+[48.229877] (-) TimerEvent: {}
+[48.331692] (-) TimerEvent: {}
+[48.433221] (-) TimerEvent: {}
+[48.534435] (-) TimerEvent: {}
+[48.635651] (-) TimerEvent: {}
+[48.737085] (-) TimerEvent: {}
+[48.838390] (-) TimerEvent: {}
+[48.939907] (-) TimerEvent: {}
+[49.041276] (-) TimerEvent: {}
+[49.142515] (-) TimerEvent: {}
+[49.243877] (-) TimerEvent: {}
+[49.345553] (-) TimerEvent: {}
+[49.446865] (-) TimerEvent: {}
+[49.549243] (-) TimerEvent: {}
+[49.651394] (-) TimerEvent: {}
+[49.752807] (-) TimerEvent: {}
+[49.854110] (-) TimerEvent: {}
+[49.955392] (-) TimerEvent: {}
+[50.056688] (-) TimerEvent: {}
+[50.158040] (-) TimerEvent: {}
+[50.259301] (-) TimerEvent: {}
+[50.360630] (-) TimerEvent: {}
+[50.461873] (-) TimerEvent: {}
+[50.563385] (-) TimerEvent: {}
+[50.664631] (-) TimerEvent: {}
+[50.765981] (-) TimerEvent: {}
+[50.867628] (-) TimerEvent: {}
+[50.968863] (-) TimerEvent: {}
+[51.070180] (-) TimerEvent: {}
+[51.171691] (-) TimerEvent: {}
+[51.273331] (-) TimerEvent: {}
+[51.375601] (-) TimerEvent: {}
+[51.477765] (-) TimerEvent: {}
+[51.493269] (spider_msgs) StdoutLine: {'line': b'[ 76%] Built target spider_msgs__py\n'}
+[51.578100] (-) TimerEvent: {}
+[51.609046] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_generator_py\x1b[0m\n'}
+[51.678390] (-) TimerEvent: {}
+[51.760780] (spider_msgs) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_py.dir/rosidl_generator_py/spider_msgs/msg/_spider_leg_s.c.o\x1b[0m\n'}
+[51.766633] (spider_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_py.dir/rosidl_generator_py/spider_msgs/srv/_servo_calibrate_s.c.o\x1b[0m\n'}
+[51.778695] (-) TimerEvent: {}
+[51.881995] (-) TimerEvent: {}
+[51.983612] (-) TimerEvent: {}
+[52.085094] (-) TimerEvent: {}
+[52.186540] (-) TimerEvent: {}
+[52.288045] (-) TimerEvent: {}
+[52.393335] (-) TimerEvent: {}
+[52.495251] (-) TimerEvent: {}
+[52.597853] (-) TimerEvent: {}
+[52.701608] (-) TimerEvent: {}
+[52.803312] (-) TimerEvent: {}
+[52.905388] (-) TimerEvent: {}
+[53.007297] (-) TimerEvent: {}
+[53.109099] (-) TimerEvent: {}
+[53.183047] (spider_msgs) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/spider_msgs/libspider_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[53.209440] (-) TimerEvent: {}
+[53.311172] (-) TimerEvent: {}
+[53.413896] (-) TimerEvent: {}
+[53.515643] (-) TimerEvent: {}
+[53.617107] (-) TimerEvent: {}
+[53.679344] (spider_msgs) StdoutLine: {'line': b'[ 84%] Built target spider_msgs__rosidl_generator_py\n'}
+[53.717391] (-) TimerEvent: {}
+[53.803177] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[53.809767] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[53.817660] (-) TimerEvent: {}
+[53.834149] (spider_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[53.917961] (-) TimerEvent: {}
+[53.984505] (spider_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[53.997136] (spider_msgs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[54.003819] (spider_msgs) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[54.018311] (-) TimerEvent: {}
+[54.119751] (-) TimerEvent: {}
+[54.221696] (-) TimerEvent: {}
+[54.323141] (-) TimerEvent: {}
+[54.424807] (-) TimerEvent: {}
+[54.526414] (-) TimerEvent: {}
+[54.627846] (-) TimerEvent: {}
+[54.729413] (-) TimerEvent: {}
+[54.830835] (-) TimerEvent: {}
+[54.933646] (-) TimerEvent: {}
+[55.036506] (-) TimerEvent: {}
+[55.140399] (-) TimerEvent: {}
+[55.244172] (-) TimerEvent: {}
+[55.350063] (-) TimerEvent: {}
+[55.433476] (spider_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/spider_msgs/spider_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[55.450377] (-) TimerEvent: {}
+[55.494200] (spider_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/spider_msgs/spider_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[55.550712] (-) TimerEvent: {}
+[55.566232] (spider_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/spider_msgs/spider_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[55.651082] (-) TimerEvent: {}
+[55.752994] (-) TimerEvent: {}
+[55.855076] (-) TimerEvent: {}
+[55.957543] (-) TimerEvent: {}
+[56.037192] (spider_msgs) StdoutLine: {'line': b'[100%] Built target spider_msgs__rosidl_typesupport_c__pyext\n'}
+[56.059183] (-) TimerEvent: {}
+[56.135834] (spider_msgs) StdoutLine: {'line': b'[100%] Built target spider_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[56.159474] (-) TimerEvent: {}
+[56.195321] (spider_msgs) StdoutLine: {'line': b'[100%] Built target spider_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[56.259785] (-) TimerEvent: {}
+[56.307196] (spider_msgs) CommandEnded: {'returncode': 0}
+[56.313327] (spider_msgs) JobProgress: {'identifier': 'spider_msgs', 'progress': 'install'}
+[56.360095] (-) TimerEvent: {}
+[56.396910] (spider_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/spider/ws/build/spider_msgs'], 'cwd': '/home/spider/ws/build/spider_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'spider'), ('SSH_CLIENT', '192.168.1.174 58274 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spider'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-d8943ab4-9549-4e8d-a5c3-f60832f39338.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/spider/ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spider'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '35'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/spider/.vscode-server/cli/servers/Stable-7d842fb85a0275a4a8e4d7e040d2625abbf7f084/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31b5ff44af.sock'), ('TERM_PROGRAM', 'vscode'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/spider_control:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/spider/ws/build/spider_msgs'), ('SSH_CONNECTION', '192.168.1.174 58274 192.168.1.111 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:/home/spider/ws/build/spider_control:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble')]), 'shell': False}
+[56.460345] (-) TimerEvent: {}
+[56.488358] (spider_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[56.493635] (spider_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[56.497539] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/rosidl_interfaces/spider_msgs\n'}
+[56.505612] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__functions.h\n'}
+[56.507590] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__struct.h\n'}
+[56.513795] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__type_support.h\n'}
+[56.516147] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[56.518256] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/spider_leg.h\n'}
+[56.520654] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__functions.h\n'}
+[56.560671] (-) TimerEvent: {}
+[56.599436] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__struct.h\n'}
+[56.660894] (-) TimerEvent: {}
+[56.679762] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__type_support.h\n'}
+[56.760907] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/servo_calibrate.h\n'}
+[56.762254] (-) TimerEvent: {}
+[56.846388] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/library_path.sh\n'}
+[56.849139] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/library_path.dsv\n'}
+[56.859709] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_fastrtps_c.h\n'}
+[56.861931] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[56.863381] (-) TimerEvent: {}
+[56.864365] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_fastrtps_c.h\n'}
+[56.949264] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__builder.hpp\n'}
+[56.951586] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__struct.hpp\n'}
+[56.953853] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__traits.hpp\n'}
+[56.956109] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__type_support.hpp\n'}
+[56.958315] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[56.960312] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/spider_leg.hpp\n'}
+[56.962755] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__builder.hpp\n'}
+[56.964280] (-) TimerEvent: {}
+[57.041344] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__struct.hpp\n'}
+[57.064671] (-) TimerEvent: {}
+[57.123592] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__traits.hpp\n'}
+[57.165013] (-) TimerEvent: {}
+[57.206172] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__type_support.hpp\n'}
+[57.265217] (-) TimerEvent: {}
+[57.288381] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/servo_calibrate.hpp\n'}
+[57.365509] (-) TimerEvent: {}
+[57.378737] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[57.380739] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[57.382279] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[57.465862] (-) TimerEvent: {}
+[57.468353] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_introspection_c.h\n'}
+[57.470101] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[57.471818] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_introspection_c.h\n'}
+[57.554050] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_introspection_cpp.hpp\n'}
+[57.555939] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_introspection_cpp.hpp\n'}
+[57.566152] (-) TimerEvent: {}
+[57.640638] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/pythonpath.sh\n'}
+[57.642723] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/pythonpath.dsv\n'}
+[57.647196] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[57.649377] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[57.651492] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[57.653729] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[57.665967] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/__init__.py\n'}
+[57.667216] (-) TimerEvent: {}
+[57.669077] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[57.670788] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[57.672405] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[57.675328] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/libspider_msgs__rosidl_generator_py.so\n'}
+[57.680294] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/__init__.py\n'}
+[57.686025] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/_spider_leg.py\n'}
+[57.687980] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/_spider_leg_s.c\n'}
+[57.690590] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[57.692950] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[57.695458] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[57.698037] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/__init__.py\n'}
+[57.767544] (-) TimerEvent: {}
+[57.778323] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/_servo_calibrate.py\n'}
+[57.859224] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/_servo_calibrate_s.c\n'}
+[57.867851] (-) TimerEvent: {}
+[57.943305] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[57.946680] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[57.950204] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[57.953632] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/msg/SpiderLeg.idl\n'}
+[57.955879] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate.idl\n'}
+[57.968151] (-) TimerEvent: {}
+[58.038928] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/msg/SpiderLeg.msg\n'}
+[58.040707] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate.srv\n'}
+[58.068427] (-) TimerEvent: {}
+[58.121730] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate_Request.msg\n'}
+[58.168785] (-) TimerEvent: {}
+[58.207440] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate_Response.msg\n'}
+[58.269142] (-) TimerEvent: {}
+[58.295955] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/package_run_dependencies/spider_msgs\n'}
+[58.299452] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/parent_prefix_path/spider_msgs\n'}
+[58.302283] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/ament_prefix_path.sh\n'}
+[58.304936] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/ament_prefix_path.dsv\n'}
+[58.307244] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/path.sh\n'}
+[58.310648] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/path.dsv\n'}
+[58.313111] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.bash\n'}
+[58.315773] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.sh\n'}
+[58.318694] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.zsh\n'}
+[58.321047] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.dsv\n'}
+[58.324343] (spider_msgs) StdoutLine: {'line': b'-- Symlinking: /home/spider/ws/install/spider_msgs/share/spider_msgs/package.dsv\n'}
+[58.369439] (-) TimerEvent: {}
+[58.408678] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/packages/spider_msgs\n'}
+[58.411075] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[58.414000] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[58.416916] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[58.419430] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[58.422480] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[58.424250] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[58.426589] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[58.432487] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgsConfig.cmake\n'}
+[58.435319] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgsConfig-version.cmake\n'}
+[58.437481] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/package.xml\n'}
+[58.441254] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_c.so\n'}
+[58.448240] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_c.so" to ""\n'}
+[58.451001] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[58.457390] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[58.460074] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[58.466967] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[58.469766] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_c.so\n'}
+[58.471085] (-) TimerEvent: {}
+[58.476067] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[58.479708] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_c.so\n'}
+[58.484729] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_c.so" to ""\n'}
+[58.491350] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[58.497683] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[58.500128] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_cpp.so\n'}
+[58.506030] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[58.571350] (-) TimerEvent: {}
+[58.672693] (-) TimerEvent: {}
+[58.774070] (-) TimerEvent: {}
+[58.875427] (-) TimerEvent: {}
+[58.940206] (spider_msgs) StdoutLine: {'line': b"Listing '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs'...\n"}
+[58.941896] (spider_msgs) StdoutLine: {'line': b"Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/__init__.py'...\n"}
+[58.943115] (spider_msgs) StdoutLine: {'line': b"Listing '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg'...\n"}
+[58.944226] (spider_msgs) StdoutLine: {'line': b"Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/__init__.py'...\n"}
+[58.945613] (spider_msgs) StdoutLine: {'line': b"Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/_spider_leg.py'...\n"}
+[58.946800] (spider_msgs) StdoutLine: {'line': b"Listing '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv'...\n"}
+[58.948029] (spider_msgs) StdoutLine: {'line': b"Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/__init__.py'...\n"}
+[58.949434] (spider_msgs) StdoutLine: {'line': b"Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/_servo_calibrate.py'...\n"}
+[58.975748] (-) TimerEvent: {}
+[59.007525] (spider_msgs) StdoutLine: {'line': b'-- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_py.so\n'}
+[59.014147] (spider_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_py.so" to ""\n'}
+[59.017098] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_cExport.cmake\n'}
+[59.018698] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[59.021692] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[59.023640] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[59.026110] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_cppExport.cmake\n'}
+[59.029323] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[59.030800] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[59.033491] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[59.035298] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[59.037582] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cExport.cmake\n'}
+[59.039595] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[59.042613] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[59.044986] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[59.047508] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[59.049259] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[59.051539] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_pyExport.cmake\n'}
+[59.053089] (spider_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[59.067973] (spider_msgs) CommandEnded: {'returncode': 0}
+[59.076063] (-) TimerEvent: {}
+[59.180521] (-) TimerEvent: {}
+[59.285037] (-) TimerEvent: {}
+[59.319770] (spider_msgs) JobEnded: {'identifier': 'spider_msgs', 'rc': 0}
+[59.326588] (-) EventReactorShutdown: {}

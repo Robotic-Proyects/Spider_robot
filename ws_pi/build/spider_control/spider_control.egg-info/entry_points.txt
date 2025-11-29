@@ -1,0 +1,3 @@
+[console_scripts]
+movement_publisher = spider_control.movement_publisher_node:main
+

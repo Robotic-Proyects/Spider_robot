@@ -1,0 +1,85 @@
+[0.209s] Invoking command in '/home/spider/ws/build/spider_driver': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/spider/ws/src/spider_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/spider_driver
+[1.904s] -- The C compiler identification is GNU 11.4.0
+[2.810s] -- The CXX compiler identification is GNU 11.4.0
+[2.930s] -- Detecting C compiler ABI info
+[3.705s] -- Detecting C compiler ABI info - done
+[3.775s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.779s] -- Detecting C compile features
+[3.785s] -- Detecting C compile features - done
+[3.819s] -- Detecting CXX compiler ABI info
+[4.620s] -- Detecting CXX compiler ABI info - done
+[4.691s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.693s] -- Detecting CXX compile features
+[4.697s] -- Detecting CXX compile features - done
+[4.883s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[7.094s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[8.025s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[8.803s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[9.755s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[9.876s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[10.044s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[10.287s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[10.645s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[11.505s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[11.567s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[13.090s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[13.651s] -- Found FastRTPS: /opt/ros/humble/include  
+[14.444s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[14.646s] -- Looking for pthread.h
+[15.488s] -- Looking for pthread.h - found
+[15.492s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[16.305s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[16.315s] -- Found Threads: TRUE  
+[17.146s] -- Found spider_msgs: 0.0.0 (/home/spider/ws/install/spider_msgs/share/spider_msgs/cmake)
+[17.399s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[18.761s] -- Found ament_cmake_gtest: 1.3.12 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[18.854s] -- Added test 'copyright' to check source files copyright and LICENSE
+[18.895s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[18.897s] -- Configured cppcheck include dirs: /home/spider/ws/src/spider_driver/include
+[18.898s] -- Configured cppcheck exclude dirs and/or files: 
+[18.917s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[18.919s] -- Configured cpplint exclude dirs and/or files: 
+[18.930s] -- Added test 'lint_cmake' to check CMake code style
+[18.955s] -- Added test 'uncrustify' to check C / C++ code style
+[18.956s] -- Configured uncrustify additional arguments: 
+[18.963s] -- Added test 'xmllint' to check XML markup files
+[19.028s] -- Configuring done
+[19.212s] -- Generating done
+[19.261s] -- Build files have been written to: /home/spider/ws/build/spider_driver
+[19.354s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/spider/ws/src/spider_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/spider_driver
+[19.388s] Invoking command in '/home/spider/ws/build/spider_driver': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[19.876s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[110.616s] [ 50%] [32m[1mLinking CXX shared library libspider_driver.so[0m
+[115.720s] [ 50%] Built target spider_driver
+[116.007s] [ 75%] [32mBuilding CXX object CMakeFiles/control_main.dir/src/controller_node.cpp.o[0m
+[147.847s] [100%] [32m[1mLinking CXX executable control_main[0m
+[150.389s] [100%] Built target control_main
+[151.144s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[151.512s] Invoking command in '/home/spider/ws/build/spider_driver': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/spider/ws/build/spider_driver
+[151.684s] -- Install configuration: ""
+[151.686s] -- Execute custom install script
+[151.691s] -- Symlinking: /home/spider/ws/install/spider_driver/lib/libspider_driver.so
+[151.761s] -- Symlinking: /home/spider/ws/install/spider_driver/lib/spider_driver/control_main
+[151.834s] -- Symlinking: /home/spider/ws/install/spider_driver/include//spider_driver/ControllerNode.hpp
+[151.906s] -- Symlinking: /home/spider/ws/install/spider_driver/include//spider_driver/PCA9685.hpp
+[151.985s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/environment/library_path.sh
+[152.059s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/environment/library_path.dsv
+[152.135s] -- Symlinking: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/package_run_dependencies/spider_driver
+[152.209s] -- Symlinking: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/parent_prefix_path/spider_driver
+[152.285s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/environment/ament_prefix_path.sh
+[152.357s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/environment/ament_prefix_path.dsv
+[152.432s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/environment/path.sh
+[152.507s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/environment/path.dsv
+[152.581s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.bash
+[152.651s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.sh
+[152.721s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.zsh
+[152.794s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.dsv
+[152.865s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/package.dsv
+[152.937s] -- Symlinking: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/packages/spider_driver
+[153.014s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[153.087s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[153.158s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[153.230s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/spider_driverConfig.cmake
+[153.301s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/spider_driverConfig-version.cmake
+[153.380s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/package.xml
+[153.487s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/spider/ws/build/spider_driver

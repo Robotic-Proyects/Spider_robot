@@ -1,0 +1,63 @@
+[0.108s] Invoking command in '/home/spider/ws/build/i2c_pwm_board_calibration': AMENT_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/i2c_pwm_board_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/i2c_pwm_board_calibration -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/i2c_pwm_board_calibration
+[0.695s] -- The C compiler identification is GNU 11.4.0
+[1.290s] -- The CXX compiler identification is GNU 11.4.0
+[1.355s] -- Detecting C compiler ABI info
+[2.091s] -- Detecting C compiler ABI info - done
+[2.163s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.165s] -- Detecting C compile features
+[2.171s] -- Detecting C compile features - done
+[2.200s] -- Detecting CXX compiler ABI info
+[2.992s] -- Detecting CXX compiler ABI info - done
+[3.062s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.065s] -- Detecting CXX compile features
+[3.070s] -- Detecting CXX compile features - done
+[3.130s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.856s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[5.540s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[6.142s] -- Found i2c_pwm_board_msgs: 0.1.0 (/home/spider/ws/install/i2c_pwm_board_msgs/share/i2c_pwm_board_msgs/cmake)
+[6.757s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[6.862s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[7.002s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[7.187s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[7.435s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[7.617s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[8.439s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[8.491s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[9.681s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[10.169s] -- Found FastRTPS: /opt/ros/humble/include  
+[10.958s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[11.127s] -- Looking for pthread.h
+[11.885s] -- Looking for pthread.h - found
+[11.887s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[12.645s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[12.654s] -- Found Threads: TRUE  
+[13.338s] -- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+[14.222s] -- Configuring done
+[14.373s] -- Generating done
+[14.412s] -- Build files have been written to: /home/spider/ws/build/i2c_pwm_board_calibration
+[14.496s] Invoked command in '/home/spider/ws/build/i2c_pwm_board_calibration' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/i2c_pwm_board_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/i2c_pwm_board_calibration -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/i2c_pwm_board_calibration
+[14.517s] Invoking command in '/home/spider/ws/build/i2c_pwm_board_calibration': AMENT_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/i2c_pwm_board_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/spider/ws/build/i2c_pwm_board_calibration -- -j4 -l4
+[14.980s] [ 50%] [32mBuilding CXX object CMakeFiles/node.dir/src/calibration_node.cc.o[0m
+[67.214s] [100%] [32m[1mLinking CXX executable node[0m
+[70.970s] [100%] Built target node
+[71.630s] Invoked command in '/home/spider/ws/build/i2c_pwm_board_calibration' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/i2c_pwm_board_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/spider/ws/build/i2c_pwm_board_calibration -- -j4 -l4
+[71.969s] Invoking command in '/home/spider/ws/build/i2c_pwm_board_calibration': AMENT_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/i2c_pwm_board_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/spider/ws/build/i2c_pwm_board_calibration
+[72.215s] -- Install configuration: ""
+[72.217s] -- Execute custom install script
+[72.225s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/lib/i2c_pwm_board_calibration/node
+[72.286s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/ament_index/resource_index/package_run_dependencies/i2c_pwm_board_calibration
+[72.363s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/ament_index/resource_index/parent_prefix_path/i2c_pwm_board_calibration
+[72.440s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/environment/ament_prefix_path.sh
+[72.515s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/environment/ament_prefix_path.dsv
+[72.589s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/environment/path.sh
+[72.666s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/environment/path.dsv
+[72.738s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/local_setup.bash
+[72.813s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/local_setup.sh
+[72.889s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/local_setup.zsh
+[72.962s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/local_setup.dsv
+[73.038s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/package.dsv
+[73.111s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/ament_index/resource_index/packages/i2c_pwm_board_calibration
+[73.184s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/cmake/i2c_pwm_board_calibrationConfig.cmake
+[73.260s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/cmake/i2c_pwm_board_calibrationConfig-version.cmake
+[73.352s] -- Symlinking: /home/spider/ws/install/i2c_pwm_board_calibration/share/i2c_pwm_board_calibration/package.xml
+[73.455s] Invoked command in '/home/spider/ws/build/i2c_pwm_board_calibration' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/i2c_pwm_board_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/spider/ws/build/i2c_pwm_board_calibration

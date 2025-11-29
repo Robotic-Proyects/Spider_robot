@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating spider_control.egg-info
+writing spider_control.egg-info/PKG-INFO
+writing dependency_links to spider_control.egg-info/dependency_links.txt
+writing entry points to spider_control.egg-info/entry_points.txt
+writing requirements to spider_control.egg-info/requires.txt
+writing top-level names to spider_control.egg-info/top_level.txt
+writing manifest file 'spider_control.egg-info/SOURCES.txt'
+reading manifest file 'spider_control.egg-info/SOURCES.txt'
+writing manifest file 'spider_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/spider/ws/install/spider_control/lib/python3.10/site-packages/spider-control.egg-link (link to .)
+Installing movement_publisher script to /home/spider/ws/install/spider_control/lib/spider_control
+
+Installed /home/spider/ws/build/spider_control
+running symlink_data
+creating /home/spider/ws/install/spider_control/share/ament_index
+creating /home/spider/ws/install/spider_control/share/ament_index/resource_index
+creating /home/spider/ws/install/spider_control/share/ament_index/resource_index/packages
+symbolically linking /home/spider/ws/build/spider_control/resource/spider_control -> /home/spider/ws/install/spider_control/share/ament_index/resource_index/packages
+symbolically linking /home/spider/ws/build/spider_control/package.xml -> /home/spider/ws/install/spider_control/share/spider_control

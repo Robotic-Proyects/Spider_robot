@@ -1,0 +1,6 @@
+Invoking command in '/home/spider/ws/build/xmlrpcpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/xmlrpcpp -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/xmlrpcpp
+Invoked command in '/home/spider/ws/build/xmlrpcpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/xmlrpcpp -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/xmlrpcpp
+Invoking command in '/home/spider/ws/build/xmlrpcpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/spider/ws/build/xmlrpcpp -- -j4 -l4
+Invoked command in '/home/spider/ws/build/xmlrpcpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/spider/ws/build/xmlrpcpp -- -j4 -l4
+Invoking command in '/home/spider/ws/build/xmlrpcpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/spider/ws/build/xmlrpcpp
+Invoked command in '/home/spider/ws/build/xmlrpcpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/spider/ws/build/xmlrpcpp

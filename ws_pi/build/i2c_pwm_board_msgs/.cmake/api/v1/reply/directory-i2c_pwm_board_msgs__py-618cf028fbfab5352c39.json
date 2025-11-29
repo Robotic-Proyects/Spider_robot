@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "i2c_pwm_board_msgs__py",
+		"source" : "/home/spider/ws/build/i2c_pwm_board_msgs/i2c_pwm_board_msgs__py"
+	}
+}

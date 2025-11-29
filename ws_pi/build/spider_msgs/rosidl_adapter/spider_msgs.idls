@@ -1,0 +1,3 @@
+/home/spider/ws/build/spider_msgs/rosidl_adapter/spider_msgs:msg/SpiderLeg.idl
+/home/spider/ws/build/spider_msgs/rosidl_adapter/spider_msgs:msg/SpiderSwitch.idl
+/home/spider/ws/build/spider_msgs/rosidl_adapter/spider_msgs:srv/ServoCalibrate.idl

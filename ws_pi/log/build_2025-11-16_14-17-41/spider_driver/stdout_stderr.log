@@ -1,0 +1,11 @@
+[35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[ 50%] [32m[1mLinking CXX shared library libspider_driver.so[0m
+[ 50%] Built target spider_driver
+[ 75%] [32mBuilding CXX object CMakeFiles/control_main.dir/src/controller_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable control_main[0m
+/usr/bin/ld: libspider_driver.so: undefined reference to `vtable for controller::ControllerNode'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/control_main.dir/build.make:168: control_main] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/control_main.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

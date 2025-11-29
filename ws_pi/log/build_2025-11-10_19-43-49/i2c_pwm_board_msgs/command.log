@@ -1,0 +1,6 @@
+Invoking command in '/home/spider/ws/build/i2c_pwm_board_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/i2c_pwm_board_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/i2c_pwm_board_msgs
+Invoked command in '/home/spider/ws/build/i2c_pwm_board_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/i2c_pwm_board_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/i2c_pwm_board_msgs
+Invoking command in '/home/spider/ws/build/i2c_pwm_board_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/spider/ws/build/i2c_pwm_board_msgs -- -j4 -l4
+Invoked command in '/home/spider/ws/build/i2c_pwm_board_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/spider/ws/build/i2c_pwm_board_msgs -- -j4 -l4
+Invoking command in '/home/spider/ws/build/i2c_pwm_board_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/spider/ws/build/i2c_pwm_board_msgs
+Invoked command in '/home/spider/ws/build/i2c_pwm_board_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/spider/ws/build/i2c_pwm_board_msgs

@@ -1,0 +1,33 @@
+[0.097s] Invoking command in '/home/spider/ws/build/i2c_pwm_board_msgs': /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/i2c_pwm_board_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/i2c_pwm_board_msgs
+[2.254s] -- The C compiler identification is GNU 11.4.0
+[4.217s] -- The CXX compiler identification is GNU 11.4.0
+[4.324s] -- Detecting C compiler ABI info
+[5.352s] -- Detecting C compiler ABI info - done
+[5.421s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.425s] -- Detecting C compile features
+[5.431s] -- Detecting C compile features - done
+[5.468s] -- Detecting CXX compiler ABI info
+[6.248s] -- Detecting CXX compiler ABI info - done
+[6.320s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[6.322s] -- Detecting CXX compile features
+[6.326s] -- Detecting CXX compile features - done
+[6.647s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[6.648s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[6.649s]   has asked CMake to find a package configuration file provided by
+[6.650s]   "ament_cmake", but CMake did not find one.
+[6.651s] 
+[6.652s]   Could not find a package configuration file provided by "ament_cmake" with
+[6.653s]   any of the following names:
+[6.654s] 
+[6.655s]     ament_cmakeConfig.cmake
+[6.656s]     ament_cmake-config.cmake
+[6.657s] 
+[6.659s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[6.660s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[6.661s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[6.662s]   has been installed.
+[6.662s] 
+[6.663s] [0m
+[6.664s] -- Configuring incomplete, errors occurred!
+[6.665s] See also "/home/spider/ws/build/i2c_pwm_board_msgs/CMakeFiles/CMakeOutput.log".
+[6.681s] Invoked command in '/home/spider/ws/build/i2c_pwm_board_msgs' returned '1': /usr/bin/cmake /home/spider/ws/src/i2c_pwm_board/i2c_pwm_board_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/spider/ws/install/i2c_pwm_board_msgs

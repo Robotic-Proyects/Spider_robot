@@ -1,0 +1,226 @@
+[0.255s] Invoking command in '/home/spider/ws/build/spider_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/spider/ws/install/spider_control:/opt/ros/humble /usr/bin/cmake --build /home/spider/ws/build/spider_msgs -- -j4 -l4
+[1.142s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[3.124s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[3.401s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[3.922s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[3.966s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[4.062s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[4.200s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.371s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.677s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[7.928s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[12.100s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[13.726s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[13.996s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[14.278s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[14.280s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[14.281s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[14.616s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[14.893s] -- Added test 'lint_cmake' to check CMake code style
+[14.921s] -- Added test 'xmllint' to check XML markup files
+[14.973s] -- Configuring done
+[15.723s] -- Generating done
+[15.857s] -- Build files have been written to: /home/spider/ws/build/spider_msgs
+[16.149s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[16.271s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[16.399s] [  5%] Built target ament_cmake_python_symlink_spider_msgs
+[20.266s] running egg_info
+[20.277s] writing spider_msgs.egg-info/PKG-INFO
+[20.279s] writing dependency_links to spider_msgs.egg-info/dependency_links.txt
+[20.281s] writing top-level names to spider_msgs.egg-info/top_level.txt
+[20.311s] reading manifest file 'spider_msgs.egg-info/SOURCES.txt'
+[20.321s] writing manifest file 'spider_msgs.egg-info/SOURCES.txt'
+[20.706s] [  5%] Built target ament_cmake_python_build_spider_msgs_egg
+[21.506s] [  5%] Built target spider_msgs__cpp
+[21.634s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_generator_c[0m
+[21.659s] [  7%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[21.661s] [ 10%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[21.682s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[21.813s] [ 15%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_c.dir/rosidl_generator_c/spider_msgs/msg/detail/spider_leg__functions.c.o[0m
+[23.652s] [ 17%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_c.dir/rosidl_generator_c/spider_msgs/srv/detail/servo_calibrate__functions.c.o[0m
+[24.468s] [ 20%] [32m[1mLinking C shared library libspider_msgs__rosidl_generator_c.so[0m
+[24.971s] [ 20%] Built target spider_msgs__rosidl_generator_c
+[25.114s] [ 23%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[25.767s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_cpp[0m
+[26.025s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/spider_msgs/msg/spider_leg__type_support.cpp.o[0m
+[26.717s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[26.893s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_introspection_cpp[0m
+[26.921s] [ 28%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/spider_msgs/msg/detail/dds_fastrtps/spider_leg__type_support.cpp.o[0m
+[27.125s] [ 30%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/spider_msgs/msg/detail/spider_leg__type_support.cpp.o[0m
+[30.763s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_fastrtps_c[0m
+[30.778s] [ 33%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/spider_msgs/srv/servo_calibrate__type_support.cpp.o[0m
+[30.983s] [ 35%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/spider_msgs/msg/detail/spider_leg__type_support_c.cpp.o[0m
+[33.539s] [ 38%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/spider_msgs/srv/detail/servo_calibrate__type_support.cpp.o[0m
+[33.644s] [ 41%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/spider_msgs/srv/detail/dds_fastrtps/servo_calibrate__type_support.cpp.o[0m
+[35.156s] [ 43%] [32m[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_cpp.so[0m
+[35.699s] [ 43%] Built target spider_msgs__rosidl_typesupport_cpp
+[35.823s] [ 46%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/spider_msgs/srv/detail/servo_calibrate__type_support_c.cpp.o[0m
+[36.362s] [ 48%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[39.961s] [ 51%] [32m[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[40.202s] [ 53%] [32m[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[40.925s] [ 53%] Built target spider_msgs__rosidl_typesupport_introspection_cpp
+[41.089s] [ 56%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[41.307s] [ 56%] Built target spider_msgs__rosidl_typesupport_fastrtps_cpp
+[42.432s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_introspection_c[0m
+[42.494s] [ 58%] [32m[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[42.588s] [ 61%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/spider_msgs/msg/detail/spider_leg__type_support.c.o[0m
+[42.614s] [ 64%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/spider_msgs/srv/detail/servo_calibrate__type_support.c.o[0m
+[43.266s] [ 66%] [32m[1mLinking C shared library libspider_msgs__rosidl_typesupport_introspection_c.so[0m
+[43.458s] [ 66%] Built target spider_msgs__rosidl_typesupport_fastrtps_c
+[43.624s] [ 66%] Built target spider_msgs__rosidl_typesupport_introspection_c
+[44.800s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_c[0m
+[44.943s] [ 69%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/spider_msgs/msg/spider_leg__type_support.cpp.o[0m
+[44.945s] [ 71%] [32mBuilding CXX object CMakeFiles/spider_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/spider_msgs/srv/servo_calibrate__type_support.cpp.o[0m
+[45.337s] [ 74%] [32m[1mLinking CXX shared library libspider_msgs__rosidl_typesupport_c.so[0m
+[45.736s] [ 74%] Built target spider_msgs__rosidl_typesupport_c
+[45.956s] [ 74%] Built target spider_msgs
+[46.177s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[51.824s] [ 76%] Built target spider_msgs__py
+[51.942s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_generator_py[0m
+[52.119s] [ 79%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_py.dir/rosidl_generator_py/spider_msgs/msg/_spider_leg_s.c.o[0m
+[52.126s] [ 82%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_generator_py.dir/rosidl_generator_py/spider_msgs/srv/_servo_calibrate_s.c.o[0m
+[53.591s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/spider_msgs/libspider_msgs__rosidl_generator_py.so[0m
+[54.063s] [ 84%] Built target spider_msgs__rosidl_generator_py
+[54.184s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[54.196s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[54.208s] [35m[1mConsolidate compiler generated dependencies of target spider_msgs__rosidl_typesupport_c__pyext[0m
+[54.344s] [ 87%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[54.369s] [ 89%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[54.402s] [ 92%] [32mBuilding C object CMakeFiles/spider_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[55.765s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/spider_msgs/spider_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[55.931s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/spider_msgs/spider_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[55.967s] [100%] [32m[1mLinking C shared library rosidl_generator_py/spider_msgs/spider_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[56.345s] [100%] Built target spider_msgs__rosidl_typesupport_fastrtps_c__pyext
+[56.587s] [100%] Built target spider_msgs__rosidl_typesupport_introspection_c__pyext
+[56.630s] [100%] Built target spider_msgs__rosidl_typesupport_c__pyext
+[56.740s] Invoked command in '/home/spider/ws/build/spider_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/spider/ws/install/spider_control:/opt/ros/humble /usr/bin/cmake --build /home/spider/ws/build/spider_msgs -- -j4 -l4
+[56.838s] Invoking command in '/home/spider/ws/build/spider_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/spider/ws/install/spider_control:/opt/ros/humble /usr/bin/cmake --install /home/spider/ws/build/spider_msgs
+[56.917s] -- Install configuration: ""
+[56.922s] -- Execute custom install script
+[56.927s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/rosidl_interfaces/spider_msgs
+[56.939s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__functions.h
+[56.943s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__struct.h
+[56.947s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__type_support.h
+[56.950s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_generator_c__visibility_control.h
+[56.954s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/spider_leg.h
+[56.959s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__functions.h
+[56.963s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__struct.h
+[56.966s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__type_support.h
+[56.969s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/servo_calibrate.h
+[56.975s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/library_path.sh
+[56.976s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/library_path.dsv
+[56.985s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_fastrtps_c.h
+[56.988s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[56.991s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_fastrtps_c.h
+[57.000s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__builder.hpp
+[57.004s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__struct.hpp
+[57.007s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__traits.hpp
+[57.011s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__type_support.hpp
+[57.015s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[57.017s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/spider_leg.hpp
+[57.021s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__builder.hpp
+[57.024s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__struct.hpp
+[57.028s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__traits.hpp
+[57.031s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__type_support.hpp
+[57.034s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/servo_calibrate.hpp
+[57.045s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_fastrtps_cpp.hpp
+[57.048s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[57.052s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_fastrtps_cpp.hpp
+[57.059s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_introspection_c.h
+[57.062s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[57.065s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_introspection_c.h
+[57.072s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/msg/detail/spider_leg__rosidl_typesupport_introspection_cpp.hpp
+[57.076s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/include/spider_msgs/spider_msgs/srv/detail/servo_calibrate__rosidl_typesupport_introspection_cpp.hpp
+[57.079s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/pythonpath.sh
+[57.081s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/pythonpath.dsv
+[57.086s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[57.089s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[57.093s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[57.096s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[57.113s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/__init__.py
+[57.117s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_c.c
+[57.119s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[57.123s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/_spider_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[57.126s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/libspider_msgs__rosidl_generator_py.so
+[57.130s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/__init__.py
+[57.134s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/_spider_leg.py
+[57.137s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/_spider_leg_s.c
+[57.140s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[57.143s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[57.146s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[57.151s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/__init__.py
+[57.154s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/_servo_calibrate.py
+[57.157s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/_servo_calibrate_s.c
+[57.161s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[57.165s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[57.169s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/spider_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[57.173s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/msg/SpiderLeg.idl
+[57.177s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate.idl
+[57.180s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/msg/SpiderLeg.msg
+[57.182s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate.srv
+[57.185s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate_Request.msg
+[57.189s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/srv/ServoCalibrate_Response.msg
+[57.192s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/package_run_dependencies/spider_msgs
+[57.196s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/parent_prefix_path/spider_msgs
+[57.200s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/ament_prefix_path.sh
+[57.204s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/ament_prefix_path.dsv
+[57.207s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/path.sh
+[57.211s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/environment/path.dsv
+[57.215s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.bash
+[57.218s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.sh
+[57.221s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.zsh
+[57.224s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/local_setup.dsv
+[57.225s] -- Symlinking: /home/spider/ws/install/spider_msgs/share/spider_msgs/package.dsv
+[57.307s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/ament_index/resource_index/packages/spider_msgs
+[57.313s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/rosidl_cmake-extras.cmake
+[57.317s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[57.321s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[57.324s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[57.328s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[57.331s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[57.334s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[57.338s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgsConfig.cmake
+[57.341s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgsConfig-version.cmake
+[57.343s] -- Up-to-date symlink: /home/spider/ws/install/spider_msgs/share/spider_msgs/package.xml
+[57.346s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_c.so
+[57.353s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_c.so" to ""
+[57.357s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_c.so
+[57.363s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[57.366s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_cpp.so
+[57.372s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[57.375s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_c.so
+[57.381s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_c.so" to ""
+[57.383s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_c.so
+[57.389s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_c.so" to ""
+[57.392s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_cpp.so
+[57.398s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[57.401s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_cpp.so
+[57.407s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_typesupport_cpp.so" to ""
+[57.919s] Listing '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs'...
+[57.921s] Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/__init__.py'...
+[57.922s] Listing '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg'...
+[57.924s] Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/__init__.py'...
+[57.925s] Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/msg/_spider_leg.py'...
+[57.927s] Listing '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv'...
+[57.929s] Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/__init__.py'...
+[57.930s] Compiling '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages/spider_msgs/srv/_servo_calibrate.py'...
+[57.986s] -- Installing: /home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_py.so
+[57.993s] -- Set runtime path of "/home/spider/ws/install/spider_msgs/lib/libspider_msgs__rosidl_generator_py.so" to ""
+[57.996s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_cExport.cmake
+[57.997s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_cExport-noconfig.cmake
+[58.001s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[58.002s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[58.005s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_cppExport.cmake
+[58.008s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[58.013s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[58.014s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cExport.cmake
+[58.017s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[58.020s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cExport.cmake
+[58.021s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[58.026s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[58.028s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[58.031s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cppExport.cmake
+[58.033s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/spider_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[58.036s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_pyExport.cmake
+[58.037s] -- Up-to-date: /home/spider/ws/install/spider_msgs/share/spider_msgs/cmake/export_spider_msgs__rosidl_generator_pyExport-noconfig.cmake
+[58.053s] Invoked command in '/home/spider/ws/build/spider_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/spider/ws/install/spider_control:/opt/ros/humble /usr/bin/cmake --install /home/spider/ws/build/spider_msgs

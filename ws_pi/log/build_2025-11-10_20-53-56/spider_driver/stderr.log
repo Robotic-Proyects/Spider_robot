@@ -1,0 +1,7 @@
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::calibrate_callback(std::shared_ptr<spider_msgs::srv::ServoCalibrate_Request_<std::allocator<void> > >, std::shared_ptr<spider_msgs::srv::ServoCalibrate_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:129:23:[m[K [01;31m[Kerror: [m[Kvariable ‘[01m[Kstd::ofstream file[m[K’ has initializer but incomplete type
+  129 |     std::ofstream file[01;31m[K([m[K"/home/pi/servo_calibration.yaml", std::ios::app);
+      |                       [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

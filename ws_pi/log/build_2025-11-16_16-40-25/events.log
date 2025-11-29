@@ -1,0 +1,137 @@
+[0.000000] (-) TimerEvent: {}
+[0.001124] (-) JobUnselected: {'identifier': 'i2c_pwm_board'}
+[0.002902] (-) JobUnselected: {'identifier': 'i2c_pwm_board_calibration'}
+[0.005013] (-) JobUnselected: {'identifier': 'i2c_pwm_board_msgs'}
+[0.007919] (-) JobUnselected: {'identifier': 'i2c_pwm_board_xmlrp'}
+[0.009638] (-) JobUnselected: {'identifier': 'spider_control'}
+[0.010293] (-) JobUnselected: {'identifier': 'spider_msgs'}
+[0.010804] (-) JobUnselected: {'identifier': 'xmlrpcpp'}
+[0.012073] (spider_driver) JobQueued: {'identifier': 'spider_driver', 'dependencies': OrderedDict([('spider_msgs', '/home/spider/ws/install/spider_msgs')])}
+[0.012694] (spider_driver) JobStarted: {'identifier': 'spider_driver'}
+[0.099978] (-) TimerEvent: {}
+[0.201660] (-) TimerEvent: {}
+[0.223976] (spider_driver) JobProgress: {'identifier': 'spider_driver', 'progress': 'cmake'}
+[0.233626] (spider_driver) JobProgress: {'identifier': 'spider_driver', 'progress': 'build'}
+[0.240293] (spider_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/spider/ws/build/spider_driver', '--', '-j4', '-l4'], 'cwd': '/home/spider/ws/build/spider_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'spider'), ('SSH_CLIENT', '192.168.1.51 44612 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spider'), ('TERM_PROGRAM_VERSION', '1.106.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-184a43d4-3c29-4e5f-9541-1d36b294c80c.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/spider/ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spider'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '61'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31b5ff44af.sock'), ('TERM_PROGRAM', 'vscode'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/spider_control:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/spider/ws/build/spider_driver'), ('SSH_CONNECTION', '192.168.1.51 44612 192.168.1.111 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:/home/spider/ws/build/spider_control:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble')]), 'shell': False}
+[0.301954] (-) TimerEvent: {}
+[0.403419] (-) TimerEvent: {}
+[0.504967] (-) TimerEvent: {}
+[0.606871] (-) TimerEvent: {}
+[0.708880] (-) TimerEvent: {}
+[0.810684] (-) TimerEvent: {}
+[0.912090] (-) TimerEvent: {}
+[0.980395] (spider_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target spider_driver\x1b[0m\n'}
+[1.012391] (-) TimerEvent: {}
+[1.114118] (-) TimerEvent: {}
+[1.215536] (-) TimerEvent: {}
+[1.228412] (spider_driver) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o\x1b[0m\n'}
+[1.315830] (-) TimerEvent: {}
+[1.417297] (-) TimerEvent: {}
+[1.519263] (-) TimerEvent: {}
+[1.620979] (-) TimerEvent: {}
+[1.723273] (-) TimerEvent: {}
+[1.825107] (-) TimerEvent: {}
+[1.926577] (-) TimerEvent: {}
+[2.027918] (-) TimerEvent: {}
+[2.129328] (-) TimerEvent: {}
+[2.230839] (-) TimerEvent: {}
+[2.332638] (-) TimerEvent: {}
+[2.434174] (-) TimerEvent: {}
+[2.535528] (-) TimerEvent: {}
+[2.636949] (-) TimerEvent: {}
+[2.738448] (-) TimerEvent: {}
+[2.839898] (-) TimerEvent: {}
+[2.941348] (-) TimerEvent: {}
+[3.043109] (-) TimerEvent: {}
+[3.144559] (-) TimerEvent: {}
+[3.246445] (-) TimerEvent: {}
+[3.347814] (-) TimerEvent: {}
+[3.449617] (-) TimerEvent: {}
+[3.551375] (-) TimerEvent: {}
+[3.652780] (-) TimerEvent: {}
+[3.754618] (-) TimerEvent: {}
+[3.856702] (-) TimerEvent: {}
+[3.958153] (-) TimerEvent: {}
+[4.059932] (-) TimerEvent: {}
+[4.161446] (-) TimerEvent: {}
+[4.262813] (-) TimerEvent: {}
+[4.364672] (-) TimerEvent: {}
+[4.466230] (-) TimerEvent: {}
+[4.567793] (-) TimerEvent: {}
+[4.669312] (-) TimerEvent: {}
+[4.770788] (-) TimerEvent: {}
+[4.872247] (-) TimerEvent: {}
+[4.973589] (-) TimerEvent: {}
+[5.074992] (-) TimerEvent: {}
+[5.176728] (-) TimerEvent: {}
+[5.278472] (-) TimerEvent: {}
+[5.380000] (-) TimerEvent: {}
+[5.481429] (-) TimerEvent: {}
+[5.583130] (-) TimerEvent: {}
+[5.685383] (-) TimerEvent: {}
+[5.786868] (-) TimerEvent: {}
+[5.888468] (-) TimerEvent: {}
+[5.989945] (-) TimerEvent: {}
+[6.091396] (-) TimerEvent: {}
+[6.192971] (-) TimerEvent: {}
+[6.294757] (-) TimerEvent: {}
+[6.396174] (-) TimerEvent: {}
+[6.497892] (-) TimerEvent: {}
+[6.599343] (-) TimerEvent: {}
+[6.700861] (-) TimerEvent: {}
+[6.802613] (-) TimerEvent: {}
+[6.904055] (-) TimerEvent: {}
+[7.005656] (-) TimerEvent: {}
+[7.107098] (-) TimerEvent: {}
+[7.208682] (-) TimerEvent: {}
+[7.310699] (-) TimerEvent: {}
+[7.412354] (-) TimerEvent: {}
+[7.513962] (-) TimerEvent: {}
+[7.615515] (-) TimerEvent: {}
+[7.717073] (-) TimerEvent: {}
+[7.818706] (-) TimerEvent: {}
+[7.922463] (-) TimerEvent: {}
+[8.024521] (-) TimerEvent: {}
+[8.127534] (-) TimerEvent: {}
+[8.229267] (-) TimerEvent: {}
+[8.331136] (-) TimerEvent: {}
+[8.432644] (-) TimerEvent: {}
+[8.534269] (-) TimerEvent: {}
+[8.635796] (-) TimerEvent: {}
+[8.737285] (-) TimerEvent: {}
+[8.838836] (-) TimerEvent: {}
+[8.940377] (-) TimerEvent: {}
+[9.042982] (-) TimerEvent: {}
+[9.144692] (-) TimerEvent: {}
+[9.246341] (-) TimerEvent: {}
+[9.347901] (-) TimerEvent: {}
+[9.449327] (-) TimerEvent: {}
+[9.550905] (-) TimerEvent: {}
+[9.652557] (-) TimerEvent: {}
+[9.754178] (-) TimerEvent: {}
+[9.855712] (-) TimerEvent: {}
+[9.957256] (-) TimerEvent: {}
+[10.058824] (-) TimerEvent: {}
+[10.161012] (-) TimerEvent: {}
+[10.262536] (-) TimerEvent: {}
+[10.364051] (-) TimerEvent: {}
+[10.465791] (-) TimerEvent: {}
+[10.567961] (-) TimerEvent: {}
+[10.669504] (-) TimerEvent: {}
+[10.771138] (-) TimerEvent: {}
+[10.872794] (-) TimerEvent: {}
+[10.974580] (-) TimerEvent: {}
+[11.076203] (-) TimerEvent: {}
+[11.178283] (-) TimerEvent: {}
+[11.280296] (-) TimerEvent: {}
+[11.382047] (-) TimerEvent: {}
+[11.483576] (-) TimerEvent: {}
+[11.572513] (spider_driver) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Interrupt\n'}
+[11.574735] (spider_driver) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Interrupt\n'}
+[11.577538] (spider_driver) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[11.583960] (-) TimerEvent: {}
+[11.626543] (spider_driver) CommandEnded: {'returncode': -2}
+[11.684137] (-) TimerEvent: {}
+[11.776407] (spider_driver) JobEnded: {'identifier': 'spider_driver', 'rc': 'SIGINT'}
+[11.784530] (-) TimerEvent: {}
+[11.791247] (-) EventReactorShutdown: {}

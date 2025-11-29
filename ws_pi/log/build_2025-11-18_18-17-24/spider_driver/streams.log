@@ -1,0 +1,37 @@
+[0.154s] Invoking command in '/home/spider/ws/build/spider_driver': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[1.257s] [35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[2.054s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[119.553s] [ 50%] [32m[1mLinking CXX shared library libspider_driver.so[0m
+[125.633s] [ 50%] Built target spider_driver
+[125.900s] [35m[1mConsolidate compiler generated dependencies of target control_main[0m
+[126.480s] [ 75%] [32m[1mLinking CXX executable control_main[0m
+[129.384s] [100%] Built target control_main
+[130.325s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[131.111s] Invoking command in '/home/spider/ws/build/spider_driver': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/spider/ws/build/spider_driver
+[131.224s] -- Install configuration: ""
+[131.248s] -- Execute custom install script
+[131.258s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/lib/libspider_driver.so
+[131.262s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/lib/spider_driver/control_main
+[131.276s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/include//spider_driver/ControllerNode.hpp
+[131.277s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/include//spider_driver/PCA9685.hpp
+[131.290s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/library_path.sh
+[131.295s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/library_path.dsv
+[131.305s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/package_run_dependencies/spider_driver
+[131.311s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/parent_prefix_path/spider_driver
+[131.320s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/ament_prefix_path.sh
+[131.324s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/ament_prefix_path.dsv
+[131.328s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/path.sh
+[131.332s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/environment/path.dsv
+[131.335s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.bash
+[131.339s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.sh
+[131.343s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.zsh
+[131.346s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/local_setup.dsv
+[131.348s] -- Symlinking: /home/spider/ws/install/spider_driver/share/spider_driver/package.dsv
+[131.417s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/ament_index/resource_index/packages/spider_driver
+[131.423s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[131.427s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[131.432s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[131.436s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/spider_driverConfig.cmake
+[131.440s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/cmake/spider_driverConfig-version.cmake
+[131.447s] -- Up-to-date symlink: /home/spider/ws/install/spider_driver/share/spider_driver/package.xml
+[131.507s] Invoked command in '/home/spider/ws/build/spider_driver' returned '0': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/spider/ws/build/spider_driver

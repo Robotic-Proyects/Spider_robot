@@ -1,0 +1,4 @@
+source;share/spider_msgs/local_setup.bash
+source;share/spider_msgs/local_setup.dsv
+source;share/spider_msgs/local_setup.sh
+source;share/spider_msgs/local_setup.zsh

@@ -1,0 +1,17 @@
+[8.805s] Invoking command in '/home/spider/ws/build/spider_control': PYTHONPATH=/home/spider/ws/build/spider_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/spider/ws/build/spider_control/build --no-deps symlink_data
+[12.032s] running develop
+[14.238s] running egg_info
+[14.239s] writing spider_control.egg-info/PKG-INFO
+[14.242s] writing dependency_links to spider_control.egg-info/dependency_links.txt
+[14.247s] writing entry points to spider_control.egg-info/entry_points.txt
+[14.249s] writing requirements to spider_control.egg-info/requires.txt
+[14.250s] writing top-level names to spider_control.egg-info/top_level.txt
+[14.266s] reading manifest file 'spider_control.egg-info/SOURCES.txt'
+[14.275s] writing manifest file 'spider_control.egg-info/SOURCES.txt'
+[14.289s] running build_ext
+[14.291s] Creating /home/spider/ws/install/spider_control/lib/python3.10/site-packages/spider-control.egg-link (link to .)
+[14.300s] Installing movement_publisher script to /home/spider/ws/install/spider_control/lib/spider_control
+[14.303s] 
+[14.304s] Installed /home/spider/ws/build/spider_control
+[14.305s] running symlink_data
+[14.607s] Invoked command in '/home/spider/ws/build/spider_control' returned '0': PYTHONPATH=/home/spider/ws/build/spider_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/spider/ws/build/spider_control/build --no-deps symlink_data

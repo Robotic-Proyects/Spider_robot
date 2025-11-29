@@ -1,0 +1,10 @@
+[0.237s] Invoking command in '/home/spider/ws/build/spider_driver': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[2.193s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[38.120s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In destructor ‘[01m[Kvirtual controller::ControllerNode::~ControllerNode()[m[K’:
+[38.134s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:81:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kunexport_gpio[m[K’ was not declared in this scope
+[38.136s]    81 |     [01;31m[Kunexport_gpio[m[K(oe_pin_);
+[38.138s]       |     [01;31m[K^~~~~~~~~~~~~[m[K
+[116.257s] gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+[116.326s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+[116.328s] gmake: *** [Makefile:146: all] Error 2
+[117.823s] Invoked command in '/home/spider/ws/build/spider_driver' returned '2': AMENT_PREFIX_PATH=/home/spider/ws/install/spider_msgs CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib PYTHONPATH=/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4

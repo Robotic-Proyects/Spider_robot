@@ -1,0 +1,2 @@
+/usr/bin/ar qc libi2c_pwm_board_xmlrp_lib.a CMakeFiles/i2c_pwm_board_xmlrp_lib.dir/src/xmlrp.cc.o
+/usr/bin/ranlib libi2c_pwm_board_xmlrp_lib.a

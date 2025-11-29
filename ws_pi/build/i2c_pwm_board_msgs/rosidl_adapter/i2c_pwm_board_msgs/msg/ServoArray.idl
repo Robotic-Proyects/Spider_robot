@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from i2c_pwm_board_msgs/msg/ServoArray.msg
+// generated code does not contain a copyright notice
+
+#include "i2c_pwm_board_msgs/msg/Servo.idl"
+
+module i2c_pwm_board_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "the ServoArray message is commonly used message in this package to" "\n"
+      "handle multiple assignments of values to servos. the purpose of" "\n"
+      "the value is dependent on the topic or service being called")
+    struct ServoArray {
+      sequence<i2c_pwm_board_msgs::msg::Servo> servos;
+    };
+  };
+};

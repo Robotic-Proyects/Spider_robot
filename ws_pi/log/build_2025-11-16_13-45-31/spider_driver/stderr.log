@@ -1,0 +1,44 @@
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:23:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+   31 |     frontleft_pose = [[01;31m[K0[m[K, 0, 0]
+      |                       [01;31m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:24:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K][m[K’ before ‘[01m[K,[m[K’ token
+   31 |     frontleft_pose = [0[01;31m[K,[m[K 0, 0]
+      |                        [01;31m[K^[m[K
+      |                        [32m[K][m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In lambda function:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:24:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K,[m[K’ token
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:20:[m[K [01;31m[Kerror: [m[Kincompatible types in assignment of ‘[01m[Kcontroller::ControllerNode::ControllerNode()::<lambda()>[m[K’ to ‘[01m[Kint [3][m[K’
+   31 |     frontleft_pose = [0, 0, 0]
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::configure_all_servos()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:70:14:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(controller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>) (int [3])[m[K’
+   70 |     [01;31m[Kset_group(pca_frontright_)[m[K;
+      |     [01;31m[K~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcontroller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>[m[K’
+   60 |     auto set_group = [01;36m[K[[m[K&](const int channels[3], int pose[3]) {
+      |                      [01;36m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:71:14:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(controller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>) (int [3])[m[K’
+   71 |     [01;31m[Kset_group(pca_backright_)[m[K;
+      |     [01;31m[K~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcontroller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>[m[K’
+   60 |     auto set_group = [01;36m[K[[m[K&](const int channels[3], int pose[3]) {
+      |                      [01;36m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:72:14:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(controller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>) (int [3])[m[K’
+   72 |     [01;31m[Kset_group(pca_frontleft_)[m[K;
+      |     [01;31m[K~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcontroller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>[m[K’
+   60 |     auto set_group = [01;36m[K[[m[K&](const int channels[3], int pose[3]) {
+      |                      [01;36m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:73:14:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(controller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>) (int [3])[m[K’
+   73 |     [01;31m[Kset_group(pca_backleft_)[m[K;
+      |     [01;31m[K~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcontroller::ControllerNode::configure_all_servos()::<lambda(const int*, int*)>[m[K’
+   60 |     auto set_group = [01;36m[K[[m[K&](const int channels[3], int pose[3]) {
+      |                      [01;36m[K^[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:60:22:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Interrupt

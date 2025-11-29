@@ -1,0 +1,270 @@
+[1.727s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--parallel-workers', '1', '--packages-select', 'spider_driver']
+[1.728s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=1, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['spider_driver'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff83a88820>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff83c15c90>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff83c15c90>>)
+[5.410s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[5.412s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[5.412s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[5.413s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[5.413s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[5.414s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[5.414s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/spider/ws'
+[5.416s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[5.417s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[5.417s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[5.418s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[5.419s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[5.419s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[5.420s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[5.420s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[5.421s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[5.569s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[5.569s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[5.570s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[5.571s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[5.571s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[5.572s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[5.573s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[5.574s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[5.576s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[5.577s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[5.577s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[5.579s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[5.580s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[5.580s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[5.581s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[5.582s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[5.583s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[5.583s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[5.584s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[5.584s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[5.585s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[5.585s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[5.586s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[5.587s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[5.587s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[5.588s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[5.588s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[5.588s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[5.594s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extensions ['ignore', 'ignore_ament_install']
+[5.595s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'ignore'
+[5.596s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'ignore_ament_install'
+[5.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extensions ['colcon_pkg']
+[5.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'colcon_pkg'
+[5.598s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extensions ['colcon_meta']
+[5.599s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'colcon_meta'
+[5.600s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extensions ['ros']
+[5.600s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'ros'
+[5.601s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extensions ['cmake', 'python']
+[5.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'cmake'
+[5.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'python'
+[5.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extensions ['python_setup_py']
+[5.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board) by extension 'python_setup_py'
+[5.607s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extensions ['ignore', 'ignore_ament_install']
+[5.608s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'ignore'
+[5.608s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'ignore_ament_install'
+[5.609s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extensions ['colcon_pkg']
+[5.609s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'colcon_pkg'
+[5.610s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extensions ['colcon_meta']
+[5.610s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'colcon_meta'
+[5.611s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extensions ['ros']
+[5.611s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'ros'
+[5.612s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extensions ['cmake', 'python']
+[5.613s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'cmake'
+[5.613s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'python'
+[5.614s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extensions ['python_setup_py']
+[5.614s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs) by extension 'python_setup_py'
+[5.617s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extensions ['ignore', 'ignore_ament_install']
+[5.618s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'ignore'
+[5.618s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'ignore_ament_install'
+[5.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extensions ['colcon_pkg']
+[5.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'colcon_pkg'
+[5.620s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extensions ['colcon_meta']
+[5.620s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'colcon_meta'
+[5.621s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extensions ['ros']
+[5.621s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'ros'
+[5.622s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extensions ['cmake', 'python']
+[5.623s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'cmake'
+[5.623s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'python'
+[5.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extensions ['python_setup_py']
+[5.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/docs/images) by extension 'python_setup_py'
+[5.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extensions ['ignore', 'ignore_ament_install']
+[5.628s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extension 'ignore'
+[5.628s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extension 'ignore_ament_install'
+[5.629s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extensions ['colcon_pkg']
+[5.629s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extension 'colcon_pkg'
+[5.630s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extensions ['colcon_meta']
+[5.630s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extension 'colcon_meta'
+[5.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extensions ['ros']
+[5.632s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board) by extension 'ros'
+[5.664s] DEBUG:colcon.colcon_core.package_identification:Package 'src/i2c_pwm_board/i2c_pwm_board' with type 'ros.ament_cmake' and name 'i2c_pwm_board'
+[5.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extensions ['ignore', 'ignore_ament_install']
+[5.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extension 'ignore'
+[5.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extension 'ignore_ament_install'
+[5.670s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extensions ['colcon_pkg']
+[5.670s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extension 'colcon_pkg'
+[5.671s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extensions ['colcon_meta']
+[5.671s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extension 'colcon_meta'
+[5.672s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extensions ['ros']
+[5.672s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_calibration) by extension 'ros'
+[5.679s] DEBUG:colcon.colcon_core.package_identification:Package 'src/i2c_pwm_board/i2c_pwm_board_calibration' with type 'ros.ament_cmake' and name 'i2c_pwm_board_calibration'
+[5.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extensions ['ignore', 'ignore_ament_install']
+[5.682s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extension 'ignore'
+[5.683s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extension 'ignore_ament_install'
+[5.684s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extensions ['colcon_pkg']
+[5.684s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extension 'colcon_pkg'
+[5.685s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extensions ['colcon_meta']
+[5.685s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extension 'colcon_meta'
+[5.686s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extensions ['ros']
+[5.686s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_msgs) by extension 'ros'
+[5.692s] DEBUG:colcon.colcon_core.package_identification:Package 'src/i2c_pwm_board/i2c_pwm_board_msgs' with type 'ros.ament_cmake' and name 'i2c_pwm_board_msgs'
+[5.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extensions ['ignore', 'ignore_ament_install']
+[5.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extension 'ignore'
+[5.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extension 'ignore_ament_install'
+[5.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extensions ['colcon_pkg']
+[5.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extension 'colcon_pkg'
+[5.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extensions ['colcon_meta']
+[5.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extension 'colcon_meta'
+[5.701s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extensions ['ros']
+[5.701s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/i2c_pwm_board_xmlrp) by extension 'ros'
+[5.708s] DEBUG:colcon.colcon_core.package_identification:Package 'src/i2c_pwm_board/i2c_pwm_board_xmlrp' with type 'ros.ament_cmake' and name 'i2c_pwm_board_xmlrp'
+[5.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extensions ['ignore', 'ignore_ament_install']
+[5.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extension 'ignore'
+[5.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extension 'ignore_ament_install'
+[5.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extensions ['colcon_pkg']
+[5.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extension 'colcon_pkg'
+[5.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extensions ['colcon_meta']
+[5.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extension 'colcon_meta'
+[5.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extensions ['ros']
+[5.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/i2c_pwm_board/xmlrpcpp) by extension 'ros'
+[5.722s] DEBUG:colcon.colcon_core.package_identification:Package 'src/i2c_pwm_board/xmlrpcpp' with type 'ros.ament_cmake' and name 'xmlrpcpp'
+[5.723s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extensions ['ignore', 'ignore_ament_install']
+[5.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extension 'ignore'
+[5.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extension 'ignore_ament_install'
+[5.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extensions ['colcon_pkg']
+[5.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extension 'colcon_pkg'
+[5.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extensions ['colcon_meta']
+[5.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extension 'colcon_meta'
+[5.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extensions ['ros']
+[5.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_control) by extension 'ros'
+[5.734s] DEBUG:colcon.colcon_core.package_identification:Package 'src/spider_control' with type 'ros.ament_python' and name 'spider_control'
+[5.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extensions ['ignore', 'ignore_ament_install']
+[5.736s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extension 'ignore'
+[5.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extension 'ignore_ament_install'
+[5.738s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extensions ['colcon_pkg']
+[5.738s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extension 'colcon_pkg'
+[5.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extensions ['colcon_meta']
+[5.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extension 'colcon_meta'
+[5.740s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extensions ['ros']
+[5.740s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_driver) by extension 'ros'
+[5.748s] DEBUG:colcon.colcon_core.package_identification:Package 'src/spider_driver' with type 'ros.ament_cmake' and name 'spider_driver'
+[5.749s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extensions ['ignore', 'ignore_ament_install']
+[5.750s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extension 'ignore'
+[5.751s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extension 'ignore_ament_install'
+[5.752s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extensions ['colcon_pkg']
+[5.752s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extension 'colcon_pkg'
+[5.753s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extensions ['colcon_meta']
+[5.753s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extension 'colcon_meta'
+[5.753s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extensions ['ros']
+[5.754s] Level 1:colcon.colcon_core.package_identification:_identify(src/spider_msgs) by extension 'ros'
+[5.762s] DEBUG:colcon.colcon_core.package_identification:Package 'src/spider_msgs' with type 'ros.ament_cmake' and name 'spider_msgs'
+[5.763s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[5.763s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[5.764s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[5.764s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[5.764s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[6.111s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'i2c_pwm_board_msgs' in 'src/i2c_pwm_board/i2c_pwm_board_msgs'
+[6.112s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'spider_control' in 'src/spider_control'
+[6.112s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'spider_msgs' in 'src/spider_msgs'
+[6.112s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'xmlrpcpp' in 'src/i2c_pwm_board/xmlrpcpp'
+[6.113s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'i2c_pwm_board_calibration' in 'src/i2c_pwm_board/i2c_pwm_board_calibration'
+[6.113s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'i2c_pwm_board_xmlrp' in 'src/i2c_pwm_board/i2c_pwm_board_xmlrp'
+[6.113s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'i2c_pwm_board' in 'src/i2c_pwm_board/i2c_pwm_board'
+[6.119s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[6.119s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[6.165s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 8 installed packages in /home/spider/ws/install
+[6.187s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 279 installed packages in /opt/ros/humble
+[6.203s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[6.963s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'cmake_args' from command line to 'None'
+[6.963s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'cmake_target' from command line to 'None'
+[6.963s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.964s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[6.964s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'cmake_clean_first' from command line to 'False'
+[6.964s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'cmake_force_configure' from command line to 'False'
+[6.964s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'ament_cmake_args' from command line to 'None'
+[6.965s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[6.965s] Level 5:colcon.colcon_core.verb:set package 'spider_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.965s] DEBUG:colcon.colcon_core.verb:Building package 'spider_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/spider/ws/build/spider_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/spider/ws/install/spider_driver', 'merge_install': False, 'path': '/home/spider/ws/src/spider_driver', 'symlink_install': True, 'test_result_base': None}
+[6.967s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[6.976s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[6.978s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/spider/ws/src/spider_driver' with build type 'ament_cmake'
+[6.979s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/spider/ws/src/spider_driver'
+[7.028s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[7.031s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.031s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[7.196s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[125.644s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/spider/ws/build/spider_driver' returned '0': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[126.202s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/spider/ws/build/spider_driver
+[126.595s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/spider/ws/build/spider_driver' returned '0': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/spider/ws/build/spider_driver
+[126.592s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(spider_driver)
+[127.254s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver' for CMake module files
+[127.271s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver' for CMake config files
+[127.291s] Level 1:colcon.colcon_core.shell:create_environment_hook('spider_driver', 'cmake_prefix_path')
+[127.311s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/cmake_prefix_path.ps1'
+[127.404s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/spider/ws/install/spider_driver/share/spider_driver/hook/cmake_prefix_path.dsv'
+[127.423s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/cmake_prefix_path.sh'
+[127.457s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/lib'
+[127.461s] Level 1:colcon.colcon_core.shell:create_environment_hook('spider_driver', 'ld_library_path_lib')
+[127.467s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/ld_library_path_lib.ps1'
+[127.485s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/spider/ws/install/spider_driver/share/spider_driver/hook/ld_library_path_lib.dsv'
+[127.491s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/ld_library_path_lib.sh'
+[127.498s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/bin'
+[127.501s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/lib/pkgconfig/spider_driver.pc'
+[127.546s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/lib/python3.10/site-packages'
+[127.553s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/bin'
+[127.563s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.ps1'
+[127.585s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/spider/ws/install/spider_driver/share/spider_driver/package.dsv'
+[127.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.sh'
+[127.620s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.bash'
+[127.641s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.zsh'
+[127.663s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/spider/ws/install/spider_driver/share/colcon-core/packages/spider_driver)
+[127.706s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(spider_driver)
+[127.709s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver' for CMake module files
+[127.716s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver' for CMake config files
+[127.724s] Level 1:colcon.colcon_core.shell:create_environment_hook('spider_driver', 'cmake_prefix_path')
+[127.726s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/cmake_prefix_path.ps1'
+[127.738s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/spider/ws/install/spider_driver/share/spider_driver/hook/cmake_prefix_path.dsv'
+[127.742s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/cmake_prefix_path.sh'
+[127.751s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/lib'
+[127.754s] Level 1:colcon.colcon_core.shell:create_environment_hook('spider_driver', 'ld_library_path_lib')
+[127.759s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/ld_library_path_lib.ps1'
+[127.765s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/spider/ws/install/spider_driver/share/spider_driver/hook/ld_library_path_lib.dsv'
+[127.771s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/spider/ws/install/spider_driver/share/spider_driver/hook/ld_library_path_lib.sh'
+[127.776s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/bin'
+[127.778s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/lib/pkgconfig/spider_driver.pc'
+[127.781s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/lib/python3.10/site-packages'
+[127.785s] Level 1:colcon.colcon_core.environment:checking '/home/spider/ws/install/spider_driver/bin'
+[127.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.ps1'
+[127.795s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/spider/ws/install/spider_driver/share/spider_driver/package.dsv'
+[127.802s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.sh'
+[127.810s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.bash'
+[127.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/spider/ws/install/spider_driver/share/spider_driver/package.zsh'
+[127.821s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/spider/ws/install/spider_driver/share/colcon-core/packages/spider_driver)
+[127.829s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[127.860s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[127.867s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[127.871s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[128.305s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[128.307s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[128.308s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[128.309s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[128.403s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[128.407s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[128.420s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/spider/ws/install/local_setup.ps1'
+[128.435s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/spider/ws/install/_local_setup_util_ps1.py'
+[128.458s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/spider/ws/install/setup.ps1'
+[128.494s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/spider/ws/install/local_setup.sh'
+[128.508s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/spider/ws/install/_local_setup_util_sh.py'
+[128.517s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/spider/ws/install/setup.sh'
+[128.539s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/spider/ws/install/local_setup.bash'
+[128.548s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/spider/ws/install/setup.bash'
+[128.570s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/spider/ws/install/local_setup.zsh'
+[128.579s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/spider/ws/install/setup.zsh'

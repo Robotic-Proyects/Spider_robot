@@ -1,0 +1,20 @@
+[0.241s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[2.120s] [35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[2.558s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[31.051s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[31.054s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:23:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[31.055s]    31 |     frontleft_pose = [[01;31m[K0[m[K, 0, 0]
+[31.057s]       |                       [01;31m[K^[m[K
+[31.059s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:24:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K][m[K’ before ‘[01m[K,[m[K’ token
+[31.060s]    31 |     frontleft_pose = [0[01;31m[K,[m[K 0, 0]
+[31.062s]       |                        [01;31m[K^[m[K
+[31.064s]       |                        [32m[K][m[K
+[31.065s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In lambda function:
+[31.067s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:24:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K,[m[K’ token
+[31.068s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[31.070s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:20:[m[K [01;31m[Kerror: [m[Kincompatible types in assignment of ‘[01m[Kcontroller::ControllerNode::ControllerNode()::<lambda()>[m[K’ to ‘[01m[Kint [3][m[K’
+[31.072s]    31 |     frontleft_pose = [0, 0, 0]
+[56.699s] gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+[56.769s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+[56.771s] gmake: *** [Makefile:146: all] Error 2
+[58.138s] Invoked command in '/home/spider/ws/build/spider_driver' returned '2': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4

@@ -1,0 +1,13 @@
+[0.222s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[2.624s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[108.879s] [ 50%] [32m[1mLinking CXX shared library libspider_driver.so[0m
+[114.822s] [ 50%] Built target spider_driver
+[115.077s] [35m[1mConsolidate compiler generated dependencies of target control_main[0m
+[115.664s] [ 75%] [32mBuilding CXX object CMakeFiles/control_main.dir/src/controller_node.cpp.o[0m
+[150.027s] [100%] [32m[1mLinking CXX executable control_main[0m
+[152.711s] /usr/bin/ld: libspider_driver.so: undefined reference to `vtable for controller::ControllerNode'
+[152.724s] collect2: error: ld returned 1 exit status
+[152.736s] gmake[2]: *** [CMakeFiles/control_main.dir/build.make:168: control_main] Error 1
+[152.743s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/control_main.dir/all] Error 2
+[152.771s] gmake: *** [Makefile:146: all] Error 2
+[153.450s] Invoked command in '/home/spider/ws/build/spider_driver' returned '2': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4

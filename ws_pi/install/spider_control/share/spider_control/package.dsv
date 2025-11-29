@@ -1,0 +1,9 @@
+source;share/spider_control/hook/pythonpath.ps1
+source;share/spider_control/hook/pythonpath.dsv
+source;share/spider_control/hook/pythonpath.sh
+source;share/spider_control/hook/ament_prefix_path.ps1
+source;share/spider_control/hook/ament_prefix_path.dsv
+source;share/spider_control/hook/ament_prefix_path.sh
+source;../../build/spider_control/share/spider_control/hook/pythonpath_develop.ps1
+source;../../build/spider_control/share/spider_control/hook/pythonpath_develop.dsv
+source;../../build/spider_control/share/spider_control/hook/pythonpath_develop.sh

@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from i2c_pwm_board_msgs/srv/DriveMode.srv
+// generated code does not contain a copyright notice
+
+#include "i2c_pwm_board_msgs/msg/Position.idl"
+
+module i2c_pwm_board_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "the drive_mode service is used to assigned servos to various drive modes" "\n"
+      "the drive modes determine how the assigned servos respond to geometry_msgs::Twist messages" "\n"
+      "drive modes are one of: ackerman, differential, or mecanum" "\n"
+      "to accurately convert velocity in m/s the controller needs to know three values:" "\n"
+      "  the RPM    - the maximum output speed available from the drive motors" "\n"
+      "  the radius - the drive wheel radius in meters" "\n"
+      "  the track  - the distance between the left and right wheels in meters" "\n"
+      "use the scale value to adjust incoming Twist values as needed to match the servo/motor capability")
+    struct DriveMode_Request {
+      string mode;
+
+      float rpm;
+
+      float radius;
+
+      float track;
+
+      float scale;
+
+      sequence<i2c_pwm_board_msgs::msg::Position> servos;
+    };
+    struct DriveMode_Response {
+      int16 error;
+    };
+  };
+};

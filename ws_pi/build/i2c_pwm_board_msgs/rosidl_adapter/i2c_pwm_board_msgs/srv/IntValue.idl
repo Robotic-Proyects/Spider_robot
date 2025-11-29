@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from i2c_pwm_board_msgs/srv/IntValue.srv
+// generated code does not contain a copyright notice
+
+
+module i2c_pwm_board_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "there are a few services whic take a single integer as input" "\n"
+      "these services share the IntValue service definition")
+    struct IntValue_Request {
+      int16 value;
+    };
+    struct IntValue_Response {
+      int16 error;
+    };
+  };
+};

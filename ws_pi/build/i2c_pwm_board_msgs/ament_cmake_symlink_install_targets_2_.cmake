@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/spider/ws/build/i2c_pwm_board_msgs/rosidl_generator_py/i2c_pwm_board_msgs/i2c_pwm_board_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" "TARGETS" "i2c_pwm_board_msgs__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/i2c_pwm_board_msgs")

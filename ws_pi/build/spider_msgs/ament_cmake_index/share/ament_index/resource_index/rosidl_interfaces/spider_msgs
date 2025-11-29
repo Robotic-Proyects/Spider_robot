@@ -1,0 +1,8 @@
+msg/SpiderLeg.idl
+msg/SpiderLeg.msg
+msg/SpiderSwitch.idl
+msg/SpiderSwitch.msg
+srv/ServoCalibrate.idl
+srv/ServoCalibrate.srv
+srv/ServoCalibrate_Request.msg
+srv/ServoCalibrate_Response.msg

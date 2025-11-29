@@ -1,0 +1,23 @@
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:123:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’; did you mean ‘[01m[Ksmooth_value[m[K’?
+  123 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+      |              [01;31m[K^~~~~~~~~~~[m[K
+      |              [32m[Ksmooth_value[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:135:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’; did you mean ‘[01m[Ksmooth_value[m[K’?
+  135 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+      |              [01;31m[K^~~~~~~~~~~[m[K
+      |              [32m[Ksmooth_value[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:147:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’; did you mean ‘[01m[Ksmooth_value[m[K’?
+  147 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+      |              [01;31m[K^~~~~~~~~~~[m[K
+      |              [32m[Ksmooth_value[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:159:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’; did you mean ‘[01m[Ksmooth_value[m[K’?
+  159 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+      |              [01;31m[K^~~~~~~~~~~[m[K
+      |              [32m[Ksmooth_value[m[K
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

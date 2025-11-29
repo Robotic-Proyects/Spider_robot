@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/spider/ws/build/spider_driver/libspider_driver.so" "/home/spider/ws/build/spider_driver/control_main" "TARGETS" "spider_driver" "control_main" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/spider_driver")

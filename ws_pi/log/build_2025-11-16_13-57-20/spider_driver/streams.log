@@ -1,0 +1,62 @@
+[0.209s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[1.347s] [35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[1.890s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[8.127s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:70:48:[m[K [01;31m[Kerror: [m[Kstray ‘[01m[K#[m[K’ in program
+[8.128s]    70 |     set_group(pca_frontleft_,  frontleft_pose);[01;31m[K#[m[Kinclude "spider_driver/ControllerNode.hpp"
+[8.130s]       |                                                [01;31m[K^[m[K
+[30.273s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::configure_all_servos()[m[K’:
+[30.274s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:70:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontleft_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontleft_pose_[m[K’?
+[30.275s]    70 |     set_group(pca_frontleft_,  [01;31m[Kfrontleft_pose[m[K);#include "spider_driver/ControllerNode.hpp"
+[30.276s]       |                                [01;31m[K^~~~~~~~~~~~~~[m[K
+[30.277s]       |                                [32m[Kfrontleft_pose_[m[K
+[30.325s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:70:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kinclude[m[K’ was not declared in this scope
+[30.327s]    70 |     set_group(pca_frontleft_,  frontleft_pose);#[01;31m[Kinclude[m[K "spider_driver/ControllerNode.hpp"
+[30.330s]       |                                                 [01;31m[K^~~~~~~[m[K
+[30.367s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:244:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontright_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kfrontright_pose_[m[K’?
+[30.369s]   244 |     set_group(pca_frontright_, [01;31m[Kfrontright_pose[m[K);
+[30.370s]       |                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[30.372s]       |                                [32m[Kfrontright_pose_[m[K
+[30.413s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:245:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kbackright_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kbackright_pose_[m[K’?
+[30.415s]   245 |     set_group(pca_backright_,  [01;31m[Kbackright_pose[m[K);
+[30.416s]       |                                [01;31m[K^~~~~~~~~~~~~~[m[K
+[30.417s]       |                                [32m[Kbackright_pose_[m[K
+[30.455s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:246:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kbackleft_pose[m[K’ was not declared in this scope; did you mean ‘[01m[Kbackleft_pose_[m[K’?
+[30.457s]   246 |     set_group(pca_backleft_,   [01;31m[Kbackleft_pose[m[K);
+[30.459s]       |                                [01;31m[K^~~~~~~~~~~~~[m[K
+[30.465s]       |                                [32m[Kbackleft_pose_[m[K
+[30.482s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[30.484s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:256:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’
+[30.486s]   256 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+[30.488s]       |              [01;31m[K^~~~~~~~~~~[m[K
+[30.528s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:259:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+[30.529s]   259 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+[30.531s]       |     [01;31m[K^~~~~[m[K
+[30.532s]       |     [32m[Krint[m[K
+[30.533s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[30.534s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:265:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’
+[30.535s]   265 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+[30.537s]       |              [01;31m[K^~~~~~~~~~~[m[K
+[30.571s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:268:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+[30.573s]   268 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+[30.574s]       |     [01;31m[K^~~~~[m[K
+[30.575s]       |     [32m[Krint[m[K
+[30.576s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[30.577s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:274:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’
+[30.578s]   274 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+[30.579s]       |              [01;31m[K^~~~~~~~~~~[m[K
+[30.617s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:277:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+[30.618s]   277 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+[30.619s]       |     [01;31m[K^~~~~[m[K
+[30.621s]       |     [32m[Krint[m[K
+[30.622s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[30.623s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:283:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct spider_msgs::msg::SpiderLeg_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ksmooth_flag[m[K’
+[30.624s]   283 |     if (msg->[01;31m[Ksmooth_flag[m[K == 0) {
+[30.625s]       |              [01;31m[K^~~~~~~~~~~[m[K
+[30.661s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:286:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Krint[m[K’?
+[30.664s]   286 |     [01;31m[Kprint[m[K("SMOOTH MOVEMENT");
+[30.666s]       |     [01;31m[K^~~~~[m[K
+[30.668s]       |     [32m[Krint[m[K
+[58.720s] gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+[58.788s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+[58.790s] gmake: *** [Makefile:146: all] Error 2
+[60.162s] Invoked command in '/home/spider/ws/build/spider_driver' returned '2': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4

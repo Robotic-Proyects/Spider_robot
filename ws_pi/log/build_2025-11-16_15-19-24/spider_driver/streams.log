@@ -1,0 +1,50 @@
+[0.175s] Invoking command in '/home/spider/ws/build/spider_driver': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4
+[0.786s] [ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[26.709s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[26.710s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:63:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+[26.711s]    63 |     [01;31m[Ktimer_[m[K = this->create_wall_timer(
+[26.712s]       |     [01;31m[K^~~~~~[m[K
+[26.713s]       |     [32m[Ktimer_t[m[K
+[26.714s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:64:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kupdate_servos[m[K’ is not a member of ‘[01m[Kcontroller::ControllerNode[m[K’
+[26.716s]    64 |             20ms, std::bind(&ControllerNode::[01;31m[Kupdate_servos[m[K, this));
+[26.717s]       |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+[26.744s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[26.746s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:106:19:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)[m[K’
+[26.748s]   106 |         [01;31m[Kmove_servo(pca_frontleft_, frontleft_pose_, msg)[m[K;
+[26.753s]       |         [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[26.755s] In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[26.756s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’
+[26.757s]    51 |     void [01;36m[Kmove_servo[m[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);
+[26.759s]       |          [01;36m[K^~~~~~~~~~[m[K
+[26.760s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 3 provided
+[26.761s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::frontright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[26.763s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:117:19:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)[m[K’
+[26.764s]   117 |         [01;31m[Kmove_servo(pca_frontright_, frontright_pose_, msg)[m[K;
+[26.765s]       |         [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[26.767s] In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[26.768s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’
+[26.769s]    51 |     void [01;36m[Kmove_servo[m[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);
+[26.770s]       |          [01;36m[K^~~~~~~~~~[m[K
+[26.771s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 3 provided
+[26.772s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[26.773s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:128:19:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)[m[K’
+[26.774s]   128 |         [01;31m[Kmove_servo(pca_backright_, backright_pose_, msg)[m[K;
+[26.776s]       |         [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[26.777s] In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[26.778s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’
+[26.779s]    51 |     void [01;36m[Kmove_servo[m[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);
+[26.781s]       |          [01;36m[K^~~~~~~~~~[m[K
+[26.782s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 3 provided
+[26.784s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::backleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’:
+[26.785s] [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:139:19:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)[m[K’
+[26.786s]   139 |         [01;31m[Kmove_servo(pca_backleft_, backleft_pose_, msg)[m[K;
+[26.787s]       |         [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[26.788s] In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[26.790s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)[m[K’
+[26.791s]    51 |     void [01;36m[Kmove_servo[m[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);
+[26.792s]       |          [01;36m[K^~~~~~~~~~[m[K
+[26.793s] [01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 3 provided
+[50.630s] gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+[50.748s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+[50.785s] gmake: *** [Makefile:146: all] Error 2
+[51.057s] Invoked command in '/home/spider/ws/build/spider_driver' returned '2': CMAKE_PREFIX_PATH=/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble LD_LIBRARY_PATH=/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/spider/ws/build/spider_driver -- -j4 -l4

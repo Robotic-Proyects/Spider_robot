@@ -1,0 +1,571 @@
+[0.000000] (-) TimerEvent: {}
+[0.002252] (-) JobUnselected: {'identifier': 'i2c_pwm_board'}
+[0.004601] (-) JobUnselected: {'identifier': 'i2c_pwm_board_calibration'}
+[0.006251] (-) JobUnselected: {'identifier': 'i2c_pwm_board_msgs'}
+[0.007952] (-) JobUnselected: {'identifier': 'i2c_pwm_board_xmlrp'}
+[0.008670] (-) JobUnselected: {'identifier': 'spider_control'}
+[0.010748] (-) JobUnselected: {'identifier': 'spider_msgs'}
+[0.011453] (-) JobUnselected: {'identifier': 'xmlrpcpp'}
+[0.011921] (spider_driver) JobQueued: {'identifier': 'spider_driver', 'dependencies': OrderedDict([('spider_msgs', '/home/spider/ws/install/spider_msgs')])}
+[0.012295] (spider_driver) JobStarted: {'identifier': 'spider_driver'}
+[0.099244] (-) TimerEvent: {}
+[0.145796] (spider_driver) JobProgress: {'identifier': 'spider_driver', 'progress': 'cmake'}
+[0.153137] (spider_driver) JobProgress: {'identifier': 'spider_driver', 'progress': 'build'}
+[0.159904] (spider_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/spider/ws/build/spider_driver', '--', '-j4', '-l4'], 'cwd': '/home/spider/ws/build/spider_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'spider'), ('SSH_CLIENT', '192.168.1.51 44612 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/spider/ws/install/spider_msgs/lib:/home/spider/ws/install/i2c_pwm_board_xmlrp/lib:/home/spider/ws/install/xmlrpcpp/lib:/home/spider/ws/install/spider_driver/lib:/home/spider/ws/install/i2c_pwm_board_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spider'), ('TERM_PROGRAM_VERSION', '1.106.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-184a43d4-3c29-4e5f-9541-1d36b294c80c.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/spider/ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spider'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '61'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/spider/.vscode-server/cli/servers/Stable-ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31b5ff44af.sock'), ('TERM_PROGRAM', 'vscode'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/spider_msgs:/home/spider/ws/install/spider_control:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/spider/ws/build/spider_driver'), ('SSH_CONNECTION', '192.168.1.51 44612 192.168.1.111 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/spider/ws/install/spider_msgs/local/lib/python3.10/dist-packages:/home/spider/ws/build/spider_control:/home/spider/ws/install/spider_control/lib/python3.10/site-packages:/home/spider/ws/install/i2c_pwm_board_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/spider/ws/install/spider_msgs:/home/spider/ws/install/i2c_pwm_board:/home/spider/ws/install/i2c_pwm_board_xmlrp:/home/spider/ws/install/xmlrpcpp:/home/spider/ws/install/spider_driver:/home/spider/ws/install/i2c_pwm_board_calibration:/home/spider/ws/install/i2c_pwm_board_msgs:/home/spider/ws/install/spider_control:/opt/ros/humble')]), 'shell': False}
+[0.199568] (-) TimerEvent: {}
+[0.301916] (-) TimerEvent: {}
+[0.403666] (-) TimerEvent: {}
+[0.505061] (-) TimerEvent: {}
+[0.606445] (-) TimerEvent: {}
+[0.708674] (-) TimerEvent: {}
+[0.797138] (spider_driver) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o\x1b[0m\n'}
+[0.808966] (-) TimerEvent: {}
+[0.910375] (-) TimerEvent: {}
+[1.011734] (-) TimerEvent: {}
+[1.113473] (-) TimerEvent: {}
+[1.215765] (-) TimerEvent: {}
+[1.317140] (-) TimerEvent: {}
+[1.419337] (-) TimerEvent: {}
+[1.522525] (-) TimerEvent: {}
+[1.624016] (-) TimerEvent: {}
+[1.725431] (-) TimerEvent: {}
+[1.826731] (-) TimerEvent: {}
+[1.928506] (-) TimerEvent: {}
+[2.029792] (-) TimerEvent: {}
+[2.131863] (-) TimerEvent: {}
+[2.233298] (-) TimerEvent: {}
+[2.334646] (-) TimerEvent: {}
+[2.436257] (-) TimerEvent: {}
+[2.537472] (-) TimerEvent: {}
+[2.638786] (-) TimerEvent: {}
+[2.740605] (-) TimerEvent: {}
+[2.841977] (-) TimerEvent: {}
+[2.944846] (-) TimerEvent: {}
+[3.046150] (-) TimerEvent: {}
+[3.147541] (-) TimerEvent: {}
+[3.248929] (-) TimerEvent: {}
+[3.350191] (-) TimerEvent: {}
+[3.451635] (-) TimerEvent: {}
+[3.552951] (-) TimerEvent: {}
+[3.654626] (-) TimerEvent: {}
+[3.756580] (-) TimerEvent: {}
+[3.857872] (-) TimerEvent: {}
+[3.959295] (-) TimerEvent: {}
+[4.061045] (-) TimerEvent: {}
+[4.164251] (-) TimerEvent: {}
+[4.265615] (-) TimerEvent: {}
+[4.367240] (-) TimerEvent: {}
+[4.468912] (-) TimerEvent: {}
+[4.570343] (-) TimerEvent: {}
+[4.671678] (-) TimerEvent: {}
+[4.773106] (-) TimerEvent: {}
+[4.874364] (-) TimerEvent: {}
+[4.975860] (-) TimerEvent: {}
+[5.077266] (-) TimerEvent: {}
+[5.178783] (-) TimerEvent: {}
+[5.280365] (-) TimerEvent: {}
+[5.381903] (-) TimerEvent: {}
+[5.483616] (-) TimerEvent: {}
+[5.585197] (-) TimerEvent: {}
+[5.686805] (-) TimerEvent: {}
+[5.788397] (-) TimerEvent: {}
+[5.889895] (-) TimerEvent: {}
+[5.991503] (-) TimerEvent: {}
+[6.092989] (-) TimerEvent: {}
+[6.194574] (-) TimerEvent: {}
+[6.296227] (-) TimerEvent: {}
+[6.397713] (-) TimerEvent: {}
+[6.499508] (-) TimerEvent: {}
+[6.601105] (-) TimerEvent: {}
+[6.702512] (-) TimerEvent: {}
+[6.804069] (-) TimerEvent: {}
+[6.905622] (-) TimerEvent: {}
+[7.007088] (-) TimerEvent: {}
+[7.108663] (-) TimerEvent: {}
+[7.210094] (-) TimerEvent: {}
+[7.311674] (-) TimerEvent: {}
+[7.413238] (-) TimerEvent: {}
+[7.514818] (-) TimerEvent: {}
+[7.616647] (-) TimerEvent: {}
+[7.718717] (-) TimerEvent: {}
+[7.820378] (-) TimerEvent: {}
+[7.921998] (-) TimerEvent: {}
+[8.024541] (-) TimerEvent: {}
+[8.126151] (-) TimerEvent: {}
+[8.227853] (-) TimerEvent: {}
+[8.329553] (-) TimerEvent: {}
+[8.431131] (-) TimerEvent: {}
+[8.532795] (-) TimerEvent: {}
+[8.634303] (-) TimerEvent: {}
+[8.735968] (-) TimerEvent: {}
+[8.837431] (-) TimerEvent: {}
+[8.938979] (-) TimerEvent: {}
+[9.040716] (-) TimerEvent: {}
+[9.144649] (-) TimerEvent: {}
+[9.246273] (-) TimerEvent: {}
+[9.348343] (-) TimerEvent: {}
+[9.449923] (-) TimerEvent: {}
+[9.551896] (-) TimerEvent: {}
+[9.653434] (-) TimerEvent: {}
+[9.754970] (-) TimerEvent: {}
+[9.856414] (-) TimerEvent: {}
+[9.958020] (-) TimerEvent: {}
+[10.059585] (-) TimerEvent: {}
+[10.161209] (-) TimerEvent: {}
+[10.262801] (-) TimerEvent: {}
+[10.364616] (-) TimerEvent: {}
+[10.466171] (-) TimerEvent: {}
+[10.567894] (-) TimerEvent: {}
+[10.669675] (-) TimerEvent: {}
+[10.771319] (-) TimerEvent: {}
+[10.873015] (-) TimerEvent: {}
+[10.974506] (-) TimerEvent: {}
+[11.076587] (-) TimerEvent: {}
+[11.178379] (-) TimerEvent: {}
+[11.280978] (-) TimerEvent: {}
+[11.382642] (-) TimerEvent: {}
+[11.484468] (-) TimerEvent: {}
+[11.586149] (-) TimerEvent: {}
+[11.687817] (-) TimerEvent: {}
+[11.789488] (-) TimerEvent: {}
+[11.891154] (-) TimerEvent: {}
+[11.992799] (-) TimerEvent: {}
+[12.094313] (-) TimerEvent: {}
+[12.196013] (-) TimerEvent: {}
+[12.297625] (-) TimerEvent: {}
+[12.399111] (-) TimerEvent: {}
+[12.500524] (-) TimerEvent: {}
+[12.602187] (-) TimerEvent: {}
+[12.704017] (-) TimerEvent: {}
+[12.806289] (-) TimerEvent: {}
+[12.909051] (-) TimerEvent: {}
+[13.011158] (-) TimerEvent: {}
+[13.113284] (-) TimerEvent: {}
+[13.214719] (-) TimerEvent: {}
+[13.316295] (-) TimerEvent: {}
+[13.417825] (-) TimerEvent: {}
+[13.519439] (-) TimerEvent: {}
+[13.620967] (-) TimerEvent: {}
+[13.722480] (-) TimerEvent: {}
+[13.824092] (-) TimerEvent: {}
+[13.925612] (-) TimerEvent: {}
+[14.027350] (-) TimerEvent: {}
+[14.128865] (-) TimerEvent: {}
+[14.230660] (-) TimerEvent: {}
+[14.332204] (-) TimerEvent: {}
+[14.433642] (-) TimerEvent: {}
+[14.535167] (-) TimerEvent: {}
+[14.636825] (-) TimerEvent: {}
+[14.738341] (-) TimerEvent: {}
+[14.839830] (-) TimerEvent: {}
+[14.941185] (-) TimerEvent: {}
+[15.042607] (-) TimerEvent: {}
+[15.144107] (-) TimerEvent: {}
+[15.245583] (-) TimerEvent: {}
+[15.346979] (-) TimerEvent: {}
+[15.448464] (-) TimerEvent: {}
+[15.549810] (-) TimerEvent: {}
+[15.651283] (-) TimerEvent: {}
+[15.752702] (-) TimerEvent: {}
+[15.854314] (-) TimerEvent: {}
+[15.955921] (-) TimerEvent: {}
+[16.057515] (-) TimerEvent: {}
+[16.161130] (-) TimerEvent: {}
+[16.262909] (-) TimerEvent: {}
+[16.364596] (-) TimerEvent: {}
+[16.466199] (-) TimerEvent: {}
+[16.567793] (-) TimerEvent: {}
+[16.670519] (-) TimerEvent: {}
+[16.772225] (-) TimerEvent: {}
+[16.873903] (-) TimerEvent: {}
+[16.976436] (-) TimerEvent: {}
+[17.078531] (-) TimerEvent: {}
+[17.180404] (-) TimerEvent: {}
+[17.282304] (-) TimerEvent: {}
+[17.383974] (-) TimerEvent: {}
+[17.485598] (-) TimerEvent: {}
+[17.587334] (-) TimerEvent: {}
+[17.688936] (-) TimerEvent: {}
+[17.790769] (-) TimerEvent: {}
+[17.892626] (-) TimerEvent: {}
+[17.994702] (-) TimerEvent: {}
+[18.096267] (-) TimerEvent: {}
+[18.197878] (-) TimerEvent: {}
+[18.299451] (-) TimerEvent: {}
+[18.401106] (-) TimerEvent: {}
+[18.502805] (-) TimerEvent: {}
+[18.604422] (-) TimerEvent: {}
+[18.705835] (-) TimerEvent: {}
+[18.807297] (-) TimerEvent: {}
+[18.908833] (-) TimerEvent: {}
+[19.010544] (-) TimerEvent: {}
+[19.113146] (-) TimerEvent: {}
+[19.214681] (-) TimerEvent: {}
+[19.316778] (-) TimerEvent: {}
+[19.418450] (-) TimerEvent: {}
+[19.520043] (-) TimerEvent: {}
+[19.621551] (-) TimerEvent: {}
+[19.723147] (-) TimerEvent: {}
+[19.824903] (-) TimerEvent: {}
+[19.926422] (-) TimerEvent: {}
+[20.027986] (-) TimerEvent: {}
+[20.129666] (-) TimerEvent: {}
+[20.231370] (-) TimerEvent: {}
+[20.332909] (-) TimerEvent: {}
+[20.434289] (-) TimerEvent: {}
+[20.535947] (-) TimerEvent: {}
+[20.637540] (-) TimerEvent: {}
+[20.738967] (-) TimerEvent: {}
+[20.840586] (-) TimerEvent: {}
+[20.942260] (-) TimerEvent: {}
+[21.043887] (-) TimerEvent: {}
+[21.145364] (-) TimerEvent: {}
+[21.246719] (-) TimerEvent: {}
+[21.348326] (-) TimerEvent: {}
+[21.449897] (-) TimerEvent: {}
+[21.551386] (-) TimerEvent: {}
+[21.652879] (-) TimerEvent: {}
+[21.754489] (-) TimerEvent: {}
+[21.856111] (-) TimerEvent: {}
+[21.957565] (-) TimerEvent: {}
+[22.059111] (-) TimerEvent: {}
+[22.160681] (-) TimerEvent: {}
+[22.262335] (-) TimerEvent: {}
+[22.363919] (-) TimerEvent: {}
+[22.465659] (-) TimerEvent: {}
+[22.567476] (-) TimerEvent: {}
+[22.668966] (-) TimerEvent: {}
+[22.770489] (-) TimerEvent: {}
+[22.872016] (-) TimerEvent: {}
+[22.974246] (-) TimerEvent: {}
+[23.075799] (-) TimerEvent: {}
+[23.177147] (-) TimerEvent: {}
+[23.278523] (-) TimerEvent: {}
+[23.379949] (-) TimerEvent: {}
+[23.481448] (-) TimerEvent: {}
+[23.582952] (-) TimerEvent: {}
+[23.684300] (-) TimerEvent: {}
+[23.785627] (-) TimerEvent: {}
+[23.887106] (-) TimerEvent: {}
+[23.988653] (-) TimerEvent: {}
+[24.090282] (-) TimerEvent: {}
+[24.191918] (-) TimerEvent: {}
+[24.293304] (-) TimerEvent: {}
+[24.394831] (-) TimerEvent: {}
+[24.496444] (-) TimerEvent: {}
+[24.597984] (-) TimerEvent: {}
+[24.700251] (-) TimerEvent: {}
+[24.802302] (-) TimerEvent: {}
+[24.904093] (-) TimerEvent: {}
+[25.006445] (-) TimerEvent: {}
+[25.108346] (-) TimerEvent: {}
+[25.210000] (-) TimerEvent: {}
+[25.311738] (-) TimerEvent: {}
+[25.413713] (-) TimerEvent: {}
+[25.515465] (-) TimerEvent: {}
+[25.617471] (-) TimerEvent: {}
+[25.719028] (-) TimerEvent: {}
+[25.820735] (-) TimerEvent: {}
+[25.922278] (-) TimerEvent: {}
+[26.023905] (-) TimerEvent: {}
+[26.125480] (-) TimerEvent: {}
+[26.227078] (-) TimerEvent: {}
+[26.328694] (-) TimerEvent: {}
+[26.430227] (-) TimerEvent: {}
+[26.531927] (-) TimerEvent: {}
+[26.633514] (-) TimerEvent: {}
+[26.719182] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kcontroller::ControllerNode::ControllerNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.721505] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:63:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktimer_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ktimer_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[26.722718] (spider_driver) StderrLine: {'line': b'   63 |     \x1b[01;31m\x1b[Ktimer_\x1b[m\x1b[K = this->create_wall_timer(\n'}
+[26.723892] (spider_driver) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[26.724914] (spider_driver) StderrLine: {'line': b'      |     \x1b[32m\x1b[Ktimer_t\x1b[m\x1b[K\n'}
+[26.726006] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:64:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kupdate_servos\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kcontroller::ControllerNode\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.727455] (spider_driver) StderrLine: {'line': b'   64 |             20ms, std::bind(&ControllerNode::\x1b[01;31m\x1b[Kupdate_servos\x1b[m\x1b[K, this));\n'}
+[26.728771] (spider_driver) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.733781] (-) TimerEvent: {}
+[26.754609] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::frontleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.756667] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:106:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.759171] (spider_driver) StderrLine: {'line': b'  106 |         \x1b[01;31m\x1b[Kmove_servo(pca_frontleft_, frontleft_pose_, msg)\x1b[m\x1b[K;\n'}
+[26.761188] (spider_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.766155] (spider_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1\x1b[m\x1b[K:\n'}
+[26.767662] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.768976] (spider_driver) StderrLine: {'line': b'   51 |     void \x1b[01;36m\x1b[Kmove_servo\x1b[m\x1b[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);\n'}
+[26.770286] (spider_driver) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.771796] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 3 provided\n'}
+[26.773037] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::frontright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.774199] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:117:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.775545] (spider_driver) StderrLine: {'line': b'  117 |         \x1b[01;31m\x1b[Kmove_servo(pca_frontright_, frontright_pose_, msg)\x1b[m\x1b[K;\n'}
+[26.776945] (spider_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.778118] (spider_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1\x1b[m\x1b[K:\n'}
+[26.779415] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.780486] (spider_driver) StderrLine: {'line': b'   51 |     void \x1b[01;36m\x1b[Kmove_servo\x1b[m\x1b[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);\n'}
+[26.781468] (spider_driver) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.782406] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 3 provided\n'}
+[26.783533] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::backright(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.784681] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:128:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.785987] (spider_driver) StderrLine: {'line': b'  128 |         \x1b[01;31m\x1b[Kmove_servo(pca_backright_, backright_pose_, msg)\x1b[m\x1b[K;\n'}
+[26.787438] (spider_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.788770] (spider_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1\x1b[m\x1b[K:\n'}
+[26.789848] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.790813] (spider_driver) StderrLine: {'line': b'   51 |     void \x1b[01;36m\x1b[Kmove_servo\x1b[m\x1b[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);\n'}
+[26.792377] (spider_driver) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.793666] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 3 provided\n'}
+[26.794976] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::backleft(spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.796388] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:139:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kcontroller::ControllerNode::move_servo(int [3], double [3], const SharedPtr&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.797592] (spider_driver) StderrLine: {'line': b'  139 |         \x1b[01;31m\x1b[Kmove_servo(pca_backleft_, backleft_pose_, msg)\x1b[m\x1b[K;\n'}
+[26.798796] (spider_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.800100] (spider_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1\x1b[m\x1b[K:\n'}
+[26.801239] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid controller::ControllerNode::move_servo(const int*, spider_msgs::msg::SpiderLeg_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.802294] (spider_driver) StderrLine: {'line': b'   51 |     void \x1b[01;36m\x1b[Kmove_servo\x1b[m\x1b[K(const int channels[3], const spider_msgs::msg::SpiderLeg::SharedPtr msg);\n'}
+[26.803329] (spider_driver) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.804644] (spider_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:51:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 3 provided\n'}
+[26.834172] (-) TimerEvent: {}
+[26.935829] (-) TimerEvent: {}
+[27.037512] (-) TimerEvent: {}
+[27.139205] (-) TimerEvent: {}
+[27.240937] (-) TimerEvent: {}
+[27.343191] (-) TimerEvent: {}
+[27.444811] (-) TimerEvent: {}
+[27.546231] (-) TimerEvent: {}
+[27.647925] (-) TimerEvent: {}
+[27.749516] (-) TimerEvent: {}
+[27.851645] (-) TimerEvent: {}
+[27.953546] (-) TimerEvent: {}
+[28.055477] (-) TimerEvent: {}
+[28.157603] (-) TimerEvent: {}
+[28.259181] (-) TimerEvent: {}
+[28.360663] (-) TimerEvent: {}
+[28.462228] (-) TimerEvent: {}
+[28.563746] (-) TimerEvent: {}
+[28.665203] (-) TimerEvent: {}
+[28.766756] (-) TimerEvent: {}
+[28.868330] (-) TimerEvent: {}
+[28.969917] (-) TimerEvent: {}
+[29.072393] (-) TimerEvent: {}
+[29.174066] (-) TimerEvent: {}
+[29.275567] (-) TimerEvent: {}
+[29.377194] (-) TimerEvent: {}
+[29.479131] (-) TimerEvent: {}
+[29.580679] (-) TimerEvent: {}
+[29.682220] (-) TimerEvent: {}
+[29.784736] (-) TimerEvent: {}
+[29.886272] (-) TimerEvent: {}
+[29.987857] (-) TimerEvent: {}
+[30.089342] (-) TimerEvent: {}
+[30.190696] (-) TimerEvent: {}
+[30.292278] (-) TimerEvent: {}
+[30.393768] (-) TimerEvent: {}
+[30.495420] (-) TimerEvent: {}
+[30.597090] (-) TimerEvent: {}
+[30.698776] (-) TimerEvent: {}
+[30.800301] (-) TimerEvent: {}
+[30.901938] (-) TimerEvent: {}
+[31.003644] (-) TimerEvent: {}
+[31.105722] (-) TimerEvent: {}
+[31.207739] (-) TimerEvent: {}
+[31.310282] (-) TimerEvent: {}
+[31.412636] (-) TimerEvent: {}
+[31.515737] (-) TimerEvent: {}
+[31.617273] (-) TimerEvent: {}
+[31.718984] (-) TimerEvent: {}
+[31.820615] (-) TimerEvent: {}
+[31.922280] (-) TimerEvent: {}
+[32.024425] (-) TimerEvent: {}
+[32.127436] (-) TimerEvent: {}
+[32.229708] (-) TimerEvent: {}
+[32.331380] (-) TimerEvent: {}
+[32.433636] (-) TimerEvent: {}
+[32.535127] (-) TimerEvent: {}
+[32.636634] (-) TimerEvent: {}
+[32.743709] (-) TimerEvent: {}
+[32.847193] (-) TimerEvent: {}
+[32.951808] (-) TimerEvent: {}
+[33.053816] (-) TimerEvent: {}
+[33.155586] (-) TimerEvent: {}
+[33.257159] (-) TimerEvent: {}
+[33.359007] (-) TimerEvent: {}
+[33.460516] (-) TimerEvent: {}
+[33.562006] (-) TimerEvent: {}
+[33.663641] (-) TimerEvent: {}
+[33.765468] (-) TimerEvent: {}
+[33.867199] (-) TimerEvent: {}
+[33.969048] (-) TimerEvent: {}
+[34.070689] (-) TimerEvent: {}
+[34.172299] (-) TimerEvent: {}
+[34.273998] (-) TimerEvent: {}
+[34.380050] (-) TimerEvent: {}
+[34.482073] (-) TimerEvent: {}
+[34.583683] (-) TimerEvent: {}
+[34.685206] (-) TimerEvent: {}
+[34.786675] (-) TimerEvent: {}
+[34.888210] (-) TimerEvent: {}
+[34.989936] (-) TimerEvent: {}
+[35.091538] (-) TimerEvent: {}
+[35.193434] (-) TimerEvent: {}
+[35.295550] (-) TimerEvent: {}
+[35.397165] (-) TimerEvent: {}
+[35.498673] (-) TimerEvent: {}
+[35.600425] (-) TimerEvent: {}
+[35.702452] (-) TimerEvent: {}
+[35.805922] (-) TimerEvent: {}
+[35.909030] (-) TimerEvent: {}
+[36.010751] (-) TimerEvent: {}
+[36.112474] (-) TimerEvent: {}
+[36.214046] (-) TimerEvent: {}
+[36.315606] (-) TimerEvent: {}
+[36.417035] (-) TimerEvent: {}
+[36.518460] (-) TimerEvent: {}
+[36.620418] (-) TimerEvent: {}
+[36.721854] (-) TimerEvent: {}
+[36.823501] (-) TimerEvent: {}
+[36.925007] (-) TimerEvent: {}
+[37.026544] (-) TimerEvent: {}
+[37.128127] (-) TimerEvent: {}
+[37.229619] (-) TimerEvent: {}
+[37.331335] (-) TimerEvent: {}
+[37.433071] (-) TimerEvent: {}
+[37.534563] (-) TimerEvent: {}
+[37.636261] (-) TimerEvent: {}
+[37.744360] (-) TimerEvent: {}
+[37.855282] (-) TimerEvent: {}
+[37.957066] (-) TimerEvent: {}
+[38.060998] (-) TimerEvent: {}
+[38.163041] (-) TimerEvent: {}
+[38.265009] (-) TimerEvent: {}
+[38.366456] (-) TimerEvent: {}
+[38.467924] (-) TimerEvent: {}
+[38.570453] (-) TimerEvent: {}
+[38.671854] (-) TimerEvent: {}
+[38.773203] (-) TimerEvent: {}
+[38.874552] (-) TimerEvent: {}
+[38.976542] (-) TimerEvent: {}
+[39.079290] (-) TimerEvent: {}
+[39.182161] (-) TimerEvent: {}
+[39.283669] (-) TimerEvent: {}
+[39.385004] (-) TimerEvent: {}
+[39.486367] (-) TimerEvent: {}
+[39.587779] (-) TimerEvent: {}
+[39.689205] (-) TimerEvent: {}
+[39.790576] (-) TimerEvent: {}
+[39.891966] (-) TimerEvent: {}
+[39.993256] (-) TimerEvent: {}
+[40.094607] (-) TimerEvent: {}
+[40.196044] (-) TimerEvent: {}
+[40.297443] (-) TimerEvent: {}
+[40.398802] (-) TimerEvent: {}
+[40.500415] (-) TimerEvent: {}
+[40.601760] (-) TimerEvent: {}
+[40.703169] (-) TimerEvent: {}
+[40.804545] (-) TimerEvent: {}
+[40.906680] (-) TimerEvent: {}
+[41.008192] (-) TimerEvent: {}
+[41.109575] (-) TimerEvent: {}
+[41.211048] (-) TimerEvent: {}
+[41.312605] (-) TimerEvent: {}
+[41.414310] (-) TimerEvent: {}
+[41.515936] (-) TimerEvent: {}
+[41.617399] (-) TimerEvent: {}
+[41.718927] (-) TimerEvent: {}
+[41.820431] (-) TimerEvent: {}
+[41.921992] (-) TimerEvent: {}
+[42.023495] (-) TimerEvent: {}
+[42.125001] (-) TimerEvent: {}
+[42.226344] (-) TimerEvent: {}
+[42.328094] (-) TimerEvent: {}
+[42.429769] (-) TimerEvent: {}
+[42.531452] (-) TimerEvent: {}
+[42.633068] (-) TimerEvent: {}
+[42.735402] (-) TimerEvent: {}
+[42.837526] (-) TimerEvent: {}
+[42.942068] (-) TimerEvent: {}
+[43.044207] (-) TimerEvent: {}
+[43.145795] (-) TimerEvent: {}
+[43.247563] (-) TimerEvent: {}
+[43.349514] (-) TimerEvent: {}
+[43.451162] (-) TimerEvent: {}
+[43.552831] (-) TimerEvent: {}
+[43.654673] (-) TimerEvent: {}
+[43.756791] (-) TimerEvent: {}
+[43.858310] (-) TimerEvent: {}
+[43.959938] (-) TimerEvent: {}
+[44.064091] (-) TimerEvent: {}
+[44.167475] (-) TimerEvent: {}
+[44.271710] (-) TimerEvent: {}
+[44.373839] (-) TimerEvent: {}
+[44.475592] (-) TimerEvent: {}
+[44.577185] (-) TimerEvent: {}
+[44.678731] (-) TimerEvent: {}
+[44.780396] (-) TimerEvent: {}
+[44.881892] (-) TimerEvent: {}
+[44.983603] (-) TimerEvent: {}
+[45.085082] (-) TimerEvent: {}
+[45.187176] (-) TimerEvent: {}
+[45.288691] (-) TimerEvent: {}
+[45.390247] (-) TimerEvent: {}
+[45.491772] (-) TimerEvent: {}
+[45.593529] (-) TimerEvent: {}
+[45.695060] (-) TimerEvent: {}
+[45.796614] (-) TimerEvent: {}
+[45.898141] (-) TimerEvent: {}
+[45.999713] (-) TimerEvent: {}
+[46.101428] (-) TimerEvent: {}
+[46.203342] (-) TimerEvent: {}
+[46.304783] (-) TimerEvent: {}
+[46.406078] (-) TimerEvent: {}
+[46.507507] (-) TimerEvent: {}
+[46.608843] (-) TimerEvent: {}
+[46.710404] (-) TimerEvent: {}
+[46.811864] (-) TimerEvent: {}
+[46.913517] (-) TimerEvent: {}
+[47.015028] (-) TimerEvent: {}
+[47.116557] (-) TimerEvent: {}
+[47.217863] (-) TimerEvent: {}
+[47.319247] (-) TimerEvent: {}
+[47.421083] (-) TimerEvent: {}
+[47.522724] (-) TimerEvent: {}
+[47.624577] (-) TimerEvent: {}
+[47.726255] (-) TimerEvent: {}
+[47.828038] (-) TimerEvent: {}
+[47.930018] (-) TimerEvent: {}
+[48.032417] (-) TimerEvent: {}
+[48.133716] (-) TimerEvent: {}
+[48.235506] (-) TimerEvent: {}
+[48.337616] (-) TimerEvent: {}
+[48.439566] (-) TimerEvent: {}
+[48.541462] (-) TimerEvent: {}
+[48.643798] (-) TimerEvent: {}
+[48.745563] (-) TimerEvent: {}
+[48.847395] (-) TimerEvent: {}
+[48.949014] (-) TimerEvent: {}
+[49.050593] (-) TimerEvent: {}
+[49.152494] (-) TimerEvent: {}
+[49.254118] (-) TimerEvent: {}
+[49.355774] (-) TimerEvent: {}
+[49.457417] (-) TimerEvent: {}
+[49.559292] (-) TimerEvent: {}
+[49.661507] (-) TimerEvent: {}
+[49.763087] (-) TimerEvent: {}
+[49.864721] (-) TimerEvent: {}
+[49.966141] (-) TimerEvent: {}
+[50.067781] (-) TimerEvent: {}
+[50.195436] (-) TimerEvent: {}
+[50.301680] (spider_driver) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1\n'}
+[50.691776] (-) TimerEvent: {}
+[50.720575] (spider_driver) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2\n'}
+[50.764120] (spider_driver) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[50.807048] (-) TimerEvent: {}
+[50.940734] (-) TimerEvent: {}
+[50.977211] (spider_driver) CommandEnded: {'returncode': 2}
+[51.359100] (-) TimerEvent: {}
+[51.471740] (-) TimerEvent: {}
+[51.598231] (-) TimerEvent: {}
+[51.718131] (-) TimerEvent: {}
+[51.823050] (-) TimerEvent: {}
+[52.023484] (-) TimerEvent: {}
+[52.134174] (-) TimerEvent: {}
+[52.237706] (-) TimerEvent: {}
+[52.345308] (-) TimerEvent: {}
+[52.461363] (-) TimerEvent: {}
+[52.574294] (spider_driver) JobEnded: {'identifier': 'spider_driver', 'rc': 2}
+[52.647139] (-) TimerEvent: {}
+[52.667955] (-) EventReactorShutdown: {}

@@ -1,0 +1,24 @@
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:31:5:[m[K [01;31m[Kerror: [m[K‘[01m[Koe_enable[m[K’ was not declared in this scope
+   31 |     [01;31m[Koe_enable[m[K();
+      |     [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K At global scope:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:222:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid controller::ControllerNode::oe_enable()[m[K’
+  222 | void [01;31m[KControllerNode[m[K::oe_enable() {
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:222:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid controller::ControllerNode::oe_enable()[m[K’
+In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:15:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass controller::ControllerNode[m[K’ defined here
+   15 | class [01;36m[KControllerNode[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:226:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid controller::ControllerNode::oe_disable()[m[K’
+  226 | void [01;31m[KControllerNode[m[K::oe_disable() {
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:226:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid controller::ControllerNode::oe_disable()[m[K’
+In file included from [01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:1[m[K:
+[01m[K/home/spider/ws/src/spider_driver/include/spider_driver/ControllerNode.hpp:15:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass controller::ControllerNode[m[K’ defined here
+   15 | class [01;36m[KControllerNode[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

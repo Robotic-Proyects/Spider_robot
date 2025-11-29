@@ -1,0 +1,8 @@
+source;share/xmlrpcpp/hook/cmake_prefix_path.ps1
+source;share/xmlrpcpp/hook/cmake_prefix_path.dsv
+source;share/xmlrpcpp/hook/cmake_prefix_path.sh
+source;share/xmlrpcpp/local_setup.bash
+source;share/xmlrpcpp/local_setup.dsv
+source;share/xmlrpcpp/local_setup.ps1
+source;share/xmlrpcpp/local_setup.sh
+source;share/xmlrpcpp/local_setup.zsh

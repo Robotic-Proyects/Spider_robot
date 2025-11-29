@@ -1,0 +1,4 @@
+# there are a few services whic take a single integer as input
+# these services share the IntValue service definition
+
+int16 value

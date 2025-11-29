@@ -1,0 +1,13 @@
+[35m[1mConsolidate compiler generated dependencies of target spider_driver[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In constructor ‘[01m[Kcontroller::ControllerNode::ControllerNode()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:63:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+   63 |     [01;31m[Ktimer_[m[K = this->create_wall_timer(
+      |     [01;31m[K^~~~~~[m[K
+      |     [32m[Ktimer_t[m[K
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:64:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kupdate_servos[m[K’ is not a member of ‘[01m[Kcontroller::ControllerNode[m[K’
+   64 |             20ms, std::bind(&ControllerNode::[01;31m[Kupdate_servos[m[K, this));
+      |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,7 @@
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In member function ‘[01m[Kvoid controller::ControllerNode::update_servos()[m[K’:
+[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:220:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kmove_towards[m[K’ was not declared in this scope
+  220 |     auto pwm_fl = [01;31m[Kmove_towards[m[K(frontleft_pose_, frontleft_target_, pca_frontleft_, pca_);
+      |                   [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
