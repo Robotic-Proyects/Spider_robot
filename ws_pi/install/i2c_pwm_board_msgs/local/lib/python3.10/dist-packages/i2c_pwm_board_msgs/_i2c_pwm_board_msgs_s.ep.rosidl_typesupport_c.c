@@ -1,1 +1,0 @@
-/home/spider/ws/build/i2c_pwm_board_msgs/rosidl_generator_py/i2c_pwm_board_msgs/_i2c_pwm_board_msgs_s.ep.rosidl_typesupport_c.c

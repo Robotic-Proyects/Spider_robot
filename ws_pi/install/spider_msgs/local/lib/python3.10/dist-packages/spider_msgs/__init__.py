@@ -1,1 +1,0 @@
-/home/spider/ws/build/spider_msgs/rosidl_generator_py/spider_msgs/__init__.py

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libxmlrpcpp.a CMakeFiles/xmlrpcpp.dir/src/xml_rpc_client.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_server.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_server_connection.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_server_method.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_socket.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_source.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_util.cc.o CMakeFiles/xmlrpcpp.dir/src/xml_rpc_value.cc.o CMakeFiles/xmlrpcpp.dir/libb64/src/cdecode.c.o CMakeFiles/xmlrpcpp.dir/libb64/src/cencode.c.o
-/usr/bin/ranlib libxmlrpcpp.a

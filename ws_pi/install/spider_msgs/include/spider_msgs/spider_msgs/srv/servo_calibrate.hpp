@@ -1,1 +1,0 @@
-/home/spider/ws/build/spider_msgs/rosidl_generator_cpp/spider_msgs/srv/servo_calibrate.hpp

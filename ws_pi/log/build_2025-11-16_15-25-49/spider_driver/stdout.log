@@ -1,6 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o[0m
-[ 50%] [32m[1mLinking CXX shared library libspider_driver.so[0m
-[ 50%] Built target spider_driver
-[35m[1mConsolidate compiler generated dependencies of target control_main[0m
-[ 75%] [32mBuilding CXX object CMakeFiles/control_main.dir/src/controller_node.cpp.o[0m
-[100%] [32m[1mLinking CXX executable control_main[0m

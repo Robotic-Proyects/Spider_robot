@@ -1,1 +1,0 @@
-/home/spider/ws/src/spider_msgs/msg/SpiderLeg.msg

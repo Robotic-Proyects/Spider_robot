@@ -1,3 +1,0 @@
-gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Interrupt
-gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Interrupt
-gmake: *** [Makefile:146: all] Interrupt

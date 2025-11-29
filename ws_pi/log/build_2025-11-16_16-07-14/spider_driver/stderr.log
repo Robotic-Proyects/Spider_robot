@@ -1,8 +1,0 @@
-[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In lambda function:
-[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:216:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kthis[m[K’ was not captured for this lambda function
-  216 |             int pwm = [01;31m[Krad_to_pwm(current[i], -1.5, 1.5, 100, 520)[m[K;
-      |                       [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:216:33:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kint controller::ControllerNode::rad_to_pwm(double, double, double, int, int)[m[K’ without object
-gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

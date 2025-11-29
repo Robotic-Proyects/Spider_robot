@@ -1,7 +1,0 @@
-[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:[m[K In destructor ‘[01m[Kvirtual controller::ControllerNode::~ControllerNode()[m[K’:
-[01m[K/home/spider/ws/src/spider_driver/src/spider_driver/ControllerNode.cpp:81:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kunexport_gpio[m[K’ was not declared in this scope
-   81 |     [01;31m[Kunexport_gpio[m[K(oe_pin_);
-      |     [01;31m[K^~~~~~~~~~~~~[m[K
-gmake[2]: *** [CMakeFiles/spider_driver.dir/build.make:76: CMakeFiles/spider_driver.dir/src/spider_driver/ControllerNode.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/spider_driver.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

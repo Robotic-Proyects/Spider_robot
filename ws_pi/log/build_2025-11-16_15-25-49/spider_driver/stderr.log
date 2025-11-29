@@ -1,5 +1,0 @@
-/usr/bin/ld: libspider_driver.so: undefined reference to `vtable for controller::ControllerNode'
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/control_main.dir/build.make:168: control_main] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/control_main.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

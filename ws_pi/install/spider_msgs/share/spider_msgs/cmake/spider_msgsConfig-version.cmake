@@ -1,1 +1,0 @@
-/home/spider/ws/build/spider_msgs/ament_cmake_core/spider_msgsConfig-version.cmake

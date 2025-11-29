@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/spider/ws/build/i2c_pwm_board_xmlrp/libi2c_pwm_board_xmlrp_lib.a" "TARGETS" "i2c_pwm_board_xmlrp_lib" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/i2c_pwm_board_xmlrp")

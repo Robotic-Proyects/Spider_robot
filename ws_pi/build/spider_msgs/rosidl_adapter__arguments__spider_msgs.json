@@ -1,8 +1,0 @@
-{
-  "package_name": "spider_msgs",
-  "non_idl_tuples": [
-    "/home/spider/ws/src/spider_msgs:msg/SpiderLeg.msg",
-    "/home/spider/ws/src/spider_msgs:msg/SpiderSwitch.msg",
-    "/home/spider/ws/src/spider_msgs:srv/ServoCalibrate.srv"
-  ]
-}

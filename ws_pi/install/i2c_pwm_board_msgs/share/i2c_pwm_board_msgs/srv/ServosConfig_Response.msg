@@ -1,1 +1,0 @@
-/home/spider/ws/build/i2c_pwm_board_msgs/rosidl_cmake/srv/ServosConfig_Response.msg
