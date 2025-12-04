@@ -28,8 +28,10 @@ def Beta(l_A, tibia, femur):
     return beta
 
 def get_initial_pose(pose_interface):
-    initial_pose = [0, 93.05, 99.7]
-    initial_pose = [0, initial_pose[1] + math.degrees(-0.7), initial_pose[2] + math.degrees(-0.8)]
+
+    initial_pose = [0, 1.66, 1.55]
+    if pose_interface == 1:
+        initial_pose = [0, initial_pose[1] + (-1.57), initial_pose[2] + (-1.57)]
     return initial_pose
 
 def get_configurations(pose_interface, ejeX, ejeY, ejeZ):
@@ -40,12 +42,12 @@ def get_configurations(pose_interface, ejeX, ejeY, ejeZ):
     FOOT_ENDEFFECTOR = 90.96
     
     desfaceZ = 86
-    initial_pose = [0, 93.05, 99.7]
+    initial_pose = [0, 1.66, 1.55] #[0, 93.05, 99.7]
 
     if pose_interface == 0:
-        initial_pose = [0, 93.05, 99.7]
+        initial_pose = [0, 1.66, 1.55]
     elif pose_interface == 1: # Initial pose for walking
-        initial_pose = [0, initial_pose[1] + math.degrees(-0.7), initial_pose[2] + math.degrees(-0.8)]
+        initial_pose = [0, initial_pose[1] + math.degrees(-1.57), initial_pose[2] + math.degrees(-1.57)]
     else:
         print("Introduce 0 or 1")
         return(-1)
@@ -63,4 +65,55 @@ def get_configurations(pose_interface, ejeX, ejeY, ejeZ):
 
     print(gamma_rad,alfa_rad,beta_rad)
     return(gamma_rad,alfa_rad,beta_rad)
+    
+def inverse_kinematics(x, y, z):
+    hip = 0.37
+    leg = 0.507
+    foot = 0.9
+    # q0: rotación horizontal
+    q0 = math.atan2(y, x)
+    
+    # Distancia horizontal desde la base (plano XZ)
+    r = math.sqrt(x**2 + y**2)
+    
+    # Ley del coseno para q2
+    D = (((r - hip)**2 + z**2) - leg**2 - foot**2) / (2 * leg * foot)
+    if abs(D) > 1:
+        return None
+    
+    q2 = math.atan2(-math.sqrt(1 - D**2), D)  # ángulo de la rodilla
+    
+    # q1: ángulo de la cadera
+    q1 = math.atan2(z, r - hip) - math.atan2(foot * math.sin(q2), leg + foot * math.cos(q2))
+
+
+    if q0 < 0.01 and q0 > -0.01:
+        q0 = 0.0
+    if q1 < 0.01 and q1 > -0.01:
+        q1 = 0.0
+    if q2 < 0.01 and q2 > -0.01:
+        q2 = 0.0
+    
+    if q0>=-1 and q0<=1 and q1>=-1.57 and q1<=1.57 and q2>=-1.57 and q2<=1.57:
+        return q0, q1, q2
+    
+    return None
+
+def forward_kinematics(q0, q1, q2):
+    if not (-1 <= q0 <= 1 and -1.57 <= q1 <= 1.57 and -1.57 <= q2 <= 1.57):
+        return None
+
+    hip = 0.37
+    leg = 0.507
+    foot = 0.9
+
+    # Coordenadas en el plano X'Z antes de la rotación q0
+    xp = hip + leg * math.cos(q1) + foot * math.cos(q1 + q2)
+    z  =       leg * math.sin(q1) + foot * math.sin(q1 + q2)
+
+    # Aplicar rotación en torno al eje Z
+    x = xp * math.cos(q0)
+    y = xp * math.sin(q0)
+
+    return x, y, z
 

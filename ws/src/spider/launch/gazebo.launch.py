@@ -218,71 +218,77 @@ def generate_launch_description():
         output='screen',
         condition=UnlessCondition(LaunchConfiguration('gui'))
     )
-    
+
     publish_initial_command_1 = TimerAction(
-        period=10.0,
+        period=10.5,  # Esperar 5 segundos antes de ejecutar
         actions=[
             ExecuteProcess(
                 cmd=[
+                    'timeout', '20',
                     'ros2', 'topic', 'pub',
                     '/spider_leg_front_left_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -1.57, -1.57]',
+                    'data: [0.0, 0.0, 0.0]',
                     '--once'
                 ],
-                output='screen'
+                output='screen',
+                condition=UnlessCondition(LaunchConfiguration('gui'))
             )
-        ],
-        condition=UnlessCondition(LaunchConfiguration('gui'))
+        ]
     )
 
     publish_initial_command_2 = TimerAction(
-        period=10.0,
+        period=10.5,
         actions=[
             ExecuteProcess(
                 cmd=[
+                    'timeout', '20',
                     'ros2', 'topic', 'pub',
                     '/spider_leg_back_left_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -1.57, -1.57]',
+                    'data: [0.0, 0.0, 0.0]',
                     '--once'
                 ],
-                output='screen'
+                output='screen',
+                condition=UnlessCondition(LaunchConfiguration('gui'))
             )
-        ],
-        condition=UnlessCondition(LaunchConfiguration('gui'))
+        ]
     )
+
     publish_initial_command_3 = TimerAction(
-        period=10.0,
+        period=10.5,
         actions=[
             ExecuteProcess(
                 cmd=[
+                    'timeout', '20',
                     'ros2', 'topic', 'pub',
                     '/spider_leg_back_right_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -1.57, -1.57]',
+                    'data: [0.0, 0.0, 0.0]',
                     '--once'
                 ],
-                output='screen'
+                output='screen',
+                condition=UnlessCondition(LaunchConfiguration('gui'))
             )
-        ],
-        condition=UnlessCondition(LaunchConfiguration('gui'))
+        ]
     )
+
     publish_initial_command_4 = TimerAction(
-        period=10.0,
+        period=10.5,
         actions=[
             ExecuteProcess(
                 cmd=[
+                    'timeout', '20',
                     'ros2', 'topic', 'pub',
                     '/spider_leg_front_right_controller/commands',
                     'std_msgs/msg/Float64MultiArray',
-                    'data: [0.0, -1.57, -1.57]',
+                    'data: [0.0, 0.0, 0.0]',
                     '--once'
                 ],
-                output='screen'
+                output='screen',
+                condition=UnlessCondition(LaunchConfiguration('gui'))
             )
-        ],
-        condition=UnlessCondition(LaunchConfiguration('gui'))
+        ]
     )
 
     return LaunchDescription([
