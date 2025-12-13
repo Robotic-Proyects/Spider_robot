@@ -20,7 +20,6 @@ def inverse_kinematics(x, y, z):
     # q1: ángulo de la cadera
     q1 = math.atan2(z, r) - math.atan2(foot * math.sin(q2), leg + foot * math.cos(q2))
 
-
     if q0 < 0.01 and q0 > -0.01:
         q0 = 0.0
     if q1 < 0.01 and q1 > -0.01:
@@ -31,7 +30,7 @@ def inverse_kinematics(x, y, z):
     if q0>=-1 and q0<=1 and q1>=-1.57 and q1<=1.57 and q2>=-1.57 and q2<=1.57:
         return q0, q1, q2
 
-    return None
+    return q0, q1, q2
 
 def forward_kinematics(q0, q1, q2):
     if not (-1 <= q0 <= 1 and -1.57 <= q1 <= 1.57 and -1.57 <= q2 <= 1.57):
