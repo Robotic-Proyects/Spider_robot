@@ -119,8 +119,14 @@ class MovementPublisher(Node):
         msg = SpiderLeg()
         pose = self.correct_rad(pose)
         msg.hip = pose[0]
-        msg.leg = pose[1]
-        msg.foot = pose[2]
+
+        if self.get_publisher_index(publisher) == 2:
+            msg.leg = pose[1] - math.radians(5) + math.radians(50)
+        else:
+            msg.leg = pose[1] + math.radians(50)
+
+        #msg.foot = pose[2] + math.radians(80)
+        msg.foot = pose[2] + math.radians(130)
         msg.smooth_value = 1.0
 
         publisher.publish(msg)
@@ -130,7 +136,6 @@ class MovementPublisher(Node):
         """
             Move a leg to the coordinate
         """
-        pose[2] += math.radians(90)
 
         pose = forward_kinematics(q0, q1, q2)
 
@@ -154,7 +159,6 @@ class MovementPublisher(Node):
             return
         
         pose = list(pose)
-        pose[2] += math.radians(90)
 
         self.publish(pose, publisher)
         self.set_pose(pose, self.get_publisher_index(publisher))
@@ -186,7 +190,6 @@ class MovementPublisher(Node):
 
             if q is not None:
                 q = list(q)
-                q[2] += math.radians(90)
 
                 self.publish([q[0], q[1], q[2]], publisher)
                 self.set_pose(q, self.get_publisher_index(publisher))
@@ -224,7 +227,7 @@ class MovementPublisher(Node):
         # feet: posiciones objetivo de los pies EN COORDENADAS DEL MUNDO (no locales)
         for i in range(4):
             hip_world = np.array(base) + np.array(hip_local[i])
-            foot_world = np.array(feet[i])
+            foot_world = np.array(feet[i]) + np.array(hip_local[i])
 
             x_rel = foot_world[0] - hip_world[0]
             y_rel = foot_world[1] - hip_world[1]
@@ -236,13 +239,13 @@ class MovementPublisher(Node):
                 continue
 
             pose = list(pose)
-            pose[2] += math.radians(90)
             self.publish(pose, self.publisher_list[i])
             self.set_pose(pose, i)
 
     def direct_base(self, base_pose):
-        hip_local = [[0.07, 0.07, 0], [0.07, -0.07, 0], [-0.07, 0.07, 0], [-0.07, -0.07, 0]]
-        feet = [[0.88, 0.4, -0.9], [0.88, -0.4, -0.9], [0.88, 0.4, -0.9], [0.88, -0.4, -0.9]]
+        hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
+        # feet = [[0.88, 0.4, -0.9], [0.88, -0.4, -0.9], [0.88, 0.4, -0.9], [0.88, -0.4, -0.9]]
+        feet = [[0.88, 0.0, -0.9], [0.88, -0.0, -0.9], [0.88, 0.0, -0.9], [0.88, -0.0, -0.9]]
         hip_len = 0.37
         leg_len = 0.507
         foot_len = 0.9
@@ -250,40 +253,46 @@ class MovementPublisher(Node):
         self.move_base(base_pose, hip_local, feet, hip_len, leg_len, foot_len)
 
     def moveForward(self):
+        self.direct_base([0.0, 0.25, 0])
+        time.sleep(0.1)
+        
         start = [0.6, 0.65, -0.9]
         mid   = [1.4,  0.05, -0.2]
-        end   = [0.6,  -0.65, -0.9]
-
-        self.direct_base([0.0, 0.25, 0])
-        time.sleep(0.25)
+        end   = [0.6,  -0.65, -0.9]        
         self.moveLift(start, mid, end, self.publisher_back_left_)
-        time.sleep(0.25)
-        self.moveLift(start, mid, end, self.publisher_front_left_)
-        time.sleep(0.25)
+        time.sleep(0.1)
 
-        start   = [0.6,  -0.45, -0.9]
+        start = [0.6, 0.65, -0.9]
         mid   = [1.4,  0.05, -0.2]
-        end = [0.6, 0.45, -0.9]
+        end   = [0.6,  -0.65, -0.9]       
+        self.moveLift(start, mid, end, self.publisher_front_left_)
+        time.sleep(0.1)
 
-        print(self.poses[1])
-        print(self.poses[2])
         self.set_pose([0.88, 0.0, -0.9], 2)
         self.set_pose([0.88, 0.0, -0.9], 1)
-        print(self.poses[1])
-        print(self.poses[2])
 
+        self.direct_base([0.0, 0.0, 0])
+        time.sleep(0.1)
         self.direct_base([0.0, -0.25, 0])
-        time.sleep(0.25)
+        time.sleep(0.1)
+
+        start   = [0.6,  -0.65, -0.9]
+        mid   = [1.4,  0.05, -0.2]
+        end = [0.6, 0.65, -0.9]        
         self.moveLift(start, mid, end, self.publisher_back_right_)
-        time.sleep(0.25)
+        time.sleep(0.1)
+
+        start   = [0.6,  -0.65, -0.9]
+        mid   = [1.4,  0.05, -0.2]
+        end = [0.6, 0.65, -0.9]
         self.moveLift(start, mid, end, self.publisher_front_right_)
-        time.sleep(0.25)
+        time.sleep(0.1)
 
         self.KI_move(0.88, 0.0, -0.9, self.publisher_front_left_)
         self.KI_move(0.88, 0.0, -0.9, self.publisher_back_left_)
         self.KI_move(0.88, 0.0, -0.9, self.publisher_front_right_)
         self.KI_move(0.88, 0.0, -0.9, self.publisher_back_right_)
-        time.sleep(0.25)
+        time.sleep(0.1)
     
     def listener_callback(self, msg):
         self.msg = msg
@@ -352,12 +361,12 @@ class MovementPublisher(Node):
             self.T_flag = False
 
         if self.C_flag: # SQUARE button
-            base = [0.25, 0.25, 0.0]
+            base = [0.0, 0.25, 0.0]
             self.direct_base(base)
             self.C_flag = False
 
         if self.O_flag:
-            base = [0.3, -0.6, 0.0]
+            base = [0.0, -0.25, 0.0]
             self.direct_base(base)
             self.O_flag = False
 
