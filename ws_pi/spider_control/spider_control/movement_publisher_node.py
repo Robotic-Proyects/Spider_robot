@@ -36,7 +36,7 @@ class MovementPublisher(Node):
             Joy,
             '/joy',
             self.listener_callback,
-            10)
+            1)
         
         self.subscription
 
@@ -221,77 +221,97 @@ class MovementPublisher(Node):
         self.set_pose(pose_leg, index_leg)
     """
 
-    def move_base(self, base, hip_local, feet, hip_len, leg_len, foot_len):
-        # base: posición del cuerpo en coordenadas del mundo
-        # hip_local: offsets de las caderas respecto al cuerpo (local)
-        # feet: posiciones objetivo de los pies EN COORDENADAS DEL MUNDO (no locales)
+    def Rz(self, a):
+        """Matriz de rotación alrededor de Z."""
+        c, s = np.cos(a), np.sin(a)
+        return np.array([[c, -s, 0],
+                        [s,  c, 0],
+                        [0,  0, 1]])
+
+    def move_base(self, base, hip_local, feet, hip_len, leg_len, foot_len, yaw_deg):
+        """
+        Mueve las patas a las posiciones deseadas de los pies (coordenadas del mundo)
+        base: posición del cuerpo (xyz)
+        hip_local: offsets de caderas respecto al cuerpo
+        feet: posiciones objetivo de los pies en coordenadas globales
+        hip_len, leg_len, foot_len: longitudes de los segmentos
+        yaw_deg: orientación de cada pata en grados (FR, FL, RR, RL)
+        """
         for i in range(4):
+            # posición de la cadera en mundo
             hip_world = np.array(base) + np.array(hip_local[i])
-            foot_world = np.array(feet[i]) + np.array(hip_local[i])
+            alpha = np.deg2rad(yaw_deg[i])
 
-            x_rel = foot_world[0] - hip_world[0]
-            y_rel = foot_world[1] - hip_world[1]
-            z_rel = foot_world[2] - hip_world[2]
+            # vector del hip al foot en coordenadas globales
+            v_world = np.array(feet[i]) - hip_world
 
+            # transformar al marco de la pata
+            v_hip = self.Rz(-alpha) @ v_world
+            x_rel, y_rel, z_rel = v_hip
+
+            # calcular IK en marco de la pata
             pose = inverse_kinematics(x_rel, y_rel, z_rel)
             if pose is None:
-                print("IK imposible:", i)
+                print(f"IK imposible para pata {i}")
                 continue
 
-            pose = list(pose)
+            print("i: ", i, " | pose: ", pose)
+
+            # publicar pose
             self.publish(pose, self.publisher_list[i])
             self.set_pose(pose, i)
 
     def direct_base(self, base_pose):
         hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
-        # feet = [[0.88, 0.4, -0.9], [0.88, -0.4, -0.9], [0.88, 0.4, -0.9], [0.88, -0.4, -0.9]]
-        feet = [[0.88, 0.0, -0.9], [0.88, -0.0, -0.9], [0.88, 0.0, -0.9], [0.88, -0.0, -0.9]]
+        # feet = [[0.88, 0.4, -0.8], [0.88, -0.4, -0.8], [0.88, 0.4, -0.8], [0.88, -0.4, -0.8]]
+        feet=[[1.3, 0.8, -0.8], [1.3, -0.8, -0.8], [-1.3, 0.8, -0.8], [-1.3, -0.8, -0.8]]
         hip_len = 0.37
         leg_len = 0.507
-        foot_len = 0.9
+        foot_len = 0.8
 
-        self.move_base(base_pose, hip_local, feet, hip_len, leg_len, foot_len)
+        yaw_deg = [45, -45, 135, -135]
+        self.move_base(base_pose, hip_local, feet, hip_len, leg_len, foot_len, yaw_deg)
 
     def moveForward(self):
         self.direct_base([0.0, 0.25, 0])
         time.sleep(0.1)
         
-        start = [0.6, 0.65, -0.9]
+        start = [0.6, 0.65, -0.8]
         mid   = [1.4,  0.05, -0.2]
-        end   = [0.6,  -0.65, -0.9]        
+        end   = [0.6,  -0.65, -0.8]        
         self.moveLift(start, mid, end, self.publisher_back_left_)
         time.sleep(0.1)
 
-        start = [0.6, 0.65, -0.9]
+        start = [0.6, 0.65, -0.8]
         mid   = [1.4,  0.05, -0.2]
-        end   = [0.6,  -0.65, -0.9]       
+        end   = [0.6,  -0.65, -0.8]       
         self.moveLift(start, mid, end, self.publisher_front_left_)
         time.sleep(0.1)
 
-        self.set_pose([0.88, 0.0, -0.9], 2)
-        self.set_pose([0.88, 0.0, -0.9], 1)
+        self.set_pose([0.88, 0.0, -0.8], 2)
+        self.set_pose([0.88, 0.0, -0.8], 1)
 
         self.direct_base([0.0, 0.0, 0])
         time.sleep(0.1)
         self.direct_base([0.0, -0.25, 0])
         time.sleep(0.1)
 
-        start   = [0.6,  -0.65, -0.9]
+        start   = [0.6,  -0.65, -0.8]
         mid   = [1.4,  0.05, -0.2]
-        end = [0.6, 0.65, -0.9]        
+        end = [0.6, 0.65, -0.8]        
         self.moveLift(start, mid, end, self.publisher_back_right_)
         time.sleep(0.1)
 
-        start   = [0.6,  -0.65, -0.9]
+        start   = [0.6,  -0.65, -0.8]
         mid   = [1.4,  0.05, -0.2]
-        end = [0.6, 0.65, -0.9]
+        end = [0.6, 0.65, -0.8]
         self.moveLift(start, mid, end, self.publisher_front_right_)
         time.sleep(0.1)
 
-        self.KI_move(0.88, 0.0, -0.9, self.publisher_front_left_)
-        self.KI_move(0.88, 0.0, -0.9, self.publisher_back_left_)
-        self.KI_move(0.88, 0.0, -0.9, self.publisher_front_right_)
-        self.KI_move(0.88, 0.0, -0.9, self.publisher_back_right_)
+        self.KI_move(0.88, 0.0, -0.8, self.publisher_front_left_)
+        self.KI_move(0.88, 0.0, -0.8, self.publisher_back_left_)
+        self.KI_move(0.88, 0.0, -0.8, self.publisher_front_right_)
+        self.KI_move(0.88, 0.0, -0.8, self.publisher_back_right_)
         time.sleep(0.1)
     
     def listener_callback(self, msg):
@@ -354,19 +374,19 @@ class MovementPublisher(Node):
             self.C_flag = True
         
         if self.T_flag: # TRIANGLE button
-            self.KI_move(0.88, 0.0, -0.9, self.publisher_front_left_)
-            self.KI_move(0.88, 0.0, -0.9, self.publisher_back_left_)
-            self.KI_move(0.88, 0.0, -0.9, self.publisher_front_right_)
-            self.KI_move(0.88, 0.0, -0.9, self.publisher_back_right_)
+            self.KI_move(0.88, 0.0, -0.8, self.publisher_front_left_)
+            self.KI_move(0.88, 0.0, -0.8, self.publisher_back_left_)
+            self.KI_move(0.88, 0.0, -0.8, self.publisher_front_right_)
+            self.KI_move(0.88, 0.0, -0.8, self.publisher_back_right_)
             self.T_flag = False
 
         if self.C_flag: # SQUARE button
-            base = [0.0, 0.25, 0.0]
+            base = [0.35, -0.35, 0.0]
             self.direct_base(base)
             self.C_flag = False
 
         if self.O_flag:
-            base = [0.0, -0.25, 0.0]
+            base = [0.35, 0.35, 0.0]
             self.direct_base(base)
             self.O_flag = False
 

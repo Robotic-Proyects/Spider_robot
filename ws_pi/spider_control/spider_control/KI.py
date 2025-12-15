@@ -3,7 +3,7 @@ import math
 def inverse_kinematics(x, y, z):
     hip = 0.37
     leg = 0.507
-    foot = 0.9
+    foot = 0.8
     # q0: rotación horizontal
     q0 = math.atan2(y, x)
     
