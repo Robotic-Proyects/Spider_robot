@@ -14,9 +14,9 @@ from sensor_msgs.msg import Joy
 HALFWIDTH = 5
 state_legs = 0
 
-F_OFF = 0
-S_OFF = math.radians(0)
-T_OFF = math.radians(-15)
+F_OFF = math.radians(0.0)
+S_OFF = math.radians(0.0)
+T_OFF = math.radians(0.0)
 
 class State(Enum):
     START = auto()
@@ -122,16 +122,11 @@ class MovementPublisher(Node):
         """
         msg = SpiderLeg()
         pose = self.correct_rad(pose)
+
         msg.hip = pose[0]
-
-        if self.get_publisher_index(publisher) in [1,2]:
-            msg.leg = pose[1] - math.radians(5) # + math.radians(20)
-        else:
-            msg.leg = pose[1]
-
-        #msg.foot = pose[2] + math.radians(35)
-        #msg.foot = pose[2] + math.radians(110)
+        msg.leg = pose[1]
         msg.foot = pose[2]
+
         msg.smooth_value = 1.0
 
         print("publisher: ", publisher, " | pose: ", msg.hip, msg.leg, msg.foot)
@@ -162,7 +157,8 @@ class MovementPublisher(Node):
 
         if pose == None:
             print("IK imposible")
-            return
+            return        #msg.foot = pose[2] + math.radians(35)
+        #msg.foot = pose[2] + math.radians(110)
         
         pose = list(pose)
 
@@ -239,18 +235,18 @@ class MovementPublisher(Node):
                         [0,  1, 0],
                         [0,  0, 1]])
 
-        I = np.array([[1, 0, 0],
+        ry = np.array([[1, 0, 0],
                         [0,  1, 0],
                         [0,  0, 1]])
         
-        return rz @ rx @ I 
+        return rz @ rx @ ry
 
-    def move_base(self, base, hip_local, feet, hip_len, leg_len, foot_len, yaw_deg):
+    def move_base(self, base, hip_local, feet_global, yaw_deg):
         """
         Mueve las patas a las posiciones deseadas de los pies (coordenadas del mundo)
         base: posición del cuerpo (xyz)
         hip_local: offsets de caderas respecto al cuerpo
-        feet: posiciones objetivo de los pies en coordenadas globales
+        feet_local: posiciones objetivo de los pies en coordenadas de la pata
         hip_len, leg_len, foot_len: longitudes de los segmentos
         yaw_deg: orientación de cada pata en grados (FR, FL, RR, RL)
         """
@@ -260,33 +256,28 @@ class MovementPublisher(Node):
             alpha = np.deg2rad(yaw_deg[i])
 
             # vector del hip al foot en coordenadas globales
-            v_world = np.array(feet[i]) - hip_world
+            v_world = np.array(feet_global[i]) - hip_world
 
             # transformar al marco de la pata
             v_hip = self.R(-alpha) @ v_world
             x_rel, y_rel, z_rel = v_hip
 
             # calcular IK en marco de la pata
-            before_pose = self.poses[i]
             pose = inverse_kinematics(x_rel, y_rel, z_rel, F_OFF, S_OFF, T_OFF)
             if pose is None:
                 print(f"IK imposible para pata {i}")
                 continue
 
-            pose = [pose[0], pose[1], before_pose[2]]
             # publicar pose
             self.publish(pose, self.publisher_list[i])
             self.set_pose(pose, i)
 
     def direct_base(self, base_pose):
         hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
-        feet=[[0.88, 0.8, -0.8], [0.88, -0.8, -0.8], [-0.88, 0.8, -0.8], [-0.88, -0.8, -0.8]]
-        hip_len = 0.37
-        leg_len = 0.507
-        foot_len = 0.8
+        feet_global = [[0.8534, 0.8534 ,-0.8], [0.8534, -0.8534, -0.8], [-0.8534, 0.8534, -0.8], [-0.8534, -0.8534, -0.8]]
 
         yaw_deg = [45, -45, 135, -135]
-        self.move_base(base_pose, hip_local, feet, hip_len, leg_len, foot_len, yaw_deg)
+        self.move_base(base_pose, hip_local, feet_global, yaw_deg)
     
     def calculate_mid_pose(self, start, end):
         mid = [0.0, 0.0, 0.0]
@@ -298,49 +289,45 @@ class MovementPublisher(Node):
         return mid
 
     def moveForward(self):
-        self.direct_base([0.0, -0.25, 0])
-        time.sleep(1)
+        self.direct_base([0.25, -0.25, 0])
+        time.sleep(0.5)
         
         start = self.pose_back_left
-        end   = [0.6,  -0.65, -0.8] 
+        end   = [0.2742,  -0.4271, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
-        print(mid)
         self.moveLift(start, mid, end, self.publisher_back_left_)
-        time.sleep(1)
+        time.sleep(0.5)
 
         start = self.pose_front_left
-        end   = [0.6,  -0.65, -0.8] 
+        end   = [0.2742,  -0.4271, -0.8] 
         mid   = self.calculate_mid_pose(start, end)    
         print(mid) 
         self.moveLift(start, mid, end, self.publisher_front_left_)
-        time.sleep(1)
+        time.sleep(0.5)
 
-        self.set_pose([0.88, 0.0, -0.8], 2)
-        self.set_pose([0.88, 0.0, -0.8], 1)
+        self.set_pose([0.507, 0.0, -0.8], 2)
+        self.set_pose([0.507, 0.0, -0.8], 1)
 
-        self.direct_base([0.0, 0.0, 0])
-        time.sleep(1)
-        self.direct_base([0.0, 0.25, 0])
-        time.sleep(1)
+        self.direct_base([0.25, 0.25, 0])
+        time.sleep(0.5)
 
         start   = self.pose_back_right
-        end = [0.6, 0.65, -0.8]  
+        end = [0.2742, 0.4271, -0.8]  
         mid   = self.calculate_mid_pose(start, end)   
-        print(mid)   
         self.moveLift(start, mid, end, self.publisher_back_right_)
-        time.sleep(2)
+        time.sleep(0.5)
 
         start   = self.pose_front_right
-        end = [0.6, 0.65, -0.8]
+        end = [0.507, 0.65, -0.8]
         mid   = self.calculate_mid_pose(start, end) 
         self.moveLift(start, mid, end, self.publisher_front_right_)
-        time.sleep(2)
+        time.sleep(0.5)
 
-        self.KI_move(0.88, 0.0, -0.8, self.publisher_front_left_)
-        self.KI_move(0.88, 0.0, -0.8, self.publisher_back_left_)
-        self.KI_move(0.88, 0.0, -0.8, self.publisher_front_right_)
-        self.KI_move(0.88, 0.0, -0.8, self.publisher_back_right_)
-        time.sleep(2)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
+        time.sleep(0.5)
     
     def listener_callback(self, msg):
         self.msg = msg
@@ -402,15 +389,16 @@ class MovementPublisher(Node):
             self.C_flag = True
         
         if self.T_flag: # TRIANGLE button
-            self.KI_move(0.88, 0.0, -0.8, self.publisher_front_left_)
-            self.KI_move(0.88, 0.0, -0.8, self.publisher_back_left_)
-            self.KI_move(0.88, 0.0, -0.8, self.publisher_front_right_)
-            self.KI_move(0.88, 0.0, -0.8, self.publisher_back_right_)
+            self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
+            self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
+            self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
+            self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
             self.T_flag = False
 
         if self.C_flag: # SQUARE button
-            base = [0.25, 0.25 , 0.0]
-            self.direct_base(base)
+            # base = [0.25, 0.25 , 0.0]
+            # self.direct_base(base)
+            self.KI_move(0.507,  -0.65, -0.8, self.publisher_back_right_)
             self.C_flag = False
 
         if self.O_flag:
