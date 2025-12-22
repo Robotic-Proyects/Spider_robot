@@ -15,8 +15,8 @@ HALFWIDTH = 5
 state_legs = 0
 
 F_OFF = math.radians(0.0)
-S_OFF = math.radians(0.0)
-T_OFF = math.radians(0.0)
+S_OFF = math.radians(-35.0) # S_OFF = math.radians(0.0) 
+T_OFF = math.radians(50.0) # T_OFF = math.radians(90.0)
 
 class State(Enum):
     START = auto()
@@ -196,32 +196,6 @@ class MovementPublisher(Node):
                 self.publish([q[0], q[1], q[2]], publisher)
                 self.set_pose(q, self.get_publisher_index(publisher))
                 time.sleep(0.01)
-        
-    """
-    def moveBase(self, index_hip, index_hip2, index_leg, inv_= 1):
-        pose_hip = self.poses[index_hip]
-        pose_hip2 = self.poses[index_hip2]
-        pose_leg = self.poses[index_leg]
-
-        publisher_hip = self.publisher_list[index_hip]
-        publisher_hip2 = self.publisher_list[index_hip2]
-        publisher_leg = self.publisher_list[index_leg]
-
-        turn_ = 40 * inv_
-        
-        pose_hip = [pose_hip[0] + math.radians(turn_), pose_hip[1], pose_hip[2]]
-        self.publish(pose_hip, publisher_hip)
-
-        pose_hip2 = [pose_hip2[0] + math.radians(turn_*-1), pose_hip2[1], pose_hip2[2]]
-        self.publish(pose_hip2, publisher_hip2)
-
-        pose_leg = [pose_leg[0], pose_leg[1] + math.radians(10), pose_leg[2] - math.radians(5)]
-        self.publish(pose_leg, publisher_leg)
-
-        self.set_pose(pose_hip, index_hip)
-        self.set_pose(pose_hip2, index_hip2)
-        self.set_pose(pose_leg, index_leg)
-    """
 
     def R(self, a):
         """Matriz de rotación."""
@@ -289,45 +263,47 @@ class MovementPublisher(Node):
         return mid
 
     def moveForward(self):
-        self.direct_base([0.25, -0.25, 0])
-        time.sleep(0.5)
+        self.direct_base([0.15, -0.15, 0])
+        time.sleep(0.2)
         
         start = self.pose_back_left
         end   = [0.2742,  -0.4271, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
         self.moveLift(start, mid, end, self.publisher_back_left_)
-        time.sleep(0.5)
+        time.sleep(0.2)
 
         start = self.pose_front_left
         end   = [0.2742,  -0.4271, -0.8] 
         mid   = self.calculate_mid_pose(start, end)    
-        print(mid) 
         self.moveLift(start, mid, end, self.publisher_front_left_)
-        time.sleep(0.5)
+        time.sleep(0.2)
+
+        self.direct_base([0.0, 0.0, 0])
+        time.sleep(0.2)
 
         self.set_pose([0.507, 0.0, -0.8], 2)
         self.set_pose([0.507, 0.0, -0.8], 1)
 
-        self.direct_base([0.25, 0.25, 0])
-        time.sleep(0.5)
+        self.direct_base([0.15, 0.15, 0])
+        time.sleep(0.2)
 
         start   = self.pose_back_right
         end = [0.2742, 0.4271, -0.8]  
         mid   = self.calculate_mid_pose(start, end)   
         self.moveLift(start, mid, end, self.publisher_back_right_)
-        time.sleep(0.5)
+        time.sleep(0.2)
 
         start   = self.pose_front_right
-        end = [0.507, 0.65, -0.8]
+        end = [0.2742, 0.4271, -0.8]
         mid   = self.calculate_mid_pose(start, end) 
         self.moveLift(start, mid, end, self.publisher_front_right_)
-        time.sleep(0.5)
+        time.sleep(0.2)
 
         self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
-        time.sleep(0.5)
+        time.sleep(0.2)
     
     def listener_callback(self, msg):
         self.msg = msg
@@ -396,13 +372,12 @@ class MovementPublisher(Node):
             self.T_flag = False
 
         if self.C_flag: # SQUARE button
-            # base = [0.25, 0.25 , 0.0]
-            # self.direct_base(base)
-            self.KI_move(0.507,  -0.65, -0.8, self.publisher_back_right_)
+            base = [0.15, 0.15 , 0.0]
+            self.direct_base(base)
             self.C_flag = False
 
         if self.O_flag:
-            base = [0.25, -0.25, 0.0]
+            base = [0.15, -0.15, 0.0]
             self.direct_base(base)
             self.O_flag = False
             
