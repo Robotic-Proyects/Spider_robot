@@ -77,6 +77,8 @@ class MovementPublisher(Node):
             1: 0,  # O
             2: 0,  # T
             3: 0,  # C
+            4: 0,  # L1
+            5: 0,  # R1
             8: 0,  # SHARE
             9: 0   # OPTIONS
         }
@@ -330,73 +332,54 @@ class MovementPublisher(Node):
         if self.state != State.JOY:
             return
 
-        if self.rising_edge(8):  # SHARE
+        if self.rising_edge(8):  
             msg_ = SpiderSwitch()
             msg_.oe_value = 0
             self.publisher_oe_.publish(msg_)
 
-        if self.rising_edge(9):  # OPTIONS
+        if self.rising_edge(9):  
             msg_ = SpiderSwitch()
             msg_.oe_value = 1
             self.publisher_oe_.publish(msg_)
 
         if self.rising_edge(0):  # X
-            self.X_flag = True
-            self.O_flag = False
-            self.T_flag = False
-            self.C_flag = False
+            # acción para X
+            pass
 
         if self.rising_edge(1):  # CIRCLE
-            self.X_flag = False
-            self.O_flag = True
-            self.T_flag = False
-            self.C_flag = False
+            # acción para O
+            base = [0.15, -0.15, 0.0]
+            self.direct_base(base)
+            print("Move backward")
 
         if self.rising_edge(2):  # TRIANGLE
-            self.X_flag = False
-            self.O_flag = False
-            self.T_flag = True
-            self.C_flag = False
-
-        if self.rising_edge(3):  # SQUARE
-            self.X_flag = False
-            self.O_flag = False
-            self.T_flag = False
-            self.C_flag = True
-        
-        if self.T_flag: # TRIANGLE button
             self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
             self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
             self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
             self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
-            self.T_flag = False
 
-        if self.C_flag: # SQUARE button
+        if self.rising_edge(3):  # SQUARE
             base = [0.15, 0.15 , 0.0]
             self.direct_base(base)
-            self.C_flag = False
 
-        if self.O_flag:
-            base = [0.15, -0.15, 0.0]
+        if self.rising_edge(4):  # L1
+            base = [0.0, 0.0 , 0.4]
             self.direct_base(base)
-            self.O_flag = False
-            
-            print("Move backward")
-            #self.backwardMove(step_length, z)
+
+        if self.rising_edge(5):  # R1
+            base = [0.0, 0.0, -0.1]
+            self.direct_base(base)
 
         if self.msg.axes[7] == 1:
-            print("move forward")
             self.moveForward()
 
         if self.msg.axes[6] == 1:
-            print("move left")
-            #self.leftMove(step_length, z)
+            # self.leftMove(step_length, z)
+            pass
 
         if self.msg.axes[6] == -1:
-            print("move right")
-            #self.rightMove(step_length, z)
-
-
+            # self.rightMove(step_length, z)
+            pass
 
 def main(args=None):
     rclpy.init(args=args)
