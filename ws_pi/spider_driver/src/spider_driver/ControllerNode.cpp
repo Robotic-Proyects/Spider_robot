@@ -38,6 +38,8 @@ ControllerNode::ControllerNode()
     pca_backleft_[1] = 4;
     pca_backleft_[2] = 5;
 
+    ultrasonic_channel_ = 15;
+
     smooth_ = 0.1;
 
     memset(frontleft_pose_, 0, sizeof(frontleft_pose_));
@@ -45,10 +47,17 @@ ControllerNode::ControllerNode()
     memset(backright_pose_, 0, sizeof(backright_pose_));
     memset(backleft_pose_, 0, sizeof(backleft_pose_));
 
+    ultrasonic_pose_ = 0.0;
+
     memset(frontleft_target_, 0, sizeof(frontleft_target_));
     memset(frontright_target_, 0, sizeof(frontright_target_));
     memset(backright_target_, 0, sizeof(backright_target_));
     memset(backleft_target_, 0, sizeof(backleft_target_));
+
+    ultrasonic_target_ = 0.0;
+
+    ultrasonic_sub_ = this->create_subscription<std_msgs::msg::Float64>(
+        "/ultrasonic", 10, std::bind(&ControllerNode::ultrasonic, this, std::placeholders::_1));
 
     frontleft_leg_ = this->create_subscription<spider_msgs::msg::SpiderLeg>(
         "/arm/frontleft", 10, std::bind(&ControllerNode::frontleft, this, std::placeholders::_1));
@@ -72,6 +81,8 @@ ControllerNode::ControllerNode()
     for (int i = 0; i < 16; i++) {
         last_pwm_[i] = -1;
     }
+    last_pwm_[ultrasonic_channel_] = -1;
+
     configure_all_servos();
 
     timer_ = this->create_wall_timer(
@@ -133,6 +144,11 @@ int ControllerNode::rad_to_pwm(double angle_rad, double min_rad, double max_rad,
 // ------- ------------- ------- //
 template<typename T, size_t N>
 constexpr size_t array_size(const T (&)[N]) { return N; }
+
+void ControllerNode::ultrasonic(const std_msgs::msg::Float64::SharedPtr msg)
+{
+    ultrasonic_target_ = msg->data;
+}
 
 void ControllerNode::frontleft(const spider_msgs::msg::SpiderLeg::SharedPtr msg)
 {
@@ -278,6 +294,15 @@ void ControllerNode::update_servos()
     auto pwm_fr = move_towards(frontright_pose_, frontright_target_, pca_frontright_, pca_, smooth_);
     auto pwm_br = move_towards(backright_pose_, backright_target_, pca_backright_, pca_, smooth_);
     auto pwm_bl = move_towards(backleft_pose_, backleft_target_, pca_backleft_, pca_, smooth_);
+
+    ultrasonic_pose_ += (ultrasonic_target_ - ultrasonic_pose_);
+
+    int pwm_ultra = rad_to_pwm(ultrasonic_pose_, -1.57, 1.57, 110, 510);
+
+    if (pwm_ultra != last_pwm_[ultrasonic_channel_]) {
+        pca_.setPWM(ultrasonic_channel_, pwm_ultra);
+        last_pwm_[ultrasonic_channel_] = pwm_ultra;
+    }
 
     // std::cout << "Poses rad: "
     //           << frontleft_pose_[0] << " " << frontleft_pose_[1] << " " << frontleft_pose_[2] << " | "

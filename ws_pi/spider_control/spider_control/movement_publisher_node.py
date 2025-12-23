@@ -4,7 +4,7 @@ import math
 import numpy as np
 from rclpy.node import Node
 
-from std_msgs.msg import Float64MultiArray
+from std_msgs.msg import Float64MultiArray, Float64
 from enum import Enum, auto
 
 from spider_control.KI import forward_kinematics, inverse_kinematics
@@ -30,6 +30,7 @@ class MovementPublisher(Node):
 
     def __init__(self):
         super().__init__('movement_publisher')
+        self.publisher_ultrasonic_ = self.create_publisher(Float64, '/ultrasonic', 10)
         self.publisher_back_left_ = self.create_publisher(SpiderLeg, '/arm/backleft', 10)
         self.publisher_back_right_ = self.create_publisher(SpiderLeg, '/arm/backright', 10)
         self.publisher_front_left_ = self.create_publisher(SpiderLeg, '/arm/frontleft', 10)
@@ -87,6 +88,9 @@ class MovementPublisher(Node):
         self.O_flag = False
         self.T_flag = False
         self.C_flag = False
+
+        self.ultra_phase = 0.0
+        self.ultra_speed = 0.05
 
     def set_pose(self, pose, index):
         self.poses[index] = pose
@@ -323,6 +327,14 @@ class MovementPublisher(Node):
     def timer_callback(self):
         global state_legs
 
+        # >>> ULTRASONIDO <<<
+        self.ultra_phase += self.ultra_speed
+        ultra_value = 1.5 * math.sin(self.ultra_phase)
+        msg_ultra = Float64()
+        msg_ultra.data = ultra_value
+        self.publisher_ultrasonic_.publish(msg_ultra)
+        # >>> ULTRASONIDO <<<
+
         pose = self.poses[self.indice]
         publisher = self.publisher_list[self.indice]
 
@@ -363,7 +375,7 @@ class MovementPublisher(Node):
             self.direct_base(base)
 
         if self.rising_edge(4):  # L1
-            base = [0.0, 0.0 , 0.4]
+            base = [0.0, 0.0 , 0.35]
             self.direct_base(base)
 
         if self.rising_edge(5):  # R1

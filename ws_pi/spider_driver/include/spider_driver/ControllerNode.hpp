@@ -3,6 +3,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
+#include "std_msgs/msg/float64.hpp"
 
 #include "PCA9685.hpp"
 #include "spider_msgs/msg/spider_leg.hpp"
@@ -27,7 +28,11 @@ private:
     rclcpp::Subscription<spider_msgs::msg::SpiderLeg>::SharedPtr backright_leg_;
     rclcpp::Subscription<spider_msgs::msg::SpiderLeg>::SharedPtr backleft_leg_;
 
+    rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr ultrasonic_sub_;
+
     PCA9685 pca_;
+
+    void ultrasonic(const std_msgs::msg::Float64::SharedPtr msg);
 
     void frontleft(const spider_msgs::msg::SpiderLeg::SharedPtr msg);
     void frontright(const spider_msgs::msg::SpiderLeg::SharedPtr msg);
@@ -39,15 +44,22 @@ private:
     int pca_backright_[3];
     int pca_backleft_[3];
 
+    int ultrasonic_channel_;
+
     double frontleft_pose_[3];
     double frontright_pose_[3];
     double backright_pose_[3];
     double backleft_pose_[3];
 
+    double ultrasonic_pose_;
+
     double frontleft_target_[3];
     double frontright_target_[3];
     double backright_target_[3];
     double backleft_target_[3];
+
+    double ultrasonic_target_;
+
     double initial_rad_;
     double smooth_;
 
