@@ -30,7 +30,6 @@ class MovementPublisher(Node):
 
     def __init__(self):
         super().__init__('movement_publisher')
-        self.publisher_ultrasonic_ = self.create_publisher(Float64, '/ultrasonic', 10)
         self.publisher_back_left_ = self.create_publisher(SpiderLeg, '/arm/backleft', 10)
         self.publisher_back_right_ = self.create_publisher(SpiderLeg, '/arm/backright', 10)
         self.publisher_front_left_ = self.create_publisher(SpiderLeg, '/arm/frontleft', 10)
@@ -89,9 +88,6 @@ class MovementPublisher(Node):
         self.T_flag = False
         self.C_flag = False
 
-        self.ultra_phase = 0.0
-        self.ultra_speed = 0.05
-
     def set_pose(self, pose, index):
         self.poses[index] = pose
 
@@ -133,9 +129,8 @@ class MovementPublisher(Node):
         msg.leg = pose[1]
         msg.foot = pose[2]
 
-        msg.smooth_value = 1.0
+        msg.smooth_value = 0.5
 
-        print("publisher: ", publisher, " | pose: ", msg.hip, msg.leg, msg.foot)
         publisher.publish(msg)
     
     def KD_move(self, q0, q1, q2, publisher):
@@ -169,7 +164,8 @@ class MovementPublisher(Node):
         pose = list(pose)
 
         self.publish(pose, publisher)
-        self.set_pose(pose, self.get_publisher_index(publisher))
+        print("KI: ", pose)
+        self.set_pose([x, y, z], self.get_publisher_index(publisher))
         return pose
 
     def moveLift(self, start, mid, end, publisher):
@@ -200,7 +196,7 @@ class MovementPublisher(Node):
                 q = list(q)
 
                 self.publish([q[0], q[1], q[2]], publisher)
-                self.set_pose(q, self.get_publisher_index(publisher))
+                self.set_pose([x, y, z], self.get_publisher_index(publisher))
                 time.sleep(0.01)
 
     def R(self, a):
@@ -249,8 +245,10 @@ class MovementPublisher(Node):
                 continue
 
             # publicar pose
+            print("Move_base: ",pose)
             self.publish(pose, self.publisher_list[i])
-            self.set_pose(pose, i)
+            self.set_pose([x_rel, y_rel, z_rel], i)
+            time.sleep(0.01)
 
     def direct_base(self, base_pose):
         hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
@@ -266,51 +264,129 @@ class MovementPublisher(Node):
         mid[1] = (start[1] + end[1]) / 2
         mid[2] = (start[2] + end[2]) / 2
 
+        mid[2] += 0.1
         return mid
 
     def moveForward(self):
         self.direct_base([0.15, -0.15, 0])
-        time.sleep(0.2)
+        # time.sleep(0.2)
         
         start = self.pose_back_left
-        end   = [0.2742,  -0.4271, -0.8] 
+        end   = [0.45, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
         self.moveLift(start, mid, end, self.publisher_back_left_)
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
         start = self.pose_front_left
-        end   = [0.2742,  -0.4271, -0.8] 
+        end   = [0.45, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)    
         self.moveLift(start, mid, end, self.publisher_front_left_)
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
         self.direct_base([0.0, 0.0, 0])
-        time.sleep(0.2)
-
-        self.set_pose([0.507, 0.0, -0.8], 2)
-        self.set_pose([0.507, 0.0, -0.8], 1)
 
         self.direct_base([0.15, 0.15, 0])
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
         start   = self.pose_back_right
-        end = [0.2742, 0.4271, -0.8]  
+        end = [0.45, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)   
         self.moveLift(start, mid, end, self.publisher_back_right_)
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
         start   = self.pose_front_right
-        end = [0.2742, 0.4271, -0.8]
+        end = [0.45, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end) 
         self.moveLift(start, mid, end, self.publisher_front_right_)
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
-        self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
-        self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
-        self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
-        self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
-        time.sleep(0.2)
+        self.direct_base([0.0, 0.0, 0])
+        # time.sleep(0.2)
+
+    def moveBackward(self):
+        self.direct_base([-0.15, -0.15, 0])
+        # time.sleep(0.2)
+        
+        start = self.pose_back_left
+        end   = [0.45, 0.35, -0.8] 
+        mid   = self.calculate_mid_pose(start, end)
+        self.moveLift(start, mid, end, self.publisher_front_left_)
+        # time.sleep(0.2)
+
+        start = self.pose_front_left
+        end   = [0.45, 0.35, -0.8] 
+        mid   = self.calculate_mid_pose(start, end)    
+        self.moveLift(start, mid, end, self.publisher_back_left_)
+        # time.sleep(0.2)
+
+        self.direct_base([0.0, 0.0, 0])
+
+        self.direct_base([-0.15, 0.15, 0])
+        # time.sleep(0.2)
+
+        start   = self.pose_back_right
+        end = [0.45, -0.35, -0.8] 
+        mid   = self.calculate_mid_pose(start, end)   
+        self.moveLift(start, mid, end, self.publisher_front_right_)
+        # time.sleep(0.2)
+
+        start   = self.pose_front_right
+        end = [0.45, -0.35, -0.8] 
+        mid   = self.calculate_mid_pose(start, end) 
+        self.moveLift(start, mid, end, self.publisher_back_right_)
+        # time.sleep(0.2)
+
+        self.direct_base([0.0, 0.0, 0])
+        # time.sleep(0.2)
     
+    def turn_right(self):
+        start = self.pose_back_left
+        # end   = [0.2742,  -0.4271, -0.8] 
+        end   = [0.45, -0.35, -0.8] 
+        mid   = self.calculate_mid_pose(start, end)
+
+        self.direct_base([-0.1, 0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_front_right_)
+        # time.sleep(0.2)
+        self.direct_base([0.1, 0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_back_right_)
+        # time.sleep(0.2)
+        self.direct_base([0.1, -0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_back_left_)
+        # time.sleep(0.2)
+        self.direct_base([-0.1, -0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_front_left_)
+        # time.sleep(0.2)
+        self.direct_base([0, 0, 0])
+
+    def turn_left(self):
+        start = self.pose_back_left
+        # end   = [0.2742, 0.4271, -0.8] 
+        end   = [0.45, 0.35, -0.8] 
+        mid   = self.calculate_mid_pose(start, end)
+
+        self.direct_base([-0.1, -0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_front_left_)
+        # time.sleep(0.2)
+        self.direct_base([0.1, -0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_back_left_)
+        # time.sleep(0.2)
+        self.direct_base([0.1, 0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_back_right_)
+        # time.sleep(0.2)
+        self.direct_base([-0.1, 0.1, 0])
+        # time.sleep(0.2)
+        self.moveLift(start, mid, end, self.publisher_front_right_)
+        # time.sleep(0.2)
+        self.direct_base([0, 0, 0])
+
     def listener_callback(self, msg):
         self.msg = msg
         self.state = State.JOY
@@ -326,14 +402,6 @@ class MovementPublisher(Node):
 
     def timer_callback(self):
         global state_legs
-
-        # >>> ULTRASONIDO <<<
-        self.ultra_phase += self.ultra_speed
-        ultra_value = 1.5 * math.sin(self.ultra_phase)
-        msg_ultra = Float64()
-        msg_ultra.data = ultra_value
-        self.publisher_ultrasonic_.publish(msg_ultra)
-        # >>> ULTRASONIDO <<<
 
         pose = self.poses[self.indice]
         publisher = self.publisher_list[self.indice]
@@ -355,14 +423,11 @@ class MovementPublisher(Node):
             self.publisher_oe_.publish(msg_)
 
         if self.rising_edge(0):  # X
-            # acción para X
             pass
 
         if self.rising_edge(1):  # CIRCLE
-            # acción para O
-            base = [0.15, -0.15, 0.0]
+            base = [0.1, -0.1, 0.0]
             self.direct_base(base)
-            print("Move backward")
 
         if self.rising_edge(2):  # TRIANGLE
             self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
@@ -371,7 +436,7 @@ class MovementPublisher(Node):
             self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
 
         if self.rising_edge(3):  # SQUARE
-            base = [0.15, 0.15 , 0.0]
+            base = [0.1, 0.1 , 0.0]
             self.direct_base(base)
 
         if self.rising_edge(4):  # L1
@@ -385,13 +450,14 @@ class MovementPublisher(Node):
         if self.msg.axes[7] == 1:
             self.moveForward()
 
+        if self.msg.axes[7] == -1:
+            self.moveBackward()
+
         if self.msg.axes[6] == 1:
-            # self.leftMove(step_length, z)
-            pass
+            self.turn_left()
 
         if self.msg.axes[6] == -1:
-            # self.rightMove(step_length, z)
-            pass
+            self.turn_right()
 
 def main(args=None):
     rclpy.init(args=args)

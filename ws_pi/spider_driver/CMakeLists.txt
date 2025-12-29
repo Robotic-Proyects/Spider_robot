@@ -9,33 +9,41 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(spider_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 set(dependencies
   rclcpp
   std_msgs
   spider_msgs
+  sensor_msgs
 )
 
 include_directories(include)
 
 add_library(${PROJECT_NAME} SHARED
   src/spider_driver/ControllerNode.cpp
+  src/spider_driver/ControllerHCNode.cpp
 )
 ament_target_dependencies(${PROJECT_NAME} ${dependencies})
 target_link_libraries(${PROJECT_NAME} pigpio pigpiod_if2 pthread)
 
 add_executable(control_main src/controller_node.cpp)
+add_executable(control_hc_main src/controller_hc_node.cpp)
+
 ament_target_dependencies(control_main ${dependencies})
+ament_target_dependencies(control_hc_main ${dependencies})
+
 target_link_libraries(control_main
-  ${PROJECT_NAME}
-  pigpio
-  pigpiod_if2
-  pthread
+  ${PROJECT_NAME} pigpio pigpiod_if2 pthread
+)
+target_link_libraries(control_hc_main
+  ${PROJECT_NAME} pigpio pigpiod_if2 pthread
 )
 
 install(TARGETS
   ${PROJECT_NAME}
   control_main
+  control_hc_main
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}

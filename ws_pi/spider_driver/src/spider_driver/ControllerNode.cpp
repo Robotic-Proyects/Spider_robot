@@ -297,7 +297,7 @@ void ControllerNode::update_servos()
 
     ultrasonic_pose_ += (ultrasonic_target_ - ultrasonic_pose_);
 
-    int pwm_ultra = rad_to_pwm(ultrasonic_pose_, -1.57, 1.57, 110, 510);
+    int pwm_ultra = rad_to_pwm(ultrasonic_pose_, 0.0, 3.002, 110, 510);
 
     if (pwm_ultra != last_pwm_[ultrasonic_channel_]) {
         pca_.setPWM(ultrasonic_channel_, pwm_ultra);
