@@ -6,24 +6,30 @@ from os.path import join
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction, ExecuteProcess, TimerAction
-from launch.conditions import IfCondition
-from launch.conditions import UnlessCondition
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess, TimerAction
+from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
-from launch.substitutions import PathJoinSubstitution
+from launch.substitutions import (
+    LaunchConfiguration,
+    PathJoinSubstitution,
+    TextSubstitution,
+)
 
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-from controller_manager.launch_utils import generate_load_controller_launch_description
-
 def generate_launch_description():
 
+    # ------------------------------------------------
+    # Package
+    # ------------------------------------------------
     resources_package = 'spider'
-
-    # Make path to resources dir without last package_name fragment.
     path_to_share_dir_clipped = ''.join(get_package_share_directory(resources_package).rsplit('/' + resources_package, 1))
+
+    # ------------------------------------------------
+    # Gazebo resource paths
+    # ------------------------------------------------
+    # Make path to resources dir without last package_name fragment.
 
     # Gazebo hint for resources.
     os.environ['GZ_SIM_RESOURCE_PATH'] = path_to_share_dir_clipped
@@ -40,74 +46,119 @@ def generate_launch_description():
         else:
             os.environ["SDF_PATH"] = gz_sim_resource_path
 
-
-    use_custom_world = LaunchConfiguration('use_custom_world')
-    use_custom_world_launch_arg = DeclareLaunchArgument('use_custom_world', default_value='true')
-    gazebo_world = LaunchConfiguration('gazebo_world')
-    gazebo_world_launch_arg = DeclareLaunchArgument('gazebo_world', default_value='empty.sdf')
-
-    # prepare custom world
-    world = os.getenv('GZ_SIM_WORLD', 'empty')
-    fly_world_path = resources_package + '/worlds/' + world + '.sdf'
-    gz_version = subprocess.getoutput("gz sim --versions")
-    gz_version_major = re.search(r'^\d{1}', gz_version).group()
-    launch_arguments=dict(gz_args = '-r ' + str(fly_world_path) + ' --verbose ', gz_version = gz_version_major).items()
-
-    # Gazebo Sim.
-    # by default the custom world is used, otherwise the gazebo world is used, which can be changed with the argument
-    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'),
-        ),
-        launch_arguments=launch_arguments if use_custom_world else dict(gz_args='-r ' + gazebo_world + ' --verbose').items(),
-    )
-
-    # Spawn
-    spawn = Node(
-            package='ros_gz_sim',
-            executable='create',
-            arguments=[
-                '-name', 'Robot',
-                '-x', '1.2',
-                '-z', '1.0',
-                '-Y', '3.4',
-                '-topic', '/robot_description',
-            ],
-            output='screen',
-    )
-
+    # ------------------------------------------------
+    # Launch arguments
+    # ------------------------------------------------
     use_sim_time = LaunchConfiguration('use_sim_time')
-    use_sim_time_launch_arg = DeclareLaunchArgument('use_sim_time', default_value='true')
     use_rviz = LaunchConfiguration('use_rviz')
-    use_rviz_arg = DeclareLaunchArgument("use_rviz", default_value='true')
+    use_custom_world = LaunchConfiguration('use_custom_world')
+    world_name = LaunchConfiguration('world_name')
     use_camera = LaunchConfiguration('use_camera')
-    use_camera_launch_arg = DeclareLaunchArgument('use_camera', default_value='true')
 
+    declare_args = [
+        DeclareLaunchArgument('use_sim_time', default_value='true'),
+        DeclareLaunchArgument('use_rviz', default_value='true'),
+        DeclareLaunchArgument('use_custom_world', default_value='false'),
+        DeclareLaunchArgument('world_name', default_value='empty'),
+        DeclareLaunchArgument('use_camera', default_value='true'),
+    ]
+
+    # ------------------------------------------------
+    # World path
+    # ------------------------------------------------
+    world_path = PathJoinSubstitution([
+        FindPackageShare(resources_package),
+        'worlds',
+        [world_name, '.sdf']
+    ])
+
+    # ------------------------------------------------
+    # Gazebo version
+    # ------------------------------------------------
+    gz_version = subprocess.getoutput("gz sim --versions")
+    gz_version_major = re.search(r'^\d+', gz_version).group()
+
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+
+    # ------------------------------------------------
+    # Gazebo with custom world
+    # ------------------------------------------------
+    gazebo_custom_world = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'),
+        ),
+        launch_arguments={
+            'gz_args': [
+                TextSubstitution(text='-r '),
+                world_path,
+                TextSubstitution(text=' --verbose')
+            ],
+            'gz_version': gz_version_major,
+        }.items(),
+        condition=IfCondition(use_custom_world),
+    )
+
+    # ------------------------------------------------
+    # Gazebo empty world (default)
+    # ------------------------------------------------
+    gazebo_empty_world = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'),
+        ),
+        launch_arguments={
+            'gz_args': '-r empty.sdf --verbose',
+            'gz_version': gz_version_major,
+        }.items(),
+        condition=UnlessCondition(use_custom_world),
+    )
+
+    # ------------------------------------------------
+    # Spawn robot
+    # ------------------------------------------------
+    spawn = Node(
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-name', 'Robot',
+            '-x', '0.0',  # Centro de la habitación
+            '-y', '0.0',
+            '-z', '1.0',  # Altura desde el suelo
+            '-Y', '0.0',
+            '-topic', '/robot_description',
+        ],
+        output='screen',
+    )
+
+    # ------------------------------------------------
+    # Robot description / RViz
+    # ------------------------------------------------
     robot_state_publisher = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([
-                PathJoinSubstitution([
-                    FindPackageShare(resources_package),
-                    'launch',
-                    'description.launch.py',
-                ]),
-            ]),
-            condition=UnlessCondition(use_rviz),  # rviz launch includes rsp.
-            launch_arguments=dict(use_sim_time=use_sim_time).items(),
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                FindPackageShare(resources_package),
+                'launch',
+                'description.launch.py',
+            ])
+        ),
+        condition=UnlessCondition(use_rviz),
+        launch_arguments={'use_sim_time': use_sim_time}.items(),
     )
 
     rviz = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
+        PythonLaunchDescriptionSource(
             PathJoinSubstitution([
                 FindPackageShare(resources_package),
                 'launch',
                 'display.launch.py',
-            ]),
-        ]),
+            ])
+        ),
         condition=IfCondition(use_rviz),
-        launch_arguments=dict(use_sim_time=use_sim_time).items(),
+        launch_arguments={'use_sim_time': use_sim_time}.items(),
     )
 
+    # ------------------------------------------------
+    # Sensors bridge
+    # ------------------------------------------------
     pkg_share_folder = get_package_share_directory("spider")
 
     gz_bridge_parameter = Node(
@@ -139,7 +190,9 @@ def generate_launch_description():
     )
     gz_bridge_camera_dummy = DeclareLaunchArgument('', default_value='') # dummy for LaunchDescription could take empty element
 
-
+    # -------------------------------
+    # Controllers
+    # -------------------------------
     joint_state_broadcaster = ExecuteProcess(
         cmd=[
             'ros2', 'run', 'controller_manager', 'spawner', 'joint_state_broadcaster',
@@ -291,23 +344,21 @@ def generate_launch_description():
         ]
     )
 
-    return LaunchDescription([
-        use_sim_time_launch_arg,
-        use_rviz_arg,
-        use_custom_world_launch_arg,
-        gazebo_world_launch_arg,
+    return LaunchDescription(
+        declare_args + [
+        gazebo_custom_world,
+        gazebo_empty_world,
         robot_state_publisher,
         rviz,
-        gazebo,
         spawn,
         gz_bridge_parameter,
+        (gz_bridge_camera if use_camera else gz_bridge_camera_dummy),
         joint_state_broadcaster,
         spider_dome_controller,
         spider_leg_front_left_controller,
         spider_leg_front_right_controller,
         spider_leg_back_left_controller,
         spider_leg_back_right_controller,
-        (gz_bridge_camera if use_camera else gz_bridge_camera_dummy),
         publish_initial_command_1,
         publish_initial_command_2,
         publish_initial_command_3,
