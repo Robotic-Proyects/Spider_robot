@@ -11,6 +11,11 @@ from spider_control.KI import forward_kinematics, inverse_kinematics
 from spider_msgs.msg import SpiderLeg, SpiderSwitch
 from sensor_msgs.msg import Joy
 
+import board
+import busio
+import adafruit_ssd1306
+from PIL import Image, ImageDraw, ImageFont
+
 HALFWIDTH = 5
 state_legs = 0
 
@@ -36,6 +41,10 @@ class MovementPublisher(Node):
         self.publisher_front_right_ = self.create_publisher(SpiderLeg, '/arm/frontright', 10)
         self.publisher_oe_ = self.create_publisher(SpiderSwitch, '/oe_value', 10)
 
+        self.i2c = busio.I2C(board.SCL, board.SDA)
+        self.oled = adafruit_ssd1306.SSD1306_I2C(128, 64, self.i2c, addr=0x3C)
+        self.font = ImageFont.load_default()
+
         self.subscription = self.create_subscription(
             Joy,
             '/joy',
@@ -56,12 +65,6 @@ class MovementPublisher(Node):
 
         self.base_pose = [0.0, 0.0, 0.0]
 
-        self.coordinate_back_right = {'x':0.0, 'y':0.0, 'z':0.0}
-        self.coordinate_back_left = {'x':0.0, 'y':0.0, 'z':0.0}
-        self.coordinate_front_right = {'x':0.0, 'y':0.0, 'z':0.0}
-        self.coordinate_front_left = {'x':0.0, 'y':0.0, 'z':0.0}
-
-        self.coordinate = {'x':0.0, 'y':0.0, 'z':0.0}
         self.angles = {'alpha':0.0, 'beta':0.0, 'gamma':0.0}
 
         self.poses = [self.pose_front_left, self.pose_front_right, 
@@ -437,6 +440,25 @@ class MovementPublisher(Node):
         self.msg = msg
         self.state = State.JOY
 
+    def display_msgs(self, header_text, text_lines):
+        image = Image.new("1", (self.oled.width, self.oled.height))
+        draw = ImageDraw.Draw(image)
+
+        # Header amarillo (0-15)
+        draw.rectangle((0, 0, self.oled.width-1, 15), fill=1)
+        w, h = draw.textsize(header_text, font=self.font)
+        draw.text(((self.oled.width - w)//2, (15 - h)//2), header_text, font=self.font, fill=0)
+
+        # Mensaje azul (15-63)
+        draw.rectangle((0, 15, self.oled.width-1, self.oled.height-1), fill=0)
+        y = 15
+        for line in text_lines:
+            draw.text((0, y), line, font=self.font, fill=1)
+            y += 10
+
+        self.oled.image(image)
+        self.oled.show()
+
     def expo_axis(self, x, expo=0.4):
         return math.copysign(abs(x) ** (1 + expo), x)
 
@@ -448,6 +470,14 @@ class MovementPublisher(Node):
 
     def timer_callback(self):
         global state_legs, F_OFF, S_OFF, T_OFF
+        self.display_msgs(
+            "OFFSETS",
+            [
+                f"F_OFF: {math.degrees(F_OFF):.1f}",
+                f"S_OFF: {math.degrees(S_OFF):.1f}",
+                f"T_OFF: {math.degrees(T_OFF):.1f}"
+            ]
+        )
 
         pose = self.poses[self.indice]
         publisher = self.publisher_list[self.indice]
