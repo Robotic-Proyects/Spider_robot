@@ -54,6 +54,8 @@ class MovementPublisher(Node):
         self.pose_front_right = [0.0, 0.0, 0.0]
         self.pose_front_left = [0.0, 0.0, 0.0]
 
+        self.base_pose = [0.0, 0.0, 0.0]
+
         self.coordinate_back_right = {'x':0.0, 'y':0.0, 'z':0.0}
         self.coordinate_back_left = {'x':0.0, 'y':0.0, 'z':0.0}
         self.coordinate_front_right = {'x':0.0, 'y':0.0, 'z':0.0}
@@ -79,6 +81,8 @@ class MovementPublisher(Node):
             3: 0,  # C
             4: 0,  # L1
             5: 0,  # R1
+            6: 0,  # L2
+            7: 0,  # R2
             8: 0,  # SHARE
             9: 0   # OPTIONS
         }
@@ -87,6 +91,11 @@ class MovementPublisher(Node):
         self.O_flag = False
         self.T_flag = False
         self.C_flag = False
+
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
+        self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
 
     def set_pose(self, pose, index):
         self.poses[index] = pose
@@ -130,6 +139,13 @@ class MovementPublisher(Node):
         msg.foot = pose[2]
 
         msg.smooth_value = 0.5
+
+        # if publisher == self.publisher_front_left_:
+        #     msg.leg += math.radians(-5.0)
+
+        # if publisher == self.publisher_back_left_:
+        #     msg.leg += math.radians(-5.0)
+        #     msg.foot += math.radians(-5.0)
 
         publisher.publish(msg)
     
@@ -250,13 +266,43 @@ class MovementPublisher(Node):
             self.set_pose([x_rel, y_rel, z_rel], i)
             time.sleep(0.01)
 
-    def direct_base(self, base_pose):
-        hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
-        feet_global = [[0.8534, 0.8534 ,-0.8], [0.8534, -0.8534, -0.8], [-0.8534, 0.8534, -0.8], [-0.8534, -0.8534, -0.8]]
+    def local2Global(self, base, feet_local):
+        """
+        Convierte posiciones locales de las patas a coordenadas globales
 
+        base: [x, y, z] posición del cuerpo
+        hip_local: offsets de las caderas respecto al cuerpo
+        feet_local: posiciones de los pies en marco de la pata
+        yaw_deg: yaw de cada pata
+        """
+        hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
         yaw_deg = [45, -45, 135, -135]
-        self.move_base(base_pose, hip_local, feet_global, yaw_deg)
-    
+        feet_global = []
+
+        for i in range(4):
+            alpha = np.deg2rad(yaw_deg[i])
+
+            # rotar del marco de la pata al mundo
+            v_world = self.R(alpha) @ np.array(feet_local[i])
+
+            # sumar base y offset de cadera
+            p_world = np.array(base) + np.array(hip_local[i]) + v_world
+
+            feet_global.append(p_world)
+
+        return feet_global
+
+    def direct_base(self, new_base_pose):
+        feet_local = [[0.507, 0.0, -0.8], [0.507, 0.0, -0.8], [0.507, 0.0, -0.8], [0.507, 0.0, -0.8]]
+        feet_global = self.local2Global([0.0, 0.0, 0.0], feet_local)
+
+        hip_local = [[0.4949, 0.4949, 0], [0.4949, -0.4949, 0], [-0.4949, 0.4949, 0], [-0.4949, -0.4949, 0]]
+        yaw_deg = [45, -45, 135, -135]
+
+        self.move_base(new_base_pose, hip_local, feet_global, yaw_deg)
+
+        self.base_pose = new_base_pose
+
     def calculate_mid_pose(self, start, end):
         mid = [0.0, 0.0, 0.0]
 
@@ -272,30 +318,30 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
         
         start = self.pose_back_left
-        end   = [0.45, -0.35, -0.8] 
+        end   = [0.65, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
         self.moveLift(start, mid, end, self.publisher_back_left_)
         # time.sleep(0.2)
 
         start = self.pose_front_left
-        end   = [0.45, -0.35, -0.8] 
+        end   = [0.65, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)    
         self.moveLift(start, mid, end, self.publisher_front_left_)
         # time.sleep(0.2)
 
-        self.direct_base([0.0, 0.0, 0])
+        # self.direct_base([0.0, 0.0, 0])
 
         self.direct_base([0.15, 0.15, 0])
         # time.sleep(0.2)
 
         start   = self.pose_back_right
-        end = [0.45, 0.35, -0.8] 
+        end = [0.65, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)   
         self.moveLift(start, mid, end, self.publisher_back_right_)
         # time.sleep(0.2)
 
         start   = self.pose_front_right
-        end = [0.45, 0.35, -0.8] 
+        end = [0.65, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end) 
         self.moveLift(start, mid, end, self.publisher_front_right_)
         # time.sleep(0.2)
@@ -308,13 +354,13 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
         
         start = self.pose_back_left
-        end   = [0.45, 0.35, -0.8] 
+        end   = [0.65, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
         self.moveLift(start, mid, end, self.publisher_front_left_)
         # time.sleep(0.2)
 
         start = self.pose_front_left
-        end   = [0.45, 0.35, -0.8] 
+        end   = [0.65, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)    
         self.moveLift(start, mid, end, self.publisher_back_left_)
         # time.sleep(0.2)
@@ -325,13 +371,13 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
 
         start   = self.pose_back_right
-        end = [0.45, -0.35, -0.8] 
+        end = [0.65, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)   
         self.moveLift(start, mid, end, self.publisher_front_right_)
         # time.sleep(0.2)
 
         start   = self.pose_front_right
-        end = [0.45, -0.35, -0.8] 
+        end = [0.65, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end) 
         self.moveLift(start, mid, end, self.publisher_back_right_)
         # time.sleep(0.2)
@@ -342,7 +388,7 @@ class MovementPublisher(Node):
     def turn_right(self):
         start = self.pose_back_left
         # end   = [0.2742,  -0.4271, -0.8] 
-        end   = [0.45, -0.35, -0.8] 
+        end   = [0.65, -0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
 
         self.direct_base([-0.1, 0.1, 0])
@@ -366,7 +412,7 @@ class MovementPublisher(Node):
     def turn_left(self):
         start = self.pose_back_left
         # end   = [0.2742, 0.4271, -0.8] 
-        end   = [0.45, 0.35, -0.8] 
+        end   = [0.65, 0.35, -0.8] 
         mid   = self.calculate_mid_pose(start, end)
 
         self.direct_base([-0.1, -0.1, 0])
@@ -401,7 +447,7 @@ class MovementPublisher(Node):
         return b == 1 and prev == 0
 
     def timer_callback(self):
-        global state_legs
+        global state_legs, F_OFF, S_OFF, T_OFF
 
         pose = self.poses[self.indice]
         publisher = self.publisher_list[self.indice]
@@ -423,10 +469,11 @@ class MovementPublisher(Node):
             self.publisher_oe_.publish(msg_)
 
         if self.rising_edge(0):  # X
-            pass
+            base = [0.0, 0.0, 0.0]
+            self.direct_base(base)
 
         if self.rising_edge(1):  # CIRCLE
-            base = [0.1, -0.1, 0.0]
+            base = [0.15, -0.15, 0.0]
             self.direct_base(base)
 
         if self.rising_edge(2):  # TRIANGLE
@@ -436,7 +483,7 @@ class MovementPublisher(Node):
             self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
 
         if self.rising_edge(3):  # SQUARE
-            base = [0.1, 0.1 , 0.0]
+            base = [0.15, 0.15 , 0.0]
             self.direct_base(base)
 
         if self.rising_edge(4):  # L1
@@ -445,6 +492,24 @@ class MovementPublisher(Node):
 
         if self.rising_edge(5):  # R1
             base = [0.0, 0.0, -0.1]
+            self.direct_base(base)
+
+        if self.rising_edge(6):  # L2
+            base = [0.0, 0.0, 0.0]
+
+            F_OFF = math.radians(0.0)
+            S_OFF = math.radians(-20.0)
+            T_OFF = math.radians(65.0)
+
+            self.direct_base(base)
+
+        if self.rising_edge(7):  # R2
+            base = [0.0, 0.0, 0.0]
+
+            F_OFF = math.radians(0.0)
+            S_OFF = math.radians(0.0)
+            T_OFF = math.radians(90.0)
+
             self.direct_base(base)
 
         if self.msg.axes[7] == 1:

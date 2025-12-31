@@ -39,6 +39,7 @@ ControllerNode::ControllerNode()
     pca_backleft_[2] = 5;
 
     ultrasonic_channel_ = 15;
+    pca_head_channel_ = 14;
 
     smooth_ = 0.1;
 
@@ -48,6 +49,7 @@ ControllerNode::ControllerNode()
     memset(backleft_pose_, 0, sizeof(backleft_pose_));
 
     ultrasonic_pose_ = 0.0;
+    head_pose_ = 0.0;
 
     memset(frontleft_target_, 0, sizeof(frontleft_target_));
     memset(frontright_target_, 0, sizeof(frontright_target_));
@@ -55,9 +57,13 @@ ControllerNode::ControllerNode()
     memset(backleft_target_, 0, sizeof(backleft_target_));
 
     ultrasonic_target_ = 0.0;
+    head_target_ = 0.0;
 
     ultrasonic_sub_ = this->create_subscription<std_msgs::msg::Float64>(
         "/ultrasonic", 10, std::bind(&ControllerNode::ultrasonic, this, std::placeholders::_1));
+
+    head_sub_ = this->create_subscription<std_msgs::msg::Float64>(
+        "/head", 10, std::bind(&ControllerNode::head, this, std::placeholders::_1));
 
     frontleft_leg_ = this->create_subscription<spider_msgs::msg::SpiderLeg>(
         "/arm/frontleft", 10, std::bind(&ControllerNode::frontleft, this, std::placeholders::_1));
@@ -82,6 +88,7 @@ ControllerNode::ControllerNode()
         last_pwm_[i] = -1;
     }
     last_pwm_[ultrasonic_channel_] = -1;
+    last_pwm_[pca_head_channel_] = -1;
 
     configure_all_servos();
 
@@ -148,6 +155,11 @@ constexpr size_t array_size(const T (&)[N]) { return N; }
 void ControllerNode::ultrasonic(const std_msgs::msg::Float64::SharedPtr msg)
 {
     ultrasonic_target_ = msg->data;
+}
+
+void ControllerNode::head(const std_msgs::msg::Float64::SharedPtr msg)
+{
+    head_target_ = msg->data;
 }
 
 void ControllerNode::frontleft(const spider_msgs::msg::SpiderLeg::SharedPtr msg)
@@ -302,6 +314,15 @@ void ControllerNode::update_servos()
     if (pwm_ultra != last_pwm_[ultrasonic_channel_]) {
         pca_.setPWM(ultrasonic_channel_, pwm_ultra);
         last_pwm_[ultrasonic_channel_] = pwm_ultra;
+    }
+
+    head_pose_ += (head_target_ - head_pose_) * smooth_;
+
+    int pwm_head = rad_to_pwm(head_pose_, -1.57, 1.57, 110, 510);
+
+    if (pwm_head != last_pwm_[pca_head_channel_]) {
+        pca_.setPWM(pca_head_channel_, pwm_head);
+        last_pwm_[pca_head_channel_] = pwm_head;
     }
 
     // std::cout << "Poses rad: "
