@@ -20,8 +20,8 @@ HALFWIDTH = 5
 state_legs = 0
 
 F_OFF = math.radians(0.0)
-S_OFF = math.radians(-35.0) # S_OFF = math.radians(0.0) 
-T_OFF = math.radians(50.0) # T_OFF = math.radians(90.0)
+S_OFF = math.radians(-35.0) # S_OFF = math.radians(-35.0) # S_OFF = math.radians(0.0) 
+T_OFF = math.radians(45.0) # T_OFF = math.radians(50.0) # T_OFF = math.radians(90.0)
 
 class State(Enum):
     START = auto()
@@ -146,9 +146,9 @@ class MovementPublisher(Node):
         # if publisher == self.publisher_front_left_:
         #     msg.leg += math.radians(-5.0)
 
-        # if publisher == self.publisher_back_left_:
-        #     msg.leg += math.radians(-5.0)
-        #     msg.foot += math.radians(-5.0)
+        if publisher == self.publisher_back_left_:
+            msg.leg += math.radians(-8.0)
+            # msg.foot += math.radians(-5.0)
 
         publisher.publish(msg)
     
@@ -318,7 +318,7 @@ class MovementPublisher(Node):
 
     def moveForward(self):
         self.direct_base([0.15, -0.15, 0])
-        # time.sleep(0.2)
+        time.sleep(0.1)
         
         start = self.pose_back_left
         end   = [0.65, -0.35, -0.8] 
@@ -332,10 +332,11 @@ class MovementPublisher(Node):
         self.moveLift(start, mid, end, self.publisher_front_left_)
         # time.sleep(0.2)
 
-        # self.direct_base([0.0, 0.0, 0])
+        self.direct_base([0.0, 0.0, 0])
+        time.sleep(0.1)
 
         self.direct_base([0.15, 0.15, 0])
-        # time.sleep(0.2)
+        time.sleep(0.1)
 
         start   = self.pose_back_right
         end = [0.65, 0.35, -0.8] 
@@ -350,11 +351,11 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
 
         self.direct_base([0.0, 0.0, 0])
-        # time.sleep(0.2)
+        time.sleep(0.1)
 
     def moveBackward(self):
         self.direct_base([-0.15, -0.15, 0])
-        # time.sleep(0.2)
+        time.sleep(0.1)
         
         start = self.pose_back_left
         end   = [0.65, 0.35, -0.8] 
@@ -369,9 +370,10 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
 
         self.direct_base([0.0, 0.0, 0])
+        time.sleep(0.1)
 
         self.direct_base([-0.15, 0.15, 0])
-        # time.sleep(0.2)
+        time.sleep(0.1)
 
         start   = self.pose_back_right
         end = [0.65, -0.35, -0.8] 
@@ -386,7 +388,7 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
 
         self.direct_base([0.0, 0.0, 0])
-        # time.sleep(0.2)
+        time.sleep(0.1)
     
     def turn_right(self):
         start = self.pose_back_left
@@ -470,14 +472,14 @@ class MovementPublisher(Node):
 
     def timer_callback(self):
         global state_legs, F_OFF, S_OFF, T_OFF
-        self.display_msgs(
-            "OFFSETS",
-            [
-                f"F_OFF: {math.degrees(F_OFF):.1f}",
-                f"S_OFF: {math.degrees(S_OFF):.1f}",
-                f"T_OFF: {math.degrees(T_OFF):.1f}"
-            ]
-        )
+        # self.display_msgs(
+        #     "OFFSETS",
+        #     [
+        #         f"F_OFF: {math.degrees(F_OFF):.1f}",
+        #         f"S_OFF: {math.degrees(S_OFF):.1f}",
+        #         f"T_OFF: {math.degrees(T_OFF):.1f}"
+        #     ]
+        # )
 
         pose = self.poses[self.indice]
         publisher = self.publisher_list[self.indice]
@@ -528,8 +530,8 @@ class MovementPublisher(Node):
             base = [0.0, 0.0, 0.0]
 
             F_OFF = math.radians(0.0)
-            S_OFF = math.radians(-20.0)
-            T_OFF = math.radians(65.0)
+            S_OFF = math.radians(-35.0)
+            T_OFF = math.radians(45.0)
 
             self.direct_base(base)
 
