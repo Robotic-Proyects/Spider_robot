@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Robot">
     <xacro:arg name="config_controllers" default="$(find spider)/config/spider_controllers.yaml"/>
-    <xacro:include filename="Robot.urdf"/>
-    <xacro:include filename="Robot_sensors.urdf.xacro"/>
+    <xacro:include filename="$(find spider)/urdf/Robot.urdf"/>
+    <xacro:include filename="$(find spider)/urdf/Robot_sensors.urdf.xacro"/>
 </robot>
