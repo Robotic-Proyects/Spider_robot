@@ -4,12 +4,12 @@ import math
 import numpy as np
 from rclpy.node import Node
 
-from std_msgs.msg import Float64MultiArray, Float64
+from std_msgs.msg import Float64MultiArray, Float64, UInt8
 from enum import Enum, auto
 
 from spider_control.KI import forward_kinematics, inverse_kinematics
 from spider_msgs.msg import SpiderLeg, SpiderSwitch
-from sensor_msgs.msg import Joy
+from sensor_msgs.msg import Joy, LaserScan
 
 import board
 import busio
@@ -24,12 +24,11 @@ S_OFF = math.radians(-35.0) # S_OFF = math.radians(-35.0) # S_OFF = math.radians
 T_OFF = math.radians(45.0) # T_OFF = math.radians(50.0) # T_OFF = math.radians(90.0)
 
 class State(Enum):
-    START = auto()
-    ELEVATE_FOOT = auto()
-    MOVE = auto()
-    CHANGE_LEG = auto()
-    LOWER = auto()
-    JOY = auto()
+    CONTROL = auto()
+    QUEST1 = auto()
+    QUEST1_2 = auto()
+    QUEST2 = auto()
+    OFF = auto()
 
 class MovementPublisher(Node):
 
@@ -39,6 +38,10 @@ class MovementPublisher(Node):
         self.publisher_back_right_ = self.create_publisher(SpiderLeg, '/arm/backright', 10)
         self.publisher_front_left_ = self.create_publisher(SpiderLeg, '/arm/frontleft', 10)
         self.publisher_front_right_ = self.create_publisher(SpiderLeg, '/arm/frontright', 10)
+
+        self.publisher_ultrasonic = self.create_publisher(Float64, '/ultrasonic', 10)
+
+        self.publisher_blocked_ = self.create_publisher(UInt8, '/blocked', 10)
         self.publisher_oe_ = self.create_publisher(SpiderSwitch, '/oe_value', 10)
 
         self.i2c = busio.I2C(board.SCL, board.SDA)
@@ -51,12 +54,22 @@ class MovementPublisher(Node):
             self.listener_callback,
             1)
         
+        self.sonar_subscription = self.create_subscription(
+            LaserScan,
+            '/sonar_scan',
+            self.sonar_callback,
+            10)
+
         self.subscription
+        self.sonar_subscription
+
+        self.msg = None
+        self.sonar_data = None
 
         timer_period = 0.02  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
-        self.state = State.START
+        self.state = State.QUEST1
 
         self.pose_back_right = [0.0, 0.0, 0.0]
         self.pose_back_left = [0.0, 0.0, 0.0]
@@ -74,9 +87,7 @@ class MovementPublisher(Node):
                                self.publisher_front_right_, 
                                self.publisher_back_left_, 
                                self.publisher_back_right_]
-        self.indice = 0
 
-        self.msg = None
         self.prev_buttons = {
             0: 0,  # X
             1: 0,  # O
@@ -94,6 +105,8 @@ class MovementPublisher(Node):
         self.O_flag = False
         self.T_flag = False
         self.C_flag = False
+
+        self.walls = []
 
         self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
@@ -183,7 +196,7 @@ class MovementPublisher(Node):
         pose = list(pose)
 
         self.publish(pose, publisher)
-        print("KI: ", pose)
+        # print("KI: ", pose)
         self.set_pose([x, y, z], self.get_publisher_index(publisher))
         return pose
 
@@ -264,7 +277,7 @@ class MovementPublisher(Node):
                 continue
 
             # publicar pose
-            print("Move_base: ",pose)
+            # print("Move_base: ",pose)
             self.publish(pose, self.publisher_list[i])
             self.set_pose([x_rel, y_rel, z_rel], i)
             time.sleep(0.01)
@@ -440,7 +453,9 @@ class MovementPublisher(Node):
 
     def listener_callback(self, msg):
         self.msg = msg
-        self.state = State.JOY
+    
+    def sonar_callback(self, msg):
+        self.sonar_data = msg
 
     def display_msgs(self, header_text, text_lines):
         image = Image.new("1", (self.oled.width, self.oled.height))
@@ -451,18 +466,20 @@ class MovementPublisher(Node):
         w, h = draw.textsize(header_text, font=self.font)
         draw.text(((self.oled.width - w)//2, (15 - h)//2), header_text, font=self.font, fill=0)
 
-        # Mensaje azul (15-63)
+        # Área azul (15-63)
         draw.rectangle((0, 15, self.oled.width-1, self.oled.height-1), fill=0)
-        y = 15
-        for line in text_lines:
-            draw.text((0, y), line, font=self.font, fill=1)
-            y += 10
+
+        if text_lines:
+            y = 15
+            for line in text_lines:
+                draw.text((0, y), line, font=self.font, fill=1)
+                y += 10
+        else:
+            # Rellenar todo el azul si no hay texto
+            draw.rectangle((0, 15, self.oled.width-1, self.oled.height-1), fill=1)
 
         self.oled.image(image)
         self.oled.show()
-
-    def expo_axis(self, x, expo=0.4):
-        return math.copysign(abs(x) ** (1 + expo), x)
 
     def rising_edge(self, btn_id):
         b = self.msg.buttons[btn_id]
@@ -470,91 +487,152 @@ class MovementPublisher(Node):
         self.prev_buttons[btn_id] = b
         return b == 1 and prev == 0
 
+    def detect_walls(self):
+        data = np.array(self.sonar_data.ranges)
+        mid_index = len(data) // 2
+        window = 5
+        threshold = 0.8
+
+        def wall_side(segment):
+            for i in range(len(segment) - window + 1):
+                slice_window = segment[i:i+window]
+                if slice_window[0] < threshold:
+                    diffs = np.diff(slice_window)
+                    if np.all(diffs >= 0):
+                        return True
+            return False
+
+        right_wall = wall_side(data[:mid_index])
+        left_wall = wall_side(data[mid_index:])
+        return (left_wall, right_wall)
+
     def timer_callback(self):
         global state_legs, F_OFF, S_OFF, T_OFF
-        # self.display_msgs(
-        #     "OFFSETS",
-        #     [
-        #         f"F_OFF: {math.degrees(F_OFF):.1f}",
-        #         f"S_OFF: {math.degrees(S_OFF):.1f}",
-        #         f"T_OFF: {math.degrees(T_OFF):.1f}"
-        #     ]
-        # )
 
-        pose = self.poses[self.indice]
-        publisher = self.publisher_list[self.indice]
-
-        if self.msg is None:
-            return
-
-        if self.state != State.JOY:
-            return
-
-        if self.rising_edge(8):  
+        if self.msg is not None and self.rising_edge(8): # Share
             msg_ = SpiderSwitch()
             msg_.oe_value = 0
             self.publisher_oe_.publish(msg_)
+            self.state = State.CONTROL
 
-        if self.rising_edge(9):  
+        if self.msg is not None and self.rising_edge(9): # Options
             msg_ = SpiderSwitch()
             msg_.oe_value = 1
             self.publisher_oe_.publish(msg_)
+            self.state = State.OFF
 
-        if self.rising_edge(0):  # X
-            base = [0.0, 0.0, 0.0]
-            self.direct_base(base)
+        if self.msg is not None and self.rising_edge(2):
+            self.state = State.CONTROL
 
-        if self.rising_edge(1):  # CIRCLE
-            base = [0.15, -0.15, 0.0]
-            self.direct_base(base)
+        match self.state:
+            case State.CONTROL:
+                self.display_msgs(
+                    "OFFSETS",
+                    [
+                        f"F_OFF: {math.degrees(F_OFF):.1f}",
+                        f"S_OFF: {math.degrees(S_OFF):.1f}",
+                        f"T_OFF: {math.degrees(T_OFF):.1f}"
+                    ]
+                )
 
-        if self.rising_edge(2):  # TRIANGLE
-            self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
-            self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
-            self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
-            self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
+                if self.rising_edge(0): # X
+                    self.direct_base([0.0, 0.0, 0.0])
 
-        if self.rising_edge(3):  # SQUARE
-            base = [0.15, 0.15 , 0.0]
-            self.direct_base(base)
+                if self.rising_edge(1): # O
+                    self.state = State.QUEST2
 
-        if self.rising_edge(4):  # L1
-            base = [0.0, 0.0 , 0.35]
-            self.direct_base(base)
+                # if self.rising_edge(2): # △
+                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
+                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
+                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
+                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
 
-        if self.rising_edge(5):  # R1
-            base = [0.0, 0.0, -0.1]
-            self.direct_base(base)
+                if self.rising_edge(3): # □
+                    self.state = State.QUEST1
 
-        if self.rising_edge(6):  # L2
-            base = [0.0, 0.0, 0.0]
+                if self.rising_edge(4): # L1
+                    self.direct_base([0.0, 0.0 , 0.35])
 
-            F_OFF = math.radians(0.0)
-            S_OFF = math.radians(-35.0)
-            T_OFF = math.radians(45.0)
+                if self.rising_edge(5): # R1
+                    self.direct_base([0.0, 0.0, -0.1])
 
-            self.direct_base(base)
+                if self.rising_edge(6): # L2
+                    F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
+                    self.direct_base([0.0, 0.0, 0.0])
 
-        if self.rising_edge(7):  # R2
-            base = [0.0, 0.0, 0.0]
+                if self.rising_edge(7): # R2
+                    F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(0.0), math.radians(90.0)
+                    self.direct_base([0.0, 0.0, 0.0])
 
-            F_OFF = math.radians(0.0)
-            S_OFF = math.radians(0.0)
-            T_OFF = math.radians(90.0)
+                if self.msg.axes[7] == 1:
+                    self.moveForward()
+                if self.msg.axes[7] == -1:
+                    self.moveBackward()
+                if self.msg.axes[6] == 1:
+                    self.turn_left()
+                if self.msg.axes[6] == -1:
+                    self.turn_right()
 
-            self.direct_base(base)
+            case State.QUEST1:
+                F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
 
-        if self.msg.axes[7] == 1:
-            self.moveForward()
+                self.display_msgs("WALLS", ["Detecting walls..."])
 
-        if self.msg.axes[7] == -1:
-            self.moveBackward()
+                if self.sonar_data is not None:
+                    left, right = self.detect_walls()
 
-        if self.msg.axes[6] == 1:
-            self.turn_left()
+                    msg_blocked = UInt8()
+                    msg_ultra = Float64()
 
-        if self.msg.axes[6] == -1:
-            self.turn_right()
+                    if left:
+                        msg_blocked.data = 1
+                        self.publisher_blocked_.publish(msg_blocked)
+                        msg_ultra.data = 3.002
+                        self.publisher_ultrasonic.publish(msg_ultra)
+                        self.state = State.QUEST1_2
+
+                        self.display_msgs("WALLS", ["Detected left wall"])
+
+                    elif right:
+                        msg_blocked.data = 1
+                        self.publisher_blocked_.publish(msg_blocked)
+                        msg_ultra.data = 0.0
+                        self.publisher_ultrasonic.publish(msg_ultra)
+                        self.state = State.QUEST1_2
+
+                        self.display_msgs("WALLS", ["Detected right wall"])
+
+                    self.walls = [left, right]
+                else:
+                    self.walls = [None, None]
+
+            case State.QUEST1_2:
+                F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
+
+                sonar_dist = self.sonar_data.ranges[0]
+
+                move = ""
+                wall_detected = ""
+                if sonar_dist < 1.0 and sonar_dist != -1:
+                    self.moveForward()
+                    move = "Moving Forward"
+                else:
+                    if self.walls[0]:
+                        self.turn_left()
+                        move = "Turning Left"
+                        wall_detected = "Left Wall"
+                    else:
+                        self.turn_right()
+                        move = "Turning Right"
+                        wall_detected = "Right Wall"
+
+                self.display_msgs("FOLLOWING WALL", [f"Detected {wall_detected}", f"Action: {move}"])
+            case State.QUEST2:
+                pass
+
+            case State.OFF:
+                self.display_msgs("SLEEPING", [])
+                pass
 
 def main(args=None):
     rclpy.init(args=args)
