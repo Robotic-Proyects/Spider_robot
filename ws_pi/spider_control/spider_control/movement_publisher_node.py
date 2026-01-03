@@ -40,6 +40,7 @@ class MovementPublisher(Node):
         self.publisher_front_right_ = self.create_publisher(SpiderLeg, '/arm/frontright', 10)
 
         self.publisher_ultrasonic = self.create_publisher(Float64, '/ultrasonic', 10)
+        self.publisher_head = self.create_publisher(Float64, '/head', 10)
 
         self.publisher_blocked_ = self.create_publisher(UInt8, '/blocked', 10)
         self.publisher_oe_ = self.create_publisher(SpiderSwitch, '/oe_value', 10)
@@ -69,7 +70,7 @@ class MovementPublisher(Node):
         timer_period = 0.02  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
-        self.state = State.QUEST1
+        self.state = State.CONTROL
 
         self.pose_back_right = [0.0, 0.0, 0.0]
         self.pose_back_left = [0.0, 0.0, 0.0]
@@ -107,11 +108,18 @@ class MovementPublisher(Node):
         self.C_flag = False
 
         self.walls = []
+        self._last_screen = None
+
+        self.head_rad = 0.0
 
         self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
         self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
+
+        msg_blocked = UInt8()
+        msg_blocked.data = 0
+        self.publisher_blocked_.publish(msg_blocked)
 
     def set_pose(self, pose, index):
         self.poses[index] = pose
@@ -458,15 +466,20 @@ class MovementPublisher(Node):
         self.sonar_data = msg
 
     def display_msgs(self, header_text, text_lines):
+        current_screen = (header_text, tuple(text_lines) if text_lines else None)
+
+        if current_screen == self._last_screen:
+            return
+
+        self._last_screen = current_screen
+
         image = Image.new("1", (self.oled.width, self.oled.height))
         draw = ImageDraw.Draw(image)
 
-        # Header amarillo (0-15)
         draw.rectangle((0, 0, self.oled.width-1, 15), fill=1)
         w, h = draw.textsize(header_text, font=self.font)
         draw.text(((self.oled.width - w)//2, (15 - h)//2), header_text, font=self.font, fill=0)
 
-        # Área azul (15-63)
         draw.rectangle((0, 15, self.oled.width-1, self.oled.height-1), fill=0)
 
         if text_lines:
@@ -475,7 +488,6 @@ class MovementPublisher(Node):
                 draw.text((0, y), line, font=self.font, fill=1)
                 y += 10
         else:
-            # Rellenar todo el azul si no hay texto
             draw.rectangle((0, 15, self.oled.width-1, self.oled.height-1), fill=1)
 
         self.oled.image(image)
@@ -509,20 +521,18 @@ class MovementPublisher(Node):
     def timer_callback(self):
         global state_legs, F_OFF, S_OFF, T_OFF
 
-        if self.msg is not None and self.rising_edge(8): # Share
-            msg_ = SpiderSwitch()
-            msg_.oe_value = 0
-            self.publisher_oe_.publish(msg_)
-            self.state = State.CONTROL
+        if self.msg is not None:
+            if self.rising_edge(8): # Share
+                msg_ = SpiderSwitch()
+                msg_.oe_value = 0
+                self.publisher_oe_.publish(msg_)
+                self.state = State.CONTROL
 
-        if self.msg is not None and self.rising_edge(9): # Options
-            msg_ = SpiderSwitch()
-            msg_.oe_value = 1
-            self.publisher_oe_.publish(msg_)
-            self.state = State.OFF
-
-        if self.msg is not None and self.rising_edge(2):
-            self.state = State.CONTROL
+            if self.rising_edge(9): # Options
+                msg_ = SpiderSwitch()
+                msg_.oe_value = 1
+                self.publisher_oe_.publish(msg_)
+                self.state = State.OFF
 
         match self.state:
             case State.CONTROL:
@@ -535,26 +545,34 @@ class MovementPublisher(Node):
                     ]
                 )
 
+                if self.msg is None:
+                    return
+
                 if self.rising_edge(0): # X
                     self.direct_base([0.0, 0.0, 0.0])
 
                 if self.rising_edge(1): # O
                     self.state = State.QUEST2
 
-                # if self.rising_edge(2): # △
-                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_front_left_)
-                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_back_left_)
-                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_front_right_)
-                #     self.KI_move(0.507, 0.0, -0.8, self.publisher_back_right_)
+                if self.rising_edge(2): # △
+                    msg_blocked = UInt8()
+                    msg_blocked.data = 0
+                    self.publisher_blocked_.publish(msg_blocked)
 
                 if self.rising_edge(3): # □
                     self.state = State.QUEST1
 
-                if self.rising_edge(4): # L1
-                    self.direct_base([0.0, 0.0 , 0.35])
+                if self.rising_edge(4):  # L1
+                    msg = Float64()
+                    self.head_rad += 0.1
+                    msg.data = self.head_rad
+                    self.publisher_head.publish(msg)
 
-                if self.rising_edge(5): # R1
-                    self.direct_base([0.0, 0.0, -0.1])
+                if self.rising_edge(5):  # R1
+                    msg = Float64()
+                    self.head_rad -= 0.1
+                    msg.data = self.head_rad
+                    self.publisher_head.publish(msg)
 
                 if self.rising_edge(6): # L2
                     F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
