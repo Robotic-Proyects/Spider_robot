@@ -2,6 +2,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
+#include "std_msgs/msg/u_int8_multi_array.hpp"
 #include "std_msgs/msg/float64.hpp"
 #include <std_msgs/msg/u_int8.hpp>
 #include "HCSR04.hpp"
@@ -28,12 +29,14 @@ private:
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr hc_servo_pub_;
 
     rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr blocked_sub_;
+    rclcpp::Subscription<std_msgs::msg::UInt8MultiArray>::SharedPtr range_sub_;
 
     HCSR04 ultrasonic_driver_;
 
     bool blocked_;
 
-    const int steps_ = 172;
+    int initial_step_ = 0;
+    int final_step_ = 0;
     std::vector<float> sonar_readings_;
     double min_angle_;
     double max_angle_;

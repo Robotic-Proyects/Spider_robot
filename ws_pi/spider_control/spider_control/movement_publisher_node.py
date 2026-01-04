@@ -4,7 +4,7 @@ import math
 import numpy as np
 from rclpy.node import Node
 
-from std_msgs.msg import Float64MultiArray, Float64, UInt8
+from std_msgs.msg import UInt8MultiArray, Float64, UInt8
 from enum import Enum, auto
 
 from spider_control.KI import forward_kinematics, inverse_kinematics
@@ -41,7 +41,7 @@ class MovementPublisher(Node):
 
         self.publisher_ultrasonic = self.create_publisher(Float64, '/ultrasonic', 10)
         self.publisher_head = self.create_publisher(Float64, '/head', 10)
-
+        self.publisher_range = self.create_publisher(UInt8MultiArray, '/range', 10)
         self.publisher_blocked_ = self.create_publisher(UInt8, '/blocked', 10)
         self.publisher_oe_ = self.create_publisher(SpiderSwitch, '/oe_value', 10)
 
@@ -597,6 +597,11 @@ class MovementPublisher(Node):
 
             case State.QUEST1:
                 F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
+
+                # Marcar que se mueva el ultrasonidos de 0 a 172 grados
+                msg_range = UInt8MultiArray()
+                msg_range.data = [0, 172]
+                self.publisher_range(msg_range)
 
                 self.display_msgs("WALLS", ["Detecting walls..."])
 
