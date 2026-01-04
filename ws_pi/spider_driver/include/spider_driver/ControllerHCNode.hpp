@@ -24,6 +24,8 @@ private:
 
     void blocked_callback(const std_msgs::msg::UInt8::SharedPtr msg);
 
+    void range_callback(const std_msgs::msg::UInt8MultiArray::SharedPtr msg);
+
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<sensor_msgs::msg::LaserScan>::SharedPtr laser_pub_;
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr hc_servo_pub_;
@@ -36,7 +38,7 @@ private:
     bool blocked_;
 
     int initial_step_ = 0;
-    int final_step_ = 0;
+    int final_step_ = 172;
     std::vector<float> sonar_readings_;
     double min_angle_;
     double max_angle_;

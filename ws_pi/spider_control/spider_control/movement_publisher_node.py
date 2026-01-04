@@ -464,6 +464,7 @@ class MovementPublisher(Node):
     
     def sonar_callback(self, msg):
         self.sonar_data = msg
+        #print(len(msg.ranges))
 
     def display_msgs(self, header_text, text_lines):
         current_screen = (header_text, tuple(text_lines) if text_lines else None)
@@ -562,8 +563,20 @@ class MovementPublisher(Node):
                     msg_blocked.data = 0
                     self.publisher_blocked_.publish(msg_blocked)
 
+                    msg_range = UInt8MultiArray()
+                    msg_range.data = [0, 165]
+                    self.publisher_range.publish(msg_range)
+
                 if self.rising_edge(3): # □
                     self.walls = [None, None]
+
+                    # Marcar que se mueva el ultrasonidos de 0 a 172 grados
+                    msg_range = UInt8MultiArray()
+                    msg_range.data = [0, 165]
+                    self.publisher_range.publish(msg_range)
+
+                    time.sleep(2)
+
                     self.state = State.QUEST1
 
                 if self.rising_edge(4):  # L1
@@ -597,12 +610,6 @@ class MovementPublisher(Node):
 
             case State.QUEST1:
                 F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
-
-                # Marcar que se mueva el ultrasonidos de 0 a 172 grados
-                msg_range = UInt8MultiArray()
-                msg_range.data = [0, 172]
-                self.publisher_range(msg_range)
-
                 self.display_msgs("WALLS", ["Detecting walls..."])
 
                 if self.sonar_data is not None:

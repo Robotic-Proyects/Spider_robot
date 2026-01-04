@@ -27,6 +27,8 @@ ControllerHCNode::ControllerHCNode()
     );
 
     timer_ = this->create_wall_timer(20ms, std::bind(&ControllerHCNode::timer_callback, this));
+
+    sonar_readings_.resize(final_step_ - initial_step_ + 1, -1.0f);
 }
 
 void ControllerHCNode::publisher(double angle)
@@ -49,13 +51,17 @@ void ControllerHCNode::range_callback(
     if (msg->data.size() >= 2) {
         initial_step_ = msg->data[0];
         final_step_ = msg->data[1];
+
+        int size = final_step_ - initial_step_ + 1;
+        sonar_readings_.resize(size, -1.0f);
+
+        current_step_ = initial_step_;
+        direction_ = 1;
     }
 }
 
 void ControllerHCNode::timer_callback()
 {
-    double step_angle = (max_angle_ - min_angle_) / (steps_ - 1);
-
     if (!blocked_) {
         // Publica el ángulo actual
         publisher(current_step_);
@@ -84,7 +90,7 @@ void ControllerHCNode::timer_callback()
 
             scan_msg.angle_min = min_angle_;
             scan_msg.angle_max = max_angle_;
-            scan_msg.angle_increment = step_angle;
+            scan_msg.angle_increment = 1;
             scan_msg.range_min = 0.02;
             scan_msg.range_max = 4.0;
             scan_msg.ranges = sonar_readings_;
@@ -102,13 +108,13 @@ void ControllerHCNode::timer_callback()
 
         scan_msg.angle_min = min_angle_;
         scan_msg.angle_max = max_angle_;
-        scan_msg.angle_increment = step_angle;
+        scan_msg.angle_increment = 1;
         scan_msg.range_min = 0.02;
         scan_msg.range_max = 4.0;
-        scan_msg.ranges = sonar_readings_;
+        scan_msg.ranges = {static_cast<float>(distance)};
 
         laser_pub_->publish(scan_msg);
     }
 }
 
-}  // namespace controller
+}  // namespace controller_hc
