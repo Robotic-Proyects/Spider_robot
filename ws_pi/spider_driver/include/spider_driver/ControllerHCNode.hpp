@@ -3,6 +3,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "std_msgs/msg/float64.hpp"
+#include <std_msgs/msg/u_int8.hpp>
 #include "HCSR04.hpp"
 #include <vector>
 #include <memory>
@@ -20,11 +21,17 @@ private:
     void timer_callback();
     void publisher(double angle);
 
+    void blocked_callback(const std_msgs::msg::UInt8::SharedPtr msg);
+
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<sensor_msgs::msg::LaserScan>::SharedPtr laser_pub_;
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr hc_servo_pub_;
 
+    rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr blocked_sub_;
+
     HCSR04 ultrasonic_driver_;
+
+    bool blocked_;
 
     const int steps_ = 172;
     std::vector<float> sonar_readings_;

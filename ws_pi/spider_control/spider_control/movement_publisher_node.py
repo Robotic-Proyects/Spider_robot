@@ -411,7 +411,7 @@ class MovementPublisher(Node):
         self.direct_base([0.0, 0.0, 0])
         time.sleep(0.1)
     
-    def turn_right(self):
+    def turnRight(self):
         start = self.pose_back_left
         # end   = [0.2742,  -0.4271, -0.8] 
         end   = [0.65, -0.35, -0.8] 
@@ -435,7 +435,7 @@ class MovementPublisher(Node):
         # time.sleep(0.2)
         self.direct_base([0, 0, 0])
 
-    def turn_left(self):
+    def turnLeft(self):
         start = self.pose_back_left
         # end   = [0.2742, 0.4271, -0.8] 
         end   = [0.65, 0.35, -0.8] 
@@ -503,11 +503,14 @@ class MovementPublisher(Node):
         data = np.array(self.sonar_data.ranges)
         mid_index = len(data) // 2
         window = 5
-        threshold = 0.8
+        threshold = 0.5
 
         def wall_side(segment):
             for i in range(len(segment) - window + 1):
                 slice_window = segment[i:i+window]
+                slice_window = slice_window[slice_window != -1]
+                if len(slice_window) == 0:
+                    continue 
                 if slice_window[0] < threshold:
                     diffs = np.diff(slice_window)
                     if np.all(diffs >= 0):
@@ -560,6 +563,7 @@ class MovementPublisher(Node):
                     self.publisher_blocked_.publish(msg_blocked)
 
                 if self.rising_edge(3): # □
+                    self.walls = [None, None]
                     self.state = State.QUEST1
 
                 if self.rising_edge(4):  # L1
@@ -587,9 +591,9 @@ class MovementPublisher(Node):
                 if self.msg.axes[7] == -1:
                     self.moveBackward()
                 if self.msg.axes[6] == 1:
-                    self.turn_left()
+                    self.turnLeft()
                 if self.msg.axes[6] == -1:
-                    self.turn_right()
+                    self.turnRight()
 
             case State.QUEST1:
                 F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
@@ -605,19 +609,25 @@ class MovementPublisher(Node):
                     if left:
                         msg_blocked.data = 1
                         self.publisher_blocked_.publish(msg_blocked)
-                        msg_ultra.data = 3.002
+                        time.sleep(0.5)
+                        msg_ultra.data = 2.5
                         self.publisher_ultrasonic.publish(msg_ultra)
                         self.state = State.QUEST1_2
+                        time.sleep(0.5)
 
+                        # print("LEFT")
                         self.display_msgs("WALLS", ["Detected left wall"])
 
                     elif right:
                         msg_blocked.data = 1
                         self.publisher_blocked_.publish(msg_blocked)
+                        time.sleep(0.5)
                         msg_ultra.data = 0.0
                         self.publisher_ultrasonic.publish(msg_ultra)
                         self.state = State.QUEST1_2
+                        time.sleep(0.5)
 
+                        # print("RIGHT")
                         self.display_msgs("WALLS", ["Detected right wall"])
 
                     self.walls = [left, right]
@@ -631,22 +641,34 @@ class MovementPublisher(Node):
 
                 move = ""
                 wall_detected = ""
-                if sonar_dist < 1.0 and sonar_dist != -1:
+                if sonar_dist < 1.0:
                     self.moveForward()
                     move = "Moving Forward"
                 else:
                     if self.walls[0]:
-                        self.turn_left()
+                        self.turnLeft()
                         move = "Turning Left"
                         wall_detected = "Left Wall"
                     else:
-                        self.turn_right()
+                        self.turnRight()
                         move = "Turning Right"
                         wall_detected = "Right Wall"
 
                 self.display_msgs("FOLLOWING WALL", [f"Detected {wall_detected}", f"Action: {move}"])
             case State.QUEST2:
-                pass
+                F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
+
+                data = np.array(self.sonar_data.ranges)
+                data = data[data != -1]
+
+                if np.any(data < 0.5):
+                    print("Obstáculo muy cercano, girando dos veces y deteniendo")
+                    for _ in range(5):
+                        self.turnLeft()
+                    self.state = State.OFF
+                    return
+                else:
+                    self.moveForward()
 
             case State.OFF:
                 self.display_msgs("SLEEPING", [])
