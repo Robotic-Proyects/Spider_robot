@@ -68,7 +68,7 @@ void ControllerHCNode::timer_callback()
 
         // Lee la distancia del sensor
         double distance = ultrasonic_driver_.read();
-        sonar_readings_[current_step_] = distance;
+        sonar_readings_[current_step_-initial_step_] = distance;
 
         // Actualiza el paso según la dirección
         current_step_ += direction_;

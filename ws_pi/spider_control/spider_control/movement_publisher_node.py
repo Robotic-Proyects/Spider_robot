@@ -525,6 +525,9 @@ class MovementPublisher(Node):
     def timer_callback(self):
         global state_legs, F_OFF, S_OFF, T_OFF
 
+        if self.sonar_data is not None:
+            print(len(self.sonar_data.ranges))
+
         if self.msg is not None:
             if self.rising_edge(8): # Share
                 msg_ = SpiderSwitch()
@@ -550,12 +553,26 @@ class MovementPublisher(Node):
                 )
 
                 if self.msg is None:
+                    msg_range = UInt8MultiArray()
+                    msg_range.data = [60, 120]
+                    self.publisher_range.publish(msg_range)
+
+                    time.sleep(2)
+
+                    self.state = State.QUEST2
+
                     return
 
                 if self.rising_edge(0): # X
                     self.direct_base([0.0, 0.0, 0.0])
 
                 if self.rising_edge(1): # O
+                    msg_range = UInt8MultiArray()
+                    msg_range.data = [0, 165]
+                    self.publisher_range.publish(msg_range)
+
+                    time.sleep(2)
+
                     self.state = State.QUEST2
 
                 if self.rising_edge(2): # △
@@ -670,10 +687,14 @@ class MovementPublisher(Node):
             case State.QUEST2:
                 F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
 
+                if self.sonar_data is None:
+                    return
+
                 data = np.array(self.sonar_data.ranges)
+                print(data)
                 data = data[data != -1]
 
-                if np.any(data < 0.5):
+                if np.any(data < 0.35):
                     print("Obstáculo muy cercano, girando dos veces y deteniendo")
                     for _ in range(5):
                         self.turnLeft()

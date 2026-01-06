@@ -38,7 +38,7 @@ private:
     bool blocked_;
 
     int initial_step_ = 0;
-    int final_step_ = 172;
+    int final_step_ = 170;
     std::vector<float> sonar_readings_;
     double min_angle_;
     double max_angle_;
