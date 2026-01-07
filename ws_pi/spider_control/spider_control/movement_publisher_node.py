@@ -469,6 +469,8 @@ class MovementPublisher(Node):
     
     def sonar_callback(self, msg):
         self.sonar_data = msg
+        if self.state == State.QUEST2 and len(self.sonar_data.ranges) > 1:
+            self.counter += 1
 
     def display_msgs(self, header_text, text_lines):
         current_screen = (header_text, tuple(text_lines) if text_lines else None)
@@ -569,7 +571,7 @@ class MovementPublisher(Node):
 
                 if self.rising_edge(1): # O
                     msg_range = UInt8MultiArray()
-                    msg_range.data = [35, 135]
+                    msg_range.data = [25, 135]
                     self.publisher_range.publish(msg_range)
 
                     time.sleep(3)
@@ -687,60 +689,53 @@ class MovementPublisher(Node):
 
                 self.display_msgs("FOLLOWING WALL", [f"Detected {wall_detected}", f"Action: {move}"])
             case State.QUEST2:
+                print(self.state)
+
                 F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
 
-                # if self.sonar_data is None:
-                #     return
-                # else:
-                #     self.counter += 1
+                if self.sonar_data is None:
+                    return
+                    
+                data = np.array(self.sonar_data.ranges)
+                data = data[data != -1]
 
-                # data = np.array(self.sonar_data.ranges)
-                # data = data[data != -1]
+                if self.counter == 3:
+                    self.counter = 0
+                    # Dividir en 3 sectores lo más equilibrado posible
+                    derecha, centro, izquierda = np.array_split(data, 3)
+                    print("Derecha:", derecha)
+                    print("Centro:", centro)
+                    print("Izquierda:", izquierda)
 
-                # if self.counter == 3:
-                #     # Dividir en 3 sectores lo más equilibrado posible
-                #     derecha, centro, izquierda = np.array_split(data, 3)
-                #     print("Derecha:", derecha)
-                #     print("Centro:", centro)
-                #     print("Izquierda:", izquierda)
+                    # Descartar sectores con obstáculos cercanos (<0.8 m)
+                    SEPARACION_MIN = 0.65
+                    sectores = {"derecha": derecha, "centro": centro, "izquierda": izquierda}
+                    sectores_validos = {nombre: vals for nombre, vals in sectores.items() if not np.any(vals < SEPARACION_MIN)}
 
-                #     # Descartar sectores con obstáculos cercanos (<0.8 m)
-                #     SEPARACION_MIN = 0.65
-                #     sectores = {"derecha": derecha, "centro": centro, "izquierda": izquierda}
-                #     sectores_validos = {nombre: vals for nombre, vals in sectores.items() if not np.any(vals < SEPARACION_MIN)}
+                    # Priorizar el centro si está libre
+                    if "centro" in sectores_validos or sectores_validos is None:
+                        print("Centro libre, avanzando")
+                    else :
+                        # Si no, elegir el lateral con mayor distancia media
+                        mejor_sector = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
+                        if mejor_sector == "derecha":
+                            print("Derecha libre, girando")
+                            for _ in range(2):
+                                self.turnRight()
+                        elif mejor_sector == "izquierda":
+                            print("Izquierda libre, girando")
+                            for _ in range(2):
+                                self.turnLeft()
 
-                #     if not sectores_validos:
-                #         print("Todos los sectores bloqueados, girando")
-                #         for _ in range(3):
-                #             self.turnLeft()
-                #         return
-
-                #     # Priorizar el centro si está libre
-                #     if "centro" in sectores_validos:
-                #         print("Centro libre, avanzando")
-                #         self.moveForward(0.01)
-                #         return
-
-                #     # Si no, elegir el lateral con mayor distancia media
-                #     mejor_sector = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
-                #     print(f"Moviéndose hacia {mejor_sector}")
-
-                #     if mejor_sector == "derecha":
-                #         self.turnRight()
-                #     elif mejor_sector == "izquierda":
-                #         self.turnLeft()
-
-                #     self.state = State.OFF
-
-                msg_blocked = UInt8()
-                msg_ultra = Float64()
-                msg_blocked.data = 1
-                self.publisher_blocked_.publish(msg_blocked)
-                time.sleep(0.5)
-                msg_ultra.data = 1.501
-                self.publisher_ultrasonic.publish(msg_ultra)
-                self.state = State.QUEST2_2
-                time.sleep(0.5)
+                    msg_blocked = UInt8()
+                    msg_ultra = Float64()
+                    msg_blocked.data = 1
+                    self.publisher_blocked_.publish(msg_blocked)
+                    time.sleep(0.5)
+                    msg_ultra.data = 1.501
+                    self.publisher_ultrasonic.publish(msg_ultra)
+                    self.state = State.QUEST2_2
+                    time.sleep(0.5)
 
             case State.QUEST2_2:
                 sonar_dist = self.sonar_data.ranges[0]
@@ -753,22 +748,32 @@ class MovementPublisher(Node):
                     self.counter_walls += 1
 
             case State.QUEST2_3:
-
-                for _ in range(6):
+                for _ in range(7):
                     self.turnRight()
 
                 for _ in range(self.counter):
                     self.moveForward(0.025)
 
-                if self.counter_walls >= 2:
-                    for _ in range(4):
+                if self.counter_walls == 2:
+                    for _ in range(5):
                         self.turnRight()  
 
+
+                msg_blocked = UInt8()
+                msg_blocked.data = 0
+                self.publisher_blocked_.publish(msg_blocked)
+
+                msg_range = UInt8MultiArray()
+                msg_range.data = [25, 135]
+                self.publisher_range.publish(msg_range)
+
                 self.counter = 0
+
                 self.state = State.QUEST2
 
             case State.OFF:
                 self.display_msgs("SLEEPING", [])
+                self.counter = 0
                 pass
 
 def main(args=None):
