@@ -150,10 +150,8 @@ This repository is structured to allow the following workflow:
 
 ## Credits / Acknowledgements
 
-The original 3D design of the robotic spider was created by a contributor on **[Thingiverse]([https://www.thingiverse.com/](https://www.thingiverse.com/thing:1677703))**.  
+The original 3D design of the robotic spider was created by a contributor on **[Thingiverse](https://www.thingiverse.com/thing:1677703)**.  
 
 We have **modified and adapted** the design to suit our robotic platform and integrate it with our ROS 2 control system.  
 
-Full credit for the original design goes to the creator, whose work inspired and enabled this project.  
-Please refer to the original Thingiverse page for license and usage terms.
-
+Full credit for the original design goes to the creator, whose work inspired and enabled this project.
