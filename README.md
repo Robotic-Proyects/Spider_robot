@@ -1,10 +1,10 @@
-# 🕷️ Spider Robot
+# Spider Robot
 
 Simulation and control project for a *spider-type* robot using **ROS 2 Jazzy** and **Gazebo Sim**.
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 * Ubuntu compatible with ROS 2 Jazzy
 * ROS 2 Jazzy installed and configured
@@ -14,7 +14,7 @@ Simulation and control project for a *spider-type* robot using **ROS 2 Jazzy** a
 
 ---
 
-## 🚀 Installation
+## Installation
 
 1. Move to `src` of your workspace
 
@@ -45,7 +45,7 @@ source install/setup.bash
 
 ---
 
-## 🧪 Running the Simulator
+## Running the Simulator
 
 ### World with walls (room)
 
@@ -73,7 +73,7 @@ ros2 launch spider gazebo.launch.py gui:=True
 
 ---
 
-## 🎮 Robot Control
+## Robot Control
 
 > **Note:** Each command must be executed in a separate terminal, with the workspace properly sourced.
 
@@ -97,7 +97,7 @@ ros2 run spider_control movement_publisher
 
 ---
 
-## 📌 Additional Notes
+## Additional Notes
 
 * Make sure to run `source install/setup.bash` in **every new terminal**.
 * The simulator must be running before launching the control nodes.
