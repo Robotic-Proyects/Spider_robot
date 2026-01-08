@@ -125,7 +125,7 @@ source ~/ws_pi/install/setup.bash
 1. Lanzar el nodo del joystick:
 
 ```bash
-ros2 run joy joy_node
+ros2 run joy joy_node &
 ```
 
 2. Lanzar el driver principal en segundo plano:
@@ -137,7 +137,7 @@ ros2 run spider_driver control_main initial_rad:=0.0 &
 3. Lanzar el control de alto nivel:
 
 ```bash
-ros2 run spider_driver control_hc_main
+ros2 run spider_driver control_hc_main &
 ```
 
 4. Lanzar el publicador de movimiento:
