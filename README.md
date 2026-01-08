@@ -1,42 +1,43 @@
-# 🕷️ Spider Robot - Daisy
+# 🕷️ Spider Robot
 
-Proyecto de simulación y control de un robot tipo *spider* utilizando **ROS 2 Jazzy** y **Gazebo Sim**.
+Simulation and control project for a *spider-type* robot using **ROS 2 Jazzy** and **Gazebo Sim**.
 
 ---
 
-## 📦 Requisitos
+## 📦 Requirements
 
-* Ubuntu compatible con ROS 2 Jazzy
-* ROS 2 Jazzy instalado y configurado
+* Ubuntu compatible with ROS 2 Jazzy
+* ROS 2 Jazzy installed and configured
 * Gazebo Sim
 * `colcon`
 * Git
 
 ---
 
-## 🚀 Instalación
-1. Moverte al `src` de tu paquete.
+## 🚀 Installation
 
-2. Clonar el repositorio (rama `jazzy`):
+1. Move to `src` of your workspace
+
+2. Clone the repository (branch `jazzy`):
 
 ```bash
 git clone -b jazzy https://github.com/usuario/repo.git
 ```
 
-3. Cargar el entorno de ROS 2 Jazzy:
+3. Source the ROS 2 Jazzy environment:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
 ```
 
-4. Compilar el workspace:
+4. Build the workspace:
 
 ```bash
-cd ../
+cd ws
 colcon build --symlink-install
 ```
 
-5. Cargar el workspace compilado:
+5. Source the built workspace:
 
 ```bash
 source install/setup.bash
@@ -44,27 +45,27 @@ source install/setup.bash
 
 ---
 
-## 🧪 Ejecución del simulador
+## 🧪 Running the Simulator
 
-### Mundo con paredes (habitación)
+### World with walls (room)
 
-Lanza Gazebo Sim con un mundo personalizado que incluye paredes:
+Launch Gazebo Sim with a custom world that includes walls:
 
 ```bash
 ros2 launch spider gazebo.launch.py gui:=False use_custom_world:=true world_name:=room
 ```
 
-### Mundo vacío
+### Empty world
 
-Lanza Gazebo Sim con un mundo vacío:
+Launch Gazebo Sim with an empty world:
 
 ```bash
 ros2 launch spider gazebo.launch.py gui:=False
 ```
 
-### Con interfaz gráfica
+### With graphical interface
 
-Lanza Gazebo Sim con interfaz visual:
+Launch Gazebo Sim with the graphical user interface enabled:
 
 ```bash
 ros2 launch spider gazebo.launch.py gui:=True
@@ -72,22 +73,22 @@ ros2 launch spider gazebo.launch.py gui:=True
 
 ---
 
-## 🎮 Control del robot
+## 🎮 Robot Control
 
-> **Nota:** Cada comando debe ejecutarse en una terminal distinta y con el workspace correctamente *sourced*.
+> **Note:** Each command must be executed in a separate terminal, with the workspace properly sourced.
 
-### 1. Nodo lector de teclado
+### 1. Keyboard reader node
 
-Permite controlar el robot mediante el teclado:
+Allows controlling the robot using the keyboard:
 
 ```bash
 source install/setup.bash
 ros2 run keyboard_reader key_reader
 ```
 
-### 2. Nodo controlador de movimiento
+### 2. Motion controller node
 
-Publica los comandos de movimiento al robot:
+Publishes motion commands to the robot:
 
 ```bash
 source install/setup.bash
@@ -96,14 +97,7 @@ ros2 run spider_control movement_publisher
 
 ---
 
-## 📌 Notas adicionales
+## 📌 Additional Notes
 
-* Asegúrate de ejecutar `source install/setup.bash` en **cada terminal nueva**.
-* El simulador debe estar en ejecución antes de lanzar los nodos de control.
-
-
-
-
-
-
-
+* Make sure to run `source install/setup.bash` in **every new terminal**.
+* The simulator must be running before launching the control nodes.
