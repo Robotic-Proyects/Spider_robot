@@ -1,5 +1,0 @@
-int32 channel        # Canal del PCA9685
-int32 pwm 
----
-int32 pwm_value      # PWM generado
-string status        # Mensaje informativo
