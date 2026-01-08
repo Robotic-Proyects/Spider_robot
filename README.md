@@ -21,7 +21,7 @@ Simulation and control project for a *spider-type* robot using **ROS 2 Jazzy** a
 2. Clone the repository (branch `jazzy`):
 
 ```bash
-git clone -b jazzy https://github.com/usuario/repo.git
+git clone -b jazzy https://github.com/usuario/repo.git](https://github.com/Robotic-Proyects/Spider_robot.git
 ```
 
 3. Source the ROS 2 Jazzy environment:
