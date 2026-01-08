@@ -20,9 +20,9 @@ Este repositorio contiene el software necesario para ejecutar y controlar una ar
 
 El sistema está diseñado para funcionar con Ubuntu 22.04 LTS (64-bit) para Raspberry Pi.
 
-La instalación puede realizarse directamente desde Raspberry Pi Imager:
+La instalación puede realizarse directamente desde **[Raspberry Pi Imager](https://www.raspberrypi.com/software/)**:
 
-1. Abrir Raspberry Pi Imager
+1. Abrir **[Raspberry Pi Imager](https://www.raspberrypi.com/software/)**
 2. Seleccionar Ubuntu 22.04 LTS (64-bit)
 3. Grabar la imagen en la microSD
 4. Insertar la microSD en la Raspberry Pi y arrancar
