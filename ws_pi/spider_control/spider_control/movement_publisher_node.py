@@ -689,7 +689,6 @@ class MovementPublisher(Node):
 
                 self.display_msgs("FOLLOWING WALL", [f"Detected {wall_detected}", f"Action: {move}"])
             case State.QUEST2:
-                print(self.state)
 
                 F_OFF, S_OFF, T_OFF = math.radians(0.0), math.radians(-35.0), math.radians(45.0)
 
@@ -701,38 +700,38 @@ class MovementPublisher(Node):
 
                 if self.counter == 3:
                     self.counter = 0
-                    # Dividir en 3 sectores lo más equilibrado posible
                     derecha, centro, izquierda = np.array_split(data, 3)
-                    print("Derecha:", derecha)
-                    print("Centro:", centro)
-                    print("Izquierda:", izquierda)
 
-                    # Descartar sectores con obstáculos cercanos (<0.8 m)
                     SEPARACION_MIN = 0.65
                     sectores = {"derecha": derecha, "centro": centro, "izquierda": izquierda}
                     sectores_validos = {nombre: vals for nombre, vals in sectores.items() if not np.any(vals < SEPARACION_MIN)}
 
-                    # Priorizar el centro si está libre
-                    if "centro" in sectores_validos or sectores_validos is None:
-                        print("Centro libre, avanzando")
-                    else :
-                        # Si no, elegir el lateral con mayor distancia media
-                        mejor_sector = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
-                        if mejor_sector == "derecha":
-                            print("Derecha libre, girando")
-                            self.turnRight()
-                        elif mejor_sector == "izquierda":
-                            self.turnLeft()
+                    if not sectores_validos:
+                        self.state = State.QUEST2
+                        self.counter = 0
+                    else:
+                        # Priorizar el centro si está libre
+                        if "centro" in sectores_validos:
+                            self.display_msgs("SECTOR", ["MID"])
+                        else :
+                            # Si no, elegir el lateral con mayor distancia media
+                            mejor_sector = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
+                            if mejor_sector == "derecha":
+                                self.display_msgs("SECTOR", ["RIGHT"])
+                                self.turnRight()
+                            elif mejor_sector == "izquierda":
+                                self.display_msgs("SECTOR", ["LEFT"])
+                                self.turnLeft()
 
-                    msg_blocked = UInt8()
-                    msg_ultra = Float64()
-                    msg_blocked.data = 1
-                    self.publisher_blocked_.publish(msg_blocked)
-                    time.sleep(0.5)
-                    msg_ultra.data = 1.501
-                    self.publisher_ultrasonic.publish(msg_ultra)
-                    self.state = State.QUEST2_2
-                    time.sleep(0.5)
+                        msg_blocked = UInt8()
+                        msg_ultra = Float64()
+                        msg_blocked.data = 1
+                        self.publisher_blocked_.publish(msg_blocked)
+                        time.sleep(0.5)
+                        msg_ultra.data = 1.25
+                        self.publisher_ultrasonic.publish(msg_ultra)
+                        self.state = State.QUEST2_2
+                        time.sleep(0.5)
 
             case State.QUEST2_2:
                 sonar_dist = self.sonar_data.ranges[0]
