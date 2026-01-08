@@ -132,7 +132,7 @@ The robot is operated using a PS4 controller connected via Bluetooth.
 
 - Bluetooth PS4 controller
 
-- The system is optimized for embedded execution under limited computational resources.
+The system is optimized for embedded execution under limited computational resources.
 
 ## Reproducibility
 
@@ -145,8 +145,6 @@ This repository is structured to allow the following workflow:
 - Validation through simulation
 
 - Deployment on real hardware
-
-- No proprietary software or tools are required.
 
 ## Credits / Acknowledgements
 
