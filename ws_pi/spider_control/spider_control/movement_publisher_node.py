@@ -595,7 +595,7 @@ class MovementPublisher(Node):
 
                     # Marcar que se mueva el ultrasonidos de 0 a 172 grados
                     msg_range = UInt8MultiArray()
-                    msg_range.data = [0, 165]
+                    msg_range.data = [0, 170]
                     self.publisher_range.publish(msg_range)
 
                     time.sleep(8)
@@ -674,8 +674,8 @@ class MovementPublisher(Node):
 
                 move = ""
                 wall_detected = ""
-                if sonar_dist < 1.0:
-                    self.moveForward(0.1)
+                if sonar_dist < 1.8:
+                    self.moveForward(0.05)
                     move = "Moving Forward"
                 else:
                     if self.walls[0]:
@@ -720,12 +720,9 @@ class MovementPublisher(Node):
                         mejor_sector = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
                         if mejor_sector == "derecha":
                             print("Derecha libre, girando")
-                            for _ in range(2):
-                                self.turnRight()
+                            self.turnRight()
                         elif mejor_sector == "izquierda":
-                            print("Izquierda libre, girando")
-                            for _ in range(2):
-                                self.turnLeft()
+                            self.turnLeft()
 
                     msg_blocked = UInt8()
                     msg_ultra = Float64()
@@ -748,7 +745,7 @@ class MovementPublisher(Node):
                     self.counter_walls += 1
 
             case State.QUEST2_3:
-                for _ in range(7):
+                for _ in range(6):
                     self.turnRight()
 
                 for _ in range(self.counter):
