@@ -1,12 +1,20 @@
 # Spider Robot
 
 
-<img src="images/readme_img/Daisy_photogenic.jpeg" alt="Spider Robot" width="350">
-
+<table>
+<tr>
+<td width="360" valign="top">
+  <img src="images/WhatsApp Image 2026-01-09 at 16.29.28.jpeg" width="350">
+</td>
+<td valign="top">
 
 This repository contains the complete design, documentation, simulation results, and software of a spider-type robotic platform developed using **ROS 2**.
 
 The project covers the full development lifecycle of a robotic system, including mechanical design, actuator selection through simulation, control architecture, and deployment on embedded hardware.
+
+</td>
+</tr>
+</table>
 
 ---
 
