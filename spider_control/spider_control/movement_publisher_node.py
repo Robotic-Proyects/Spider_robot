@@ -125,6 +125,7 @@ class MovementPublisher(Node):
 
         self.counter = 0
         self.counter_walls = 0
+        self.best_section = None
 
     def set_pose(self, pose, index):
         self.poses[index] = pose
@@ -675,7 +676,7 @@ class MovementPublisher(Node):
                 move = ""
                 wall_detected = ""
                 if sonar_dist < 1.8:
-                    self.moveForward(0.05)
+                    self.moveForward(0.1)
                     move = "Moving Forward"
                 else:
                     if self.walls[0]:
@@ -702,7 +703,7 @@ class MovementPublisher(Node):
                     self.counter = 0
                     derecha, centro, izquierda = np.array_split(data, 3)
 
-                    SEPARACION_MIN = 0.65
+                    SEPARACION_MIN = 0.55
                     sectores = {"derecha": derecha, "centro": centro, "izquierda": izquierda}
                     sectores_validos = {nombre: vals for nombre, vals in sectores.items() if not np.any(vals < SEPARACION_MIN)}
 
@@ -711,24 +712,29 @@ class MovementPublisher(Node):
                         self.counter = 0
                     else:
                         # Priorizar el centro si está libre
+                        ultra_value = 1.25
+
                         if "centro" in sectores_validos:
                             self.display_msgs("SECTOR", ["MID"])
+                            self.best_section = "centro"
                         else :
                             # Si no, elegir el lateral con mayor distancia media
-                            mejor_sector = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
-                            if mejor_sector == "derecha":
+                            self.best_section = max(sectores_validos.items(), key=lambda item: np.mean(item[1]))[0]
+                            if self.best_section == "derecha":
                                 self.display_msgs("SECTOR", ["RIGHT"])
                                 self.turnRight()
-                            elif mejor_sector == "izquierda":
+                                ultra_value = 2.75
+                            elif self.best_section == "izquierda":
                                 self.display_msgs("SECTOR", ["LEFT"])
                                 self.turnLeft()
+                                ultra_value = 0.25
 
                         msg_blocked = UInt8()
                         msg_ultra = Float64()
                         msg_blocked.data = 1
                         self.publisher_blocked_.publish(msg_blocked)
                         time.sleep(0.5)
-                        msg_ultra.data = 1.25
+                        msg_ultra.data = ultra_value
                         self.publisher_ultrasonic.publish(msg_ultra)
                         self.state = State.QUEST2_2
                         time.sleep(0.5)
@@ -736,10 +742,10 @@ class MovementPublisher(Node):
             case State.QUEST2_2:
                 sonar_dist = self.sonar_data.ranges[0]
 
-                self.moveForward(0.025)
+                self.moveForward(0.035)
                 self.counter += 1
 
-                if sonar_dist < 0.4 and sonar_dist != -1.0:
+                if sonar_dist < 0.45 and sonar_dist != -1.0:
                     self.state = State.QUEST2_3
                     self.counter_walls += 1
 
@@ -748,11 +754,18 @@ class MovementPublisher(Node):
                     self.turnRight()
 
                 for _ in range(self.counter):
-                    self.moveForward(0.025)
+                    self.moveForward(0.035)
 
                 if self.counter_walls == 2:
                     for _ in range(5):
                         self.turnRight()  
+                
+                if self.best_section == "izquierda":
+                    for _ in range(2):
+                        self.turnRight() 
+                elif self.best_section == "derecha":
+                    for _ in range(2):
+                        self.turnLeft()
 
 
                 msg_blocked = UInt8()
