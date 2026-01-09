@@ -1,6 +1,8 @@
 # Spider Robot
 
-![Spider Robot](images/readme_img/Daisy_photogenic.jpeg)
+
+<img src="images/readme_img/Daisy_photogenic.jpeg" alt="Spider Robot" width="350">
+
 
 This repository contains the complete design, documentation, simulation results, and software of a spider-type robotic platform developed using **ROS 2**.
 
