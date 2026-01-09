@@ -173,17 +173,17 @@ These trials include initial validation and multiple attempts to improve locomot
 
 ---
 
-### Test 2 – First Attempt
+### Test 2 – First Attempt x2 vel
 2 walls reached
 
 [![Test 2 – First Attempt](https://img.youtube.com/vi/7Gf2BibYbUM/0.jpg)](https://youtu.be/7Gf2BibYbUM)
 
-### Test 2 – Second Attempt [Best attempt 4 walls reached]
+### Test 2 – Second Attempt [Best attempt 4 walls reached] x2 vel
 It was paused because of scenery problems.
 
 [![Test 2 – Second Attempt](https://img.youtube.com/vi/IxGbDk8HLnk/0.jpg)](https://youtu.be/IxGbDk8HLnk)
 
-### Test 2 – Third Attempt
+### Test 2 – Third Attempt x2 vel
 Obstacle hit
 
 [![Test 2 – Third Attempt](https://img.youtube.com/vi/S9iTWS3Nw2c/0.jpg)](https://youtu.be/S9iTWS3Nw2c)
