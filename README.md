@@ -157,3 +157,32 @@ The original 3D design of the robotic spider was created by a contributor on **[
 We have **modified and adapted** the design to suit our robotic platform and integrate it with our ROS 2 control system.  
 
 Full credit for the original design goes to the creator, whose work inspired and enabled this project.
+
+---
+
+## Experimental Tests – Development Trials
+
+The following videos show the experimental testing phases of the spider robot during development.
+
+These trials include initial validation and multiple attempts to improve locomotion and stability.
+
+### Test 1 – Initial Trial
+
+[![Test 1 – Initial Validation](https://img.youtube.com/vi/zKno-wF2-GE/0.jpg)](https://youtube.com/shorts/zKno-wF2-GE)
+
+
+---
+
+### Test 2 – First Attempt
+2 walls reached
+[![Test 2 – First Attempt](https://img.youtube.com/vi/7Gf2BibYbUM/0.jpg)](https://youtu.be/7Gf2BibYbUM)
+
+### Test 2 – Second Attempt [Best attempt 4 walls reached]
+It was paused because of scenery problems.
+
+[![Test 2 – Second Attempt](https://img.youtube.com/vi/IxGbDk8HLnk/0.jpg)](https://youtu.be/IxGbDk8HLnk)
+
+### Test 2 – Third Attempt
+Obstacle hit
+[![Test 2 – Third Attempt](https://img.youtube.com/vi/S9iTWS3Nw2c/0.jpg)](https://youtu.be/S9iTWS3Nw2c)
+
